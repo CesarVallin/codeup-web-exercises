@@ -51,7 +51,7 @@ const randomizeInputs = () => {
     discount(randomItemCount, itemCountThreshold, active, premCustomer);
 };
 
-for(let i = 0; i < 100; i++) {
+for(let i = 0; i < 5; i++) {
     randomizeInputs();
 }
 
