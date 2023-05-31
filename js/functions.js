@@ -11,6 +11,7 @@ console.log(`hello from functions.js, external JS`);
 function sayHello(name){
     return "Hello, " + name + "!";
 }
+sayHello("codeup");
 console.log(sayHello("codeup"));
 
 /**
@@ -20,7 +21,7 @@ console.log(sayHello("codeup"));
  *
  * console.log 'helloMessage' to check your work
  */
-let helloMessage = sayHello("Cesar");
+const helloMessage = sayHello("Cesar");
 console.log(helloMessage);
 
 /**
@@ -34,7 +35,7 @@ console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+const random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -62,6 +63,7 @@ const isTwo = (numberParam) =>{
     }
     return numberToBoolean;
 };
+isTwo(random);
 console.log(random, isTwo(random));
 
 
@@ -92,21 +94,12 @@ console.log(calculateTip(15, 33.42));
  */
 
 const userInteractionCalcTip = () => {
-    // bill total user interaction:
-    const billTotalInput = prompt(`Enter your bill total`);
-    // tip amount user interaction:
-    const tipPercentInput = prompt(`Enter tip percentage you would like to leave`);
-    // check how these inputs are coming back:
-    console.log(billTotalInput, typeof billTotalInput, tipPercentInput, typeof tipPercentInput);
-   // Conversion from string to number:
-    const billTotalInputNumb = Number(billTotalInput);
-    const tipPercentInputNum = Number(tipPercentInput);
-    // check conversion:
-    console.log(billTotalInputNumb,typeof billTotalInputNumb, tipPercentInputNum, typeof tipPercentInputNum);
-
-    // interaction back to user:
-    alert(`The tip amount is: $${calculateTip(tipPercentInputNum, billTotalInputNumb)}`);
-    console.log(calculateTip(tipPercentInputNum, billTotalInputNumb));
+    const userTipPercentage = (parseFloat(prompt("How much would you like to tip as a whole percentage number?")))/100;
+    const userBillTotal = parseFloat(prompt("How much does your bill cost?"));
+    console.log(userTipPercentage, userBillTotal);
+    const tip = userTipPercentage * userBillTotal;
+    alert(`Your should tip $${tip.toFixed(2)}`);
+    console.log(tip, tip.toFixed(2));
 };
 userInteractionCalcTip();
 
@@ -127,16 +120,24 @@ userInteractionCalcTip();
 
 // can be used as arguments for parameters:
 let originalPrice = 100;
-let discountPercent = 20;
+let discountPercent = 0.2;
 
 const applyDiscount = (priceParam, discountParam) => {
     let discountValue = discountParam / 100;
     let discountValue1 = discountValue * priceParam;
     return priceParam - discountValue1;
 };
-
 console.log(applyDiscount(45.99, 12));
-console.log(applyDiscount(originalPrice, discountPercent));
+console.log(applyDiscount(100, 20)); // you explicitly changed values here, to fit the function
+
+const applyDiscount1 = (priceParam, discountParam) => {
+    return priceParam * (1- discountParam);
+};
+console.log(applyDiscount1(45.99, 0.12));
+console.log(applyDiscount1(originalPrice, discountPercent)); // this function represents the exact directions from exercise
+
+
+
 
 
 

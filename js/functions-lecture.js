@@ -57,19 +57,21 @@ console.log(`hello from functions-lecture.js, external JS`);
 
 // IIFE
 
-(function(){
-    const name = "Cesar";
-    console.log(`Hello ${name}`);
+// (function(){
+//     const name = "Cesar";
+//     console.log(`Hello ${name}`);
+//
+//     sayBye(name);
+// })();
+//
+// function sayBye(parameter1){
+//     console.log(`Bye ${parameter1}`);
+// }
 
-    sayBye(name);
-})();
 
-function sayBye(parameter1){
-    console.log(`Bye ${parameter1}`);
-}
-
-
-
+// const userTipPercentage = (parseFloat(prompt("How much would you like to tip as a whole percentage number?")))/100;
+// const userBillTotal = parseFloat(prompt("How much does your bill cost?"));
+// console.log(userTipPercentage, userBillTotal);
 
 
 
