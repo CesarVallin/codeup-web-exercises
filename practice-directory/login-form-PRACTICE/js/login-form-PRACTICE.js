@@ -1,10 +1,13 @@
 "use strict";
+console.log(`hello from login-form-PRACTICE.js, external JS`);
+
+"use strict";
 console.log(`hello from login-form.js, external JS`);
 // The variables below were used to test out access to form inputs:
-    // let usernameInput = document.forms.login.username.value;
-    // console.log(usernameInput);
-    // let passwordInput = document.forms.login.password.value;
-    // console.log(passwordInput);
+// let usernameInput = document.forms.login.username.value;
+// console.log(usernameInput);
+// let passwordInput = document.forms.login.password.value;
+// console.log(passwordInput);
 
 // -------------------------------------------------------------------------------------------------------------------
 // Create handler function for username <input value>:
@@ -76,8 +79,3 @@ updatedPasswordInput();
 Instead of creating your a RegExp , a simpler approach would have been to utilize something like:
     password.includes(username)
  */
-
-
-
-
-

@@ -41,6 +41,7 @@ console.log(`hello from conditionals.js, external JS`);
 // analyzeColor("orange");
 // console.log(analyzeColor("orange"));
 
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -54,12 +55,14 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 // analyzeColor(randomColor);
+// console.log(randomColor);
 // console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+
 // function analyzeColor(colorInputParam) {
 //     switch (colorInputParam) {
 //         case `blue`:
@@ -110,47 +113,47 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-// to use as possible argument in calculateTotl() function
-const randomNumber = Math.floor(Math.random() * 6)
-// to use as possible argument in calculateTotal() function
-const totalPriceArray = [100, 85, 23, 55, 67];
-const randomTotalPrice = totalPriceArray[Math.floor(Math.random() * totalPriceArray.length)];
-// logging possible arguments before function
-console.log(`Discount Number is: ${randomNumber}. Total amount is: ${randomTotalPrice}`);
-
-const calculateTotal = (numberParam, totalAmountParam) => {
-    let discount;
-    switch (numberParam) {
-        case 0:
-            discount = 0;
-            break;
-        case 1:
-            discount = .10;
-            break;
-        case 2:
-            discount = .25;
-            break;
-        case 3:
-            discount = .35;
-            break;
-        case 4:
-            discount = .50;
-            break;
-        case 5:
-            discount = 1.00;
-            break;
-    }
-    let grandTotal = (totalAmountParam - (totalAmountParam * discount));
-    alert(`The lucky number was ${numberParam} which yields a ${discount * 100}% discount , the price before discount is $${totalAmountParam}, and the price after discount is $${grandTotal.toFixed(2)} `);
-    // the return expression:
-        // toFixed(2), yielding 2 decimal places, however turning a number data-type to a string
-    return grandTotal.toFixed(2);
-};
+// // to use as possible argument in calculateTotl() function
+// const randomNumber = Math.floor(Math.random() * 6)
+// // to use as possible argument in calculateTotal() function
+// const totalPriceArray = [100, 85, 23, 55, 67];
+// const randomTotalPrice = totalPriceArray[Math.floor(Math.random() * totalPriceArray.length)];
+// // logging possible arguments before function
+// console.log(`Discount Number is: ${randomNumber}. Total amount is: ${randomTotalPrice}`);
+//
+// const calculateTotal = (numberParam, totalAmountParam) => {
+//     let discount;
+//     switch (numberParam) {
+//         case 0:
+//             discount = 0;
+//             break;
+//         case 1:
+//             discount = .10;
+//             break;
+//         case 2:
+//             discount = .25;
+//             break;
+//         case 3:
+//             discount = .35;
+//             break;
+//         case 4:
+//             discount = .50;
+//             break;
+//         case 5:
+//             discount = 1.00;
+//             break;
+//     }
+//     let grandTotal = (totalAmountParam - (totalAmountParam * discount));
+//     alert(`The lucky number was ${numberParam}\n\n\ The total discount is ${discount * 100}%\n\n The price before discount is $${totalAmountParam}\n\n The price after discount is $${grandTotal.toFixed(2)} `);
+//     // the return expression:
+//         // toFixed(2), yielding 2 decimal places, however turning a number data-type to a string
+//     return grandTotal.toFixed(2);
+// };
 // // calculateTotal(randomNumber, 100);
-// console.log(calculateTotal(randomNumber, 100));
-// console.log(calculateTotal(randomNumber, randomTotalPrice), typeof calculateTotal(randomNumber, randomTotalPrice));
-// console.log(Number(calculateTotal(randomNumber, randomTotalPrice)), typeof Number(calculateTotal(randomNumber, randomTotalPrice))); // display same value in number data-type
-
+// // console.log(calculateTotal(randomNumber, 100));
+// // console.log(calculateTotal(randomNumber, randomTotalPrice), typeof calculateTotal(randomNumber, randomTotalPrice));
+// // console.log(Number(calculateTotal(randomNumber, randomTotalPrice)), typeof Number(calculateTotal(randomNumber, randomTotalPrice))); // display same value in number data-type
+// calculateTotal(randomNumber, randomTotalPrice);
 
 /**
  * TODO:
@@ -160,7 +163,7 @@ const calculateTotal = (numberParam, totalAmountParam) => {
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// // Generate a random number between 0 and 6
+// // // Generate a random number between 0 and 6
 // const luckyNumber = Math.floor(Math.random() * 6);
 // const totalBill = Number(prompt(`Please enter your total bill`));
 // console.log(totalBill, typeof totalBill);
@@ -188,7 +191,7 @@ const calculateTotal = (numberParam, totalAmountParam) => {
  * HINT: The way we prompt for a value could be improved
  */
 
-// function for even or positive
+// function for even or positive, argument to be passed once userInteractionA(); is invoked
 function evenOrOdd (numberParam) {
     let numberEvenOrOdd;
     if (numberParam % 2 === 0) {
@@ -199,12 +202,12 @@ function evenOrOdd (numberParam) {
     return numberEvenOrOdd;
 }
 
-// function for number plus 100
+// function for number plus 100, argument to be passed once userInteractionA(); is invoked
 function numberPlus100 (numberParam) {
     return numberParam + 100;
 }
 
-// function for positive or negative
+// function for positive or negative, argument to be passed once userInteractionA(); is invoked
 function negOrPos (numberParam) {
     let numberNegOrPos;
     if (numberParam < 0) {
