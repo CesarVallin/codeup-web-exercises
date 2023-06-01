@@ -243,11 +243,13 @@ const userInterationA = () => {
             userNumberA = Number(prompt(`Please enter a number`));
             break;
     }
-
+    // Check if user -cancels- confirm prompt
     if (!userConfirm) {
         alert(`We'll try again next time!`)
-    } else if (isNaN(userNumberA) && userConfirm) {
+    // Check  / 1: if user -ok- confirm prompt / 2: if user's input is NOT a number data-type
+    } else if (userConfirm && isNaN(userNumberA)) {
         alert(`You need to provide a number data-type`);
+    // All checks done, execute statement-block below:
     } else {
         alert(`The number ${userNumberA} is ${evenOrOdd(userNumberA)}`);
         alert(`If you add 100 to ${userNumberA} you get ${numberPlus100(userNumberA)}`);
