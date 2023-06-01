@@ -110,10 +110,15 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+// to use as possible argument in calculateTotl() function
 const randomNumber = Math.floor(Math.random() * 6)
-console.log(randomNumber);
+// to use as possible argument in calculateTotal() function
+const totalPriceArray = [100, 85, 23, 55, 67];
+const randomTotalPrice = totalPriceArray[Math.floor(Math.random() * totalPriceArray.length)];
+// logging possible arguments before function
+console.log(`Discount Number is: ${randomNumber}. Total amount is: ${randomTotalPrice}`);
 
-function calculateTotal (numberParam, totalAmountParam) {
+const calculateTotal = (numberParam, totalAmountParam) => {
     let discount;
     switch (numberParam) {
         case 0:
@@ -136,11 +141,16 @@ function calculateTotal (numberParam, totalAmountParam) {
             break;
     }
     let grandTotal = (totalAmountParam - (totalAmountParam * discount));
-    return grandTotal;
-}
-calculateTotal(randomNumber, 100);
-console.log(calculateTotal(randomNumber, 100));
-console.log(`Your total amount is $${calculateTotal(randomNumber, 85)}`);
+    alert(`The lucky number was ${numberParam} which yields a ${discount * 100}% discount , the price before discount is $${totalAmountParam}, and the price after discount is $${grandTotal.toFixed(2)} `);
+    // the return expression:
+        // toFixed(2), yielding 2 decimal places, however turning a number data-type to a string
+    return grandTotal.toFixed(2);
+};
+// // calculateTotal(randomNumber, 100);
+// console.log(calculateTotal(randomNumber, 100));
+// console.log(calculateTotal(randomNumber, randomTotalPrice), typeof calculateTotal(randomNumber, randomTotalPrice));
+// console.log(Number(calculateTotal(randomNumber, randomTotalPrice)), typeof Number(calculateTotal(randomNumber, randomTotalPrice))); // display same value in number data-type
+
 
 /**
  * TODO:
@@ -150,10 +160,14 @@ console.log(`Your total amount is $${calculateTotal(randomNumber, 85)}`);
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-// Remember to reference:
-    // parseFloat() , parseInt() , Number()
+// // Generate a random number between 0 and 6
+// const luckyNumber = Math.floor(Math.random() * 6);
+// const totalBill = Number(prompt(`Please enter your total bill`));
+// console.log(totalBill, typeof totalBill);
+// // invoke function:
+// calculateTotal(luckyNumber, totalBill);
+
+
 
 /**
  * TODO:
@@ -173,3 +187,71 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+// function for even or positive
+function evenOrOdd (numberParam) {
+    let numberEvenOrOdd;
+    if (numberParam % 2 === 0) {
+        numberEvenOrOdd = "even";
+    } else if (numberEvenOrOdd % 2 !== 0) {
+        numberEvenOrOdd = "odd";
+    }
+    return numberEvenOrOdd;
+}
+
+// function for number plus 100
+function numberPlus100 (numberParam) {
+    return numberParam + 100;
+}
+
+// function for positive or negative
+function negOrPos (numberParam) {
+    let numberNegOrPos;
+    if (numberParam < 0) {
+        numberNegOrPos = "negative";
+    } else if (numberParam > 0) {
+        numberNegOrPos = "positive";
+    }
+    return numberNegOrPos;
+}
+
+// interaction function, 1st attempt!
+
+// const userInteraction = () => {
+//     let userNumber;
+//     const userYes = confirm(`Would you like to enter a number?`);
+//     if (userYes) {
+//         userNumber = Number(prompt(`Please enter a number`));
+//     }
+//     if (!userYes) {
+//         alert(`We'll try again next time`);
+//     } else if (isNaN(userNumber)) {
+//         alert(`You need to provide a number data-type`);
+//     } else {
+//         alert(`The number ${userNumber} is ${evenOrOdd(userNumber)}`);
+//         alert(`If you add 100 to ${userNumber} you get ${numberPlus100(userNumber)}`);
+//         alert(`The number ${userNumber} is ${negOrPos(userNumber)}`);
+//     }
+// };
+// userInteraction();
+
+const userInterationA = () => {
+    let userNumberA;
+    const userConfirm = confirm(`Would you like to enter a number?`);
+    switch(userConfirm) {
+        case true:
+            userNumberA = Number(prompt(`Please enter a number`));
+            break;
+    }
+
+    if (!userConfirm) {
+        alert(`We'll try again next time!`)
+    } else if (isNaN(userNumberA) && userConfirm) {
+        alert(`You need to provide a number data-type`);
+    } else {
+        alert(`The number ${userNumberA} is ${evenOrOdd(userNumberA)}`);
+        alert(`If you add 100 to ${userNumberA} you get ${numberPlus100(userNumberA)}`);
+        alert(`The number ${userNumberA} is ${negOrPos(userNumberA)}`);
+    }
+};
+userInterationA();
