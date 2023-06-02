@@ -74,7 +74,7 @@ const userInteraction = () => {
 
     if (favDay.length === 0) { // checks to see if the user typed anything on the prompt()
         console.log(`Looks like you didn't type anything`);
-    } else if (userInput) { // checks if the prompt() input is not null
+    } else if (userInput) { // checks if the prompt() input is not null (if the user clicked -cancel-)
         useDayInput(favDay);
     } else {
         console.log(`Maybe next time, have a great day!`);
