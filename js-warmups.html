@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Warm Ups</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    /* TODO
+
+      Write a function, addTen, that takes in an input. If the input is a number,
+      return the input plus ten and false otherwise.
+
+      Examples:
+
+      addTen(0); // returns 10
+      addTen(10); // returns 20
+      addTen('bob'); // returns false
+
+     */
+
+    const addTen = (inputParam) => {
+        let plusTen = 10;
+        // Check if input argument is a number:
+        const numberCheck = (!isNaN(inputParam)) ? inputParam + plusTen : false;
+        return numberCheck;
+    };
+    console.log(addTen(0));
+    console.log(addTen(10));
+    console.log(addTen('bob'));
+
+    function addTenA (inputParam) {
+        let plusTen = 10;
+        // Check if input argument is a number:
+        if (!isNaN(inputParam)) {
+            return inputParam + plusTen;
+        } else {
+            return false;
+        }
+    }
+    console.log(addTenA(0));
+    console.log(addTenA(10));
+    console.log(addTenA('bob'));
+
+    // last one does not evaluate for a number resolve, so if a string '5' is passed, it will return false!!!
+    // keep in mind, isNaN(argument1) makes an evaluation of argument1 to see if it can resolve to a number!!
+    // Both are just different tools for you to use, depending on what you need.
+    const addTenB = (inputParam) => {
+        let plusTen = 10;
+        if (typeof inputParam === "number") {
+            return inputParam + plusTen;
+        } else {
+            return false;
+        }
+    };
+    console.log(addTenB(0));
+    console.log(addTenB(10));
+    console.log(addTenB('bob'));
+
+    /*
+    Think of the steps in your function as (pseudocode):
+    // take the input and check if it's a number
+    // if it is a number, add ten and return it from the function
+    // if it's not a number, return the boolean false
+     */
+
+
+</script>
+
+</body>
+</html>
