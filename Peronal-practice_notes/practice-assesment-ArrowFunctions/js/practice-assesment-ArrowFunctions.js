@@ -80,7 +80,7 @@ const isEmptyString = (parameter1) => {return parameter1 === ""};
 // isNotANumber(3.141)            // false
 
 const isNotANumber = (parameter1) => {
-    if (typeof parameter1 === "boolean" || parameter1 === null) {
+    if (typeof parameter1 === "boolean" || parameter1 === null) { // this first path cuts the boolean & null right away into the happy path
         return true;
     } else if (isNaN(parameter1)) {
         return true;

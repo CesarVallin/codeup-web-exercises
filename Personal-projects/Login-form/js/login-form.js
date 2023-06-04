@@ -37,6 +37,11 @@ document.addEventListener("input", updatedUsernameInput);
 // invoke handler function for username <input value>:
 updatedUsernameInput();
 
+/*
+If you wanted to test out including white space at the beginning or at the end, try this:
+usernameInput.includes(" ").at(0) || usernameInput.includes(" ").at(-1)
+ */
+
 // -------------------------------------------------------------------------------------------------------------------
 /** Handler function for password <input value> event listener
  *  Retrieve and store password <input value>
