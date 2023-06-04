@@ -36,6 +36,7 @@ const randomizeInputs = () => {
     } else {
         active = !active;
     }
+    // const activeA = (active) => {return active === 1}; // can you use this arrow function instead???
     console.log(active, typeof active);
 
     // for customer Premium or Regular.  Random number either 1 or 2.
