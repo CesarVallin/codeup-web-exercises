@@ -19,12 +19,12 @@ console.log(`hello from JS-1-Loops.js, external JS`);
 // 7 x 10 = 70
 
 const showMultiplicationTable = (numberParam) => {
-    for (let i = 1; i <= 10; i++) {
+     for (let i = 1; i <= 10; i++) {
         console.log(`${numberParam} x ${i} = ${numberParam * i}`);
     }
 
 };
-console.log(showMultiplicationTable(7));
+showMultiplicationTable(7);
 
 // 3. Use a for loop and the code from the previous lessons to generate 10 random numbers
 // between 20 and 200 and output to the console whether each number is odd or even. For example:
@@ -61,13 +61,17 @@ console.log(evenOrOdd(randomNumber20to200()));
 // 999999999
 
 const repeatInputWithIteration = () => {
-    let counter = 0;
-    for (let i = 1; i < 10; i++) {
-        counter += 1;
-        console.log(Number(String(counter).repeat(i)));
+    // let counter = 0;
+    // for (let i = 1; i < 10; i++) {
+    //     counter += 1;
+    //     // console.log(Number(String(counter).repeat(i)));
+    //     console.log(counter.toString().repeat(i));
+    // }
+    for (let i = 0; i < 10; i++) {
+        console.log(i.toString().repeat(i));
     }
 };
-console.log(repeatInputWithIteration());
+repeatInputWithIteration();
 
 // 5. Create a for loop that uses console.log to create the output shown below.
 //
@@ -102,7 +106,7 @@ const oneHudredtoFive = () => {
         }
     }
 };
-console.log(oneHudredtoFive());
+oneHudredtoFive();
 // Read material and don't rush.  The above example can be a little better.
 
 /*
