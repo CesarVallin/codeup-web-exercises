@@ -30,4 +30,18 @@ do {
     counterA += 1;
 } while (counterA < 10);
 
+// ================================================================================================================
 
+// // Display the prompt dialogue while the value assigned to `secret` is not equal to "sesame"
+// let secret;
+// do{
+//     secret = prompt("What is the secret password?");
+// } while (secret !== `sesame`);
+// // This should run after the loop is done executing
+// alert("You know the secret password. Welcome!");
+
+/*
+Do you always need to use a counter or specify an exact number of times that a loop must run?
+
+No, all you need is a condition that, at some point, will evaluate to false so that the loop can end.
+ */
