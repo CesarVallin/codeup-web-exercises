@@ -24,7 +24,9 @@ const showMultiplicationTable = (numberParam) => {
         counter += 1;
         console.log(`${numberParam} x ${counter} = ${numberParam * counter}`);
     }
-
+    // you can also use the i instead of the counter:
+    // get rid of counter, keep loop
+    // console.log(`${number} x ${i} = ${number * i}`)
 };
 showMultiplicationTable(7);
 // ================================================================================================================
@@ -38,7 +40,7 @@ showMultiplicationTable(7);
 // 24 is even
 // 199 is odd
 // ...
-const evenOrOdd10Numbers = () => {
+const evenOrOdd10Numbers = () => { /////////////////////////////
     function randomNumber20to200() {
         return Math.floor(Math.random() * ((200 - 20) + 1)) + 20;
     }
@@ -52,11 +54,11 @@ const evenOrOdd10Numbers = () => {
             console.log(`${numberToTest} is odd`);
         }
     }
-};
+}; //////////////////////////////////////////
 evenOrOdd10Numbers();
 
 // Notice how you declared a variable, then assigned it the value of the randomNumber function, then
-// used it for your conditional statement!!!
+// used it for your conditional statement!
 
 // ================================================================================================================
 // 4. Create a for loop that uses console.log to create the output shown below.
@@ -80,7 +82,7 @@ const repeatInputWithIteration = () => {
         console.log(counter.toString().repeat(i));
     }
     // for (let i = 1; i < 10; i++) {
-    //     console.log(i.toString().repeat(i));
+    //     console.log(`${i.toString().repeat(i)}`);
     // }
 };
 repeatInputWithIteration();
