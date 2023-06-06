@@ -19,8 +19,10 @@ console.log(`hello from for_loops.js, external JS`);
 // 7 x 10 = 70
 
 const showMultiplicationTable = (numberParam) => {
+    let counter = 0;
     for (let i = 1; i <= 10; i++) {
-        console.log(`${numberParam} x ${i} = ${numberParam * i}`);
+        counter += 1;
+        console.log(`${numberParam} x ${counter} = ${numberParam * counter}`);
     }
 
 };
@@ -36,22 +38,26 @@ showMultiplicationTable(7);
 // 24 is even
 // 199 is odd
 // ...
-
-function randomNumber20to200 () {
-    return Math.floor(Math.random() * ((200 - 20) + 1)) + 20;
-}
-let numberToTest;
-for (let i = 0; i < 10; i++) {
-    numberToTest = randomNumber20to200();
-    if (numberToTest % 2 === 0) {
-        console.log(`${numberToTest} is even`);
-    } else {
-        console.log(`${numberToTest} is odd`);
+const evenOrOdd10Numbers = () => {
+    function randomNumber20to200() {
+        return Math.floor(Math.random() * ((200 - 20) + 1)) + 20;
     }
-}
+
+    let numberToTest;
+    for (let i = 0; i < 10; i++) {
+        numberToTest = randomNumber20to200();
+        if (numberToTest % 2 === 0) {
+            console.log(`${numberToTest} is even`);
+        } else {
+            console.log(`${numberToTest} is odd`);
+        }
+    }
+};
+evenOrOdd10Numbers();
 
 // Notice how you declared a variable, then assigned it the value of the randomNumber function, then
 // used it for your conditional statement!!!
+
 // ================================================================================================================
 // 4. Create a for loop that uses console.log to create the output shown below.
 //
@@ -67,15 +73,15 @@ for (let i = 0; i < 10; i++) {
 // 999999999
 
 const repeatInputWithIteration = () => {
-    // let counter = 0;
-    // for (let i = 1; i < 10; i++) {
-    //     counter += 1;
-    //     // console.log(Number(String(counter).repeat(i)));
-    //     console.log(counter.toString().repeat(i));
-    // }
+    let counter = 0;
     for (let i = 1; i < 10; i++) {
-        console.log(i.toString().repeat(i));
+        counter += 1;
+        // console.log(Number(String(counter).repeat(i)));
+        console.log(counter.toString().repeat(i));
     }
+    // for (let i = 1; i < 10; i++) {
+    //     console.log(i.toString().repeat(i));
+    // }
 };
 repeatInputWithIteration();
 // use it with a nested loop??

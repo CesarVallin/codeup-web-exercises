@@ -13,6 +13,7 @@ console.log(`hello from break_and_continue.js, external JS`);
 // Number to skip is: 27
 
 
+// commented out, but can also use the code below:
 // let userInput;
 // let loopTest = true
 // while (loopTest) {
@@ -21,14 +22,24 @@ console.log(`hello from break_and_continue.js, external JS`);
 //         loopTest = false;
 //     }
 // }
-// console.log(userInput);
-// for (let i = 1; i < 50; i++) {
-//     if (i % 2 === 0) {
-//         continue;
-//     } else if (i === parseFloat(userInput)) {
-//         console.log(`Yikes! skipping number: ${userInput}`);
-//     } else {
-//         console.log(`Here is an odd number: ${i}`);
-//     }
-// }
+
+let userInput = true;
+// let loopTest = true;
+while (userInput) {
+    userInput = prompt(`Please enter an odd number between 1 and 50`);
+    if ((parseFloat(userInput) > 1 && parseFloat(userInput) < 50) && parseFloat(userInput) % 2 !== 0) {
+        break;
+    }
+}
+
+console.log(userInput);
+for (let i = 1; i < 50; i++) {
+    if (i % 2 === 0) {
+        continue;
+    } else if (i === parseFloat(userInput)) {
+        console.log(`Yikes! skipping number: ${userInput}`);
+    } else {
+        console.log(`Here is an odd number: ${i}`);
+    }
+}
 
