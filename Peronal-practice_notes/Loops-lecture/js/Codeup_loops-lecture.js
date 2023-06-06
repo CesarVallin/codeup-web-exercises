@@ -131,7 +131,7 @@ while (i <= 10) {
 //     if (userInput) {
 //         alert(new Date().toLocaleString());
 //     }
-// } while (userInput);
+// } while(userInput);
 
 // You can utilize your conditional statements.
 // Notice how the condition of the while loop also makes its evaluation, either explicitly while (userInput === true)

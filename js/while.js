@@ -132,6 +132,8 @@ function sellMyCones() {
 }
 sellMyCones();
 
+// Follow the path, the conde makes sense!!! infinite loop until break!!
+
 
 
 

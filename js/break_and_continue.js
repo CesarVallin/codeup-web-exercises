@@ -45,33 +45,67 @@ console.log(`hello from break_and_continue.js, external JS`);
 // }
 
 // ===============================================================================================================
+
+// First example in class, too crumbled up.
+// function promptUntilOdd() {
+//     do{
+//         const userNumber = numberOneThroughFifty();
+//         if(userNumber >= 1 && userNumber <= 50 && userNumber % 2 !== 0){
+//             console.log(`Number to skip is: ${userNumber}`);
+//             for(let i = 1; i <= 50; i++) {
+//                 if(i === userNumber) {
+//                     console.log(`Yikes! Skipping ${i}`);
+//                     continue;
+//                 }
+//                 if(i % 2) {
+//                     console.log(`Here's an odd number: ${i}`);
+//                 }
+//             }
+//             break;
+//         }
+//         console.log("Invalid input");
+//     } while(true)
+// }
+
+// promptUntilOdd();
+// ===============================================================================================================
+
+function isValid(num) {
+    return num <= 0 || num >= 51 || num % 2 === 0
+}
+
 function numberOneThroughFifty() {
-    return parseInt(prompt(`Enter an odd number from 1 to 50`));
+    return parseInt(prompt("Enter an odd number from 1 to 50"));
 }
 
-
-
-function promptUntilOdd() {
+function promptBetweenOneAndFiftyAndOdd() {
+    let num;
     do {
-        const userNumber = numberOneThroughFifty();
-        if (userNumber >= 1 && userNumber <= 50 && userNumber % 2 !== 0) {
-            console.log(`Number to skip is: ${userNumber}`);
-            for (let i = 1; i <= 50; i++) {
-                if (i === userNumber) {
-                    console.log(`Yikes! Skipping ${i}`);
-                    continue;
-                }
-                if (i % 2) {
-                    console.log(`Here's an odd number: ${i}`);
-                }
-            }break;
+        num = prompt("Please enter an odd number between 1-50?");
+        if(isValid(num)) {
+            alert("Number entered is outside the acceptable range or an even number. Please try again.");
+        } else {
+            break;
         }
-
-    } while (true)
+    } while(true);
+    return num;
 }
-promptUntilOdd();
+
+let userNumber = promptBetweenOneAndFiftyAndOdd();
+
+for (let i = 1; i <= 50; i += 2) {
+    if(i == userNumber) {
+        console.log(`Yikes! Skipping over: ${userNumber}`);
+        continue;
+    }
+    console.log(`There is an odd number: ${i}.`);
+}
 
 // NOTICE THAT YOU CAN SIMPLY TYPE - while(true) -
+    // while(true) essentially runs forever!
+    // or instead you can use an expression: while(isValid(num)), try it!!!
+    // The point of this is that you are creating an infinite loop and utilizing a -break- keyword to
+    // break out of the loop.
 // create an isValid() function
 // function isValid(parameter1) {
 //  return userNumber >= 1 && userNumber <= 50 && userNumber % 2 !== 0
