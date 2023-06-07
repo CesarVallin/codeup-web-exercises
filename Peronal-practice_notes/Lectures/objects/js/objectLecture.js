@@ -46,33 +46,60 @@ console.log(`hello from objectLecture.js`);
 
 // ============================================================================================================
 
-const cars = [
+// const cars = [
+//     {
+//         make: "Toyota",
+//         model: "Camry",
+//         features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
+//         owner: {
+//             name: "Bob",
+//             age: 30
+//         },
+//         honk: function(){
+//             return `${this.model} honked...`;
+//         }
+//         // or
+//         /*
+//         honk() {
+//             return `${this.model} honked...`;
+//         }
+//          */
+//     }
+// ];
+//
+// console.log(cars[0].make);
+// console.log(cars[0].model);
+// console.log(cars[0].features[1]);
+// console.log(cars[0].owner.name);
+// console.log(cars[0].honk());
+//
+// // this keyword refers only to its parent!!!
+
+// ============================================================================================================
+
+var cars = [
     {
         make: "Toyota",
         model: "Camry",
         features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
         owner: {
-            name: "Bob",
+            name: "Jane Doe",
             age: 30
-        },
-        honk: function(){
-            return `${this.model} honked...`;
         }
-        // or
-        /*
-        honk() {
-            return `${this.model} honked...`;
+    },
+    {
+        make: "Honda",
+        model: "Accord",
+        features: ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"],
+        owner: {
+            name: "John Doe",
+            age: 31
         }
-         */
     }
 ];
 
-console.log(cars[0].make);
-console.log(cars[0].model);
-console.log(cars[0].features[1]);
-console.log(cars[0].owner.name);
-console.log(cars[0].honk());
-
-// this keyword refers only to its parent!!!
-
-
+cars.forEach(function(car) {
+    car.features.forEach(function(feature) {
+        console.log(feature);
+    });
+});
