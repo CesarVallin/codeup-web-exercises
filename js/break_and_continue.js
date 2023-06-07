@@ -24,25 +24,25 @@ console.log(`hello from break_and_continue.js, external JS`);
 //     }
 // }
 // ===========================================================
-// let userInput = true;
-// // let loopTest = true;
-// while (userInput) {
-//     userInput = prompt(`Please enter an odd number between 1 and 50`);
-//     if ((parseFloat(userInput) > 1 && parseFloat(userInput) < 50) && parseFloat(userInput) % 2 !== 0) {
-//         break;
-//     }
-// }
-//
-// console.log(`Number to skip is: ${userInput}`);
-// for (let i = 1; i < 50; i++) {
-//     if (i % 2 === 0) {
-//         continue;
-//     } else if (i === parseFloat(userInput)) {
-//         console.log(`Yikes! skipping number: ${userInput}`);
-//     } else {
-//         console.log(`Here is an odd number: ${i}`);
-//     }
-// }
+let userInput = true;
+// let loopTest = true;
+while (userInput) {
+    userInput = prompt(`Please enter an odd number between 1 and 50`);
+    if ((parseFloat(userInput) > 1 && parseFloat(userInput) < 50) && parseFloat(userInput) % 2 !== 0) {
+        break;
+    }
+}
+
+console.log(`Number to skip is: ${userInput}`);
+for (let i = 1; i < 50; i++) {
+    if (i % 2 === 0) {
+        continue;
+    } else if (i === parseFloat(userInput)) {
+        console.log(`Yikes! skipping number: ${userInput}`);
+    } else {
+        console.log(`Here is an odd number: ${i}`);
+    }
+}
 
 // ===============================================================================================================
 
@@ -70,36 +70,36 @@ console.log(`hello from break_and_continue.js, external JS`);
 // promptUntilOdd();
 // ===============================================================================================================
 
-function isValid(num) {
-    return num <= 0 || num >= 51 || num % 2 === 0
-}
-
-function numberOneThroughFifty() {
-    return parseInt(prompt("Enter an odd number from 1 to 50"));
-}
-
-function promptBetweenOneAndFiftyAndOdd() {
-    let num;
-    do {
-        num = prompt("Please enter an odd number between 1-50?");
-        if(isValid(num)) {
-            alert("Number entered is outside the acceptable range or an even number. Please try again.");
-        } else {
-            break;
-        }
-    } while(true);
-    return num;
-}
-
-let userNumber = promptBetweenOneAndFiftyAndOdd();
-
-for (let i = 1; i <= 50; i += 2) {
-    if(i == userNumber) {
-        console.log(`Yikes! Skipping over: ${userNumber}`);
-        continue;
-    }
-    console.log(`There is an odd number: ${i}.`);
-}
+// function isValid(num) {
+//     return num <= 0 || num >= 51 || num % 2 === 0
+// }
+//
+// function numberOneThroughFifty() {
+//     return parseInt(prompt("Enter an odd number from 1 to 50"));
+// }
+//
+// function promptBetweenOneAndFiftyAndOdd() {
+//     let num;
+//     do {
+//         num = prompt("Please enter an odd number between 1-50?");
+//         if(isValid(num)) {
+//             alert("Number entered is outside the acceptable range or an even number. Please try again.");
+//         } else {
+//             break;
+//         }
+//     } while(true);
+//     return num;
+// }
+//
+// let userNumber = promptBetweenOneAndFiftyAndOdd();
+//
+// for (let i = 1; i <= 50; i += 2) {
+//     if(i == userNumber) {
+//         console.log(`Yikes! Skipping over: ${userNumber}`);
+//         continue;
+//     }
+//     console.log(`There is an odd number: ${i}.`);
+// }
 
 // NOTICE THAT YOU CAN SIMPLY TYPE - while(true) -
     // while(true) essentially runs forever!

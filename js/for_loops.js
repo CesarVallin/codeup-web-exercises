@@ -40,21 +40,26 @@ showMultiplicationTable(7);
 // 24 is even
 // 199 is odd
 // ...
-const evenOrOdd10Numbers = () => { /////////////////////////////
-    function randomNumber20to200() {
-        return Math.floor(Math.random() * ((200 - 20) + 1)) + 20;
-    }
 
-    let numberToTest;
-    for (let i = 0; i < 10; i++) {
-        numberToTest = randomNumber20to200();
-        if (numberToTest % 2 === 0) {
-            console.log(`${numberToTest} is even`);
-        } else {
-            console.log(`${numberToTest} is odd`);
-        }
+// function declaration: =========================================================
+function evenOrOddReturn (numParam) {
+    if (numParam % 2 === 0) {
+        return `${numParam} is even`;
+    } else {
+        return `${numParam} is odd`;
     }
-}; //////////////////////////////////////////
+}
+// function declaration: =========================================================
+function randomNumber20to200() {
+    return Math.floor(Math.random() * ((200 - 20) + 1)) + 20;
+}
+// function with nested functions!!! ============================================
+const evenOrOdd10Numbers = () => {
+    for (let i = 0; i < 10; i++) {
+        let numberToTest = randomNumber20to200();
+        console.log(evenOrOddReturn(numberToTest));
+    }
+};
 evenOrOdd10Numbers();
 
 // Notice how you declared a variable, then assigned it the value of the randomNumber function, then
