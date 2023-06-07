@@ -1,7 +1,8 @@
 "use strict";
 console.log(`hello from Array-ppl-likes.js`);
 
-let namesLiked = ["Laura", "Sofia", "Raleigh", "Cesar", "Nana", "Grandpa"];
+// let namesLiked = ["Laura", "Sofia", "Raleigh", "Cesar", "Nana", "Grandpa"];
+let namesLiked = ["Laura", "Sofia"];
 
 function likes(names) {
     let counter = 0;
