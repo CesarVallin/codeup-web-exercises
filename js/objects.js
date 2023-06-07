@@ -123,6 +123,52 @@ console.log(`hello from objects.js`);
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    const books = [
+        {
+            title: "Lone Survivor",
+            author: {
+                firstName: "Marcus",
+                lastName: "Luttrell"
+            }
+        },
+        {
+            title: "The lost city of the Monkey God",
+            author: {
+                firstName: "Douglas",
+                lastName: "Preston"
+            }
+        },
+        {
+            title: "Do the work",
+            author: {
+                firstName: "Steven",
+                lastName: "Pressfield"
+            }
+        },
+        {
+            title: "The General and the Jaguar",
+            author: {
+                firstName: "Eileen",
+                lastName: "Welsom"
+            }
+        },
+        {
+            title: "Simply Electrifying",
+            author: {
+                firstName: "Craig",
+                lastName: "Roach"
+            }
+        }
+    ];
+
+    console.log(books[0].title);
+    // Remember, author is another property in books[0]
+        // meaning you can't access it by referencing title!
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+
+
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -148,6 +194,18 @@ console.log(`hello from objects.js`);
      *      ...
      */
 
+    function iterateThroughBooks (bookListArray){
+        let counter = 0;
+        books.forEach(i => {
+           counter += 1;
+           console.log(`Book # ${counter}`);
+           console.log(`Title: ${i.title}`);
+           console.log(`Author: ${i.author.firstName} ${i.author.lastName}`);
+           console.log(`--- --- ---`);
+        });
+    }
+    iterateThroughBooks(books);
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -158,5 +216,37 @@ console.log(`hello from objects.js`);
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+console.log(`Bonus exercise ====================================================================`);
+    const createBookIndex = (titleParam, authorFirstNameParam, authorLastNameParam) => {
+        let bookIntoObject = {
+            title: `${titleParam}`,
+            author: {
+                firstName: `${authorFirstNameParam}`,
+                lastName: `${authorLastNameParam}`
+            }
+        }
+        return bookIntoObject;
+    };
+
+
+    let booksA = [];
+    booksA.push(createBookIndex("Simply Electrifying", "Craig", "Roach"));
+    booksA.push(createBookIndex("The General and the Jaguar", "Eileen", "Welsom"));
+    booksA.push(createBookIndex("Do the work", "Steven", "Pressfield"));
+    booksA.push(createBookIndex("The lost city of the Monkey God", "Douglas", "Preston"));
+    booksA.push(createBookIndex("Lone Survivor", "Marcus", "Luttrell"));
+    // console.log(booksA);
+
+    const showBookInfo = (objectArrayParam) => {
+        let counter = 0;
+        objectArrayParam.forEach(i => {
+            counter += 1;
+            console.log(`Book # ${counter}`);
+            console.log(`Title: ${i.title}`);
+            console.log(`Author: ${i.author.firstName} ${i.author.lastName}`);
+            console.log(`--- --- ---`);
+        });
+    };
+    showBookInfo(booksA);
 
 })();
