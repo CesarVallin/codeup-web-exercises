@@ -75,6 +75,8 @@ console.log(`hello from objects.js`);
 
     // forEach loop accessing all object properties and displaying total amounts before discounts
     // discounted amount (even if 0 discount), and total after discount.
+        // Remember, forEach object in the array, you are accessing it through the iterator 'i'
+        // and further accessing *property:value* through dot notation -> i.name, i.amount, etc.
     shoppers.forEach(i => {
             console.log(`${i.name}: Total before Discount $${i.amount.toFixed(2)} \n\nDiscount amount is: $${discountAmount(i.amount)} \n\nTotal after discount is: $${savings(i.amount, discountAmount(i.amount))}`);
         });

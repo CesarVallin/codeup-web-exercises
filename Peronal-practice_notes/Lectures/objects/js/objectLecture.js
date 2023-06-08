@@ -97,9 +97,18 @@ var cars = [
         }
     }
 ];
-
+//================================================================================================================
+// forEach loops!!!!
 cars.forEach(function(car) {
     car.features.forEach(function(feature) {
         console.log(feature);
+    });
+});
+
+//===============================================
+// You came up with this nested loop! works the same as above!!!
+cars.forEach(i => {
+    i.features.forEach(i => {
+        console.log(i);
     });
 });
