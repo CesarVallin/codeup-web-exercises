@@ -99,6 +99,16 @@ var cars = [
 ];
 //================================================================================================================
 // forEach loops!!!!
+/*
+You are declaring a variable.
+Pretty much what you are saying is that for every unit(element) in cars, your are giving it a name of car (in this case)
+
+If you were looping through a -people[] array-, maybe you can declare every unit(element) as 'person'.
+It will be:
+people.forEach(function(person) {
+    //// blah
+}
+ */
 cars.forEach(function(car) {
     car.features.forEach(function(feature) {
         console.log(feature);
