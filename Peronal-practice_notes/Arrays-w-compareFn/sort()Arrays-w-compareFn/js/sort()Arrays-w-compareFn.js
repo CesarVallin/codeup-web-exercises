@@ -38,14 +38,18 @@ console.log(numArrayBB);
 
 
 
-let names = ['Laura', 'Sofia', 'Raleigh', 'Cesar', 'Nana', 'Grandpa'];
-names.sort(function(a, b) {
-    return a.length - b.length;
-});
+let names = ['Laura','Grandpa', 'Sofia', 'Raleigh', 'Cesar', 'Nana',];
 console.log(names);
 
-names.sort((a, b) => {return b.length - a.length});
-console.log(names);
+
+
+const namesAA = names.sort(function(a, b) {
+    return a.length - b.length;
+});
+console.log(namesAA);
+
+const namesBB = names.sort((a, b) => {return b.length - a.length});
+console.log(namesBB);
 console.log(names[0].length, names[0]);
 console.log(names[1].length, names[1]);
 
