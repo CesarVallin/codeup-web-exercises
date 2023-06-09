@@ -14,6 +14,15 @@ console.log(`hello from objects.js`);
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+
+        // Using dot notation.  to add property:values to our object.
+        // Broken down way.
+    const personAA = {};
+    personAA.firstName = "CesarAA";
+    personAA.lastName = "VallinAA";
+    console.log(personAA);
+
+        // Full structure way:
     const person = {
         firstName: "Cesar",
         lastName: "Vallin",
@@ -35,6 +44,13 @@ console.log(`hello from objects.js`);
      */
 
     console.log(person.sayHello());
+
+    // or you can do this:
+    personAA.sayHello = function () {
+     return `Hello from ${this.firstName} ${this.lastName}!`
+    }
+    // what 'this' is doing, it looks at its parent, or folder in which it belongs
+    console.log(personAA.sayHello());
 
 
     /** TODO:
@@ -78,9 +94,28 @@ console.log(`hello from objects.js`);
         // Remember, forEach object in the array, you are accessing it through the iterator 'i'
         // and further accessing *property:value* through dot notation -> i.name, i.amount, etc.
     shoppers.forEach(i => {
-            console.log(`${i.name}: Total before Discount $${i.amount.toFixed(2)} \n\nDiscount amount is: $${discountAmount(i.amount)} \n\nTotal after discount is: $${savings(i.amount, discountAmount(i.amount))}`);
+            console.log(`${i.name}`);
+            console.log(`Total before discount ${i.amount.toFixed(2)}`);
+            console.log(`Discount amount is: ${discountAmount(i.amount)}`);
+            console.log(`Total after discount is: $${savings(i.amount, discountAmount(i.amount))}`);
+            console.log(`--- --- --- --- --- ---`);
         });
+    /*
+    use this for your loop instead:
+    shoppers.forEach((shopper) => {
+        console.log(`${shopper.name}`);
+        etc...
 
+
+    })
+     */
+
+    /*
+    Be mindful that you can also assign variables to be more specific with object properties & values.
+    This can make it easier when you have a lot of 'dot' notations to access a specifc object property:value.
+
+    Check out walk through notes!
+     */
 
     // // Iterating through everything in this object
     // shoppers.forEach(function(i){
@@ -207,6 +242,19 @@ console.log(`hello from objects.js`);
         });
     }
     iterateThroughBooks(books);
+    /*
+    You also do i + 1 as your counter!
+     */
+    // Look at this example from walk through!!
+    console.log(`forEach differently --- === --- === --- === --- ===`);
+    books.forEach((book, index) => {
+        console.log(`Book # ${index + 1}`);
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName}, ${book.author.firstName}`);
+        if (index < book.length - 1) {
+            console.log(`---`);
+        }
+    })
 
     /**
      * Bonus:
@@ -221,10 +269,10 @@ console.log(`hello from objects.js`);
 console.log(`Bonus exercise ====================================================================`);
     const createBookIndex = (titleParam, authorFirstNameParam, authorLastNameParam) => {
         let bookIntoObject = {
-            title: `${titleParam}`,
+            title: titleParam,
             author: {
-                firstName: `${authorFirstNameParam}`,
-                lastName: `${authorLastNameParam}`
+                firstName: authorFirstNameParam,
+                lastName: authorLastNameParam
             }
         }
         return bookIntoObject;
