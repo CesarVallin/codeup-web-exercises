@@ -21,7 +21,7 @@ const sumWithInitial = array1.reduce(
     (accumulator, currentValue) => accumulator + currentValue,
     initialValue
 );
-
+// Example adapted from developer mozilla
 console.log(sumWithInitial);
 // Expected output: 10
 
@@ -32,3 +32,17 @@ const sumWithInitialAA = (arrayParam) => {
     return usingReduce;
 }
 console.log(sumWithInitialAA(arrayAA));
+
+// ========================================================================================================
+
+// same concept, however done with a forEach loop!!!!
+const addAll = (arrParam) => {
+    let result = 0;
+    arrParam.forEach(element => {
+        result += element;
+    });
+    return result;
+};
+
+console.log(addAll(array1));
+console.log(addAll(arrayAA));

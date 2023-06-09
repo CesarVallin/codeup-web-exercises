@@ -31,6 +31,12 @@ function duplicateCount(text){
         }
     } return counter;
 }
+/*
+turn into array with .split()
+then use a forEach loop
+    compare element & index??
+.includes()?
+ */
 
 console.log(duplicateCount("abcde"));
 console.log(duplicateCount("aabbcde"));
