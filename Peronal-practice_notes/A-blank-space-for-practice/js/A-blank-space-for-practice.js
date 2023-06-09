@@ -1,24 +1,21 @@
 "use strict";
 console.log(`hello from A-blank-space-for-practice.js, external JS`);
 
-// 5. Define a function named isNotANumber that accepts an input and returns true or false
-// based on whether an input is a non-numeric value or not. Numbers as strings
-// are not a number and should return true.
-//
-// isNotANumber("")               // true
-// isNotANumber(true)             // true
-// isNotANumber("Bob")            // true
-// isNotANumber([1,2,3])          // true
-// isNotANumber("42")             // true
-// isNotANumber(23)               // false
-// isNotANumber(3.141)            // false
+let arr1 = [3, 15, 6, 22];
+function sumTwoSmallestNumbers(numbers) {
+    let firstSmall;
+    let secondSmall;
+    for (let i = 0; i < numbers.length; i++) {
+        firstSmall = Math.min(...numbers);
+    }
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] === firstSmall) {
+            continue;
+        } else {
+            secondSmall = Math.min(...numbers);
+        }
+    } return `${firstSmall} and ${secondSmall}`;
 
-// const isNotANumber = (parameter1) => {
-//     if (typeof parameter1 === "boolean" || parameter1 === null) {
-//         return true;
-//     } else if (isNaN(parameter1)) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// };
+}
+
+console.log(sumTwoSmallestNumbers(arr1));
