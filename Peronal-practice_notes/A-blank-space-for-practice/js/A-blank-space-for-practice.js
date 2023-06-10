@@ -16,10 +16,4 @@ console.log(`hello from A-blank-space-for-practice.js, external JS`);
 // console.log(sumWithInitial);
 // // Expected output: 10
 //
-// const arrayAA = [10, 15, 67];
-//
-// const sumWithInitialAA = (arrayParam) => {
-//     const usingReduce = arrayParam.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-//     return usingReduce;
-// }
-// console.log(sumWithInitialAA(arrayAA));
+

@@ -20,12 +20,19 @@ The input string can be assumed to contain only alphabets (both uppercase and lo
 // text is a parameter!
 // j iterator has to be i + 1.  This ensures j stays ahead of i at all times!!!
 // do not just start j initializer expression at 1.  This will not work for your conditional statement.
+
+// ===============================================================================================================
+
+// Good to iterate and compare immediatly subsequent elements!!
+
 function duplicateCount(text){
     let textA = text.toUpperCase();
     let counter = 0;
     for (let i = 0; i < textA.length; i++){
         for (let j = i + 1; j < textA.length; j++) {
-            if (textA[i] === textA[j]) {
+            if (textA[i] !== textA[j]) {
+                continue;
+            } else {
                 counter += 1;
             }
         }
@@ -48,20 +55,5 @@ console.log(duplicateCount("ABBA"));
 
 console.log(duplicateCount("cesarcesarcesar"));
 
-// text is a parameter!
-// j iterator has to be i + 1.  This ensures j stays ahead of i at all times!!!
-// do not just start j initializer expression at 1.  This will not work for your conditional statement.
-// function duplicateCount(text){
-//     let textA = text.toUpperCase();
-//     let counter = 0;
-//     for (let i = 0; i < textA.length; i++){
-//         for (let j = i + 1; j < textA.length; j++) {
-//             if (textA[i] === textA[j]) {
-//                 counter += 1;
-//             }
-//         }
-//     } return counter;
-// }
 
-console.log("indivisibility".length);
-console.log("Indivisibilities".length);
+
