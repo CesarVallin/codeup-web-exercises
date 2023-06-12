@@ -91,6 +91,32 @@ console.log(duplicateCount("aA11"), `Expected output: 2`);
 console.log(duplicateCount("ABBA"), `Expected output: 2`);
 
 
+/*
+Call back function:
+In essence, you are introducing a function expression, (an arrow function, or regular form function)
+that will operate within your forEach function.
+
+    The example below does not capture the goal of this exercise, but it helps to depict
+    the structure and syntax of a callback funciton.
+ */
+const duplicateCount2 = (textParam) => {
+    let arr = textParam.toLowerCase().split("");
+    let counter = 0;
+    arr.forEach(letter => {
+        let duplicates = arr.filter(currLetter => currLetter === letter);
+        // let duplicates = arr.filter((currLetter) => {
+        //     return currLetter === letter
+        // });
+        // let duplicates = arr.filter(function(currLetter){
+        //     return currLetter === letter
+        // });
+        if (duplicates.length > 1) {
+            counter++;
+        }
+    });
+};
+
+
 // ===============================================================================================================
 /*
 unit test:
