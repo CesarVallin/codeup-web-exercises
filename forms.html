@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms html</title>
+</head>
+<body>
+
+
+    <form method="POST" action="https://request-inspector.glitch.me/">
+    <fieldset><legend>Register With Us</legend>
+        <section>
+            <label for="username">Username
+                <input type="text"
+                       placeholder="Enter username"
+                       name="username" id="username"
+                       required
+                >
+            </label>
+            <br>
+            <label for="password">Password
+                <input type="password"
+                       placeholder="Enter password"
+                       name="password"
+                       id="password"
+                       required
+                >
+            </label>
+        </section>
+        <br>
+
+        <section>
+            <label for="bio">Your bio
+                <br>
+                <textarea name="bio"
+                          id="bio"
+                          placeholder="Enter your bio"
+                          required
+                >
+                </textarea>
+            </label>
+        </section>
+        <br>
+
+        <section>
+            <h4>How did you hear about us?</h4>
+            <label for="billboard">
+                <input
+                        type="checkbox"
+                        name="hearAboutUs"
+                        id="billboard"
+                        value="billboard"
+                >
+                Billboard
+            </label>
+            <label for="radio-advertisement">
+                <input
+                        type="checkbox"
+                        name="hearAboutUs"
+                        id="radio-advertisement"
+                        value="radio-advertisement"
+                >
+                    Radio Advertisement
+            </label>
+            <label for="internet-advertisement">
+                <input
+                        type="checkbox"
+                        name="hearAboutUs"
+                        id="internet-advertisement"
+                        value="internet-advertisement"
+                >
+                Internet Advertisement
+            </label>
+            <label for="other">
+                <input
+                        type="checkbox"
+                        name="hearAboutUs"
+                        id="other"
+                        value="other"
+                >
+                Other
+            </label>
+
+        </section>
+        <br>
+
+        <section>
+            <label for="browser-preference">What web browser are you using?</label>
+            <br>
+            <select name="browser-preference"
+                    id="browser-preference"
+                    required
+            >
+                <option></option>
+                <option value="chrome">Chrome</option>
+                <option value="fire-fox">Fire Fox</option>
+            </select>
+        </section>
+
+        <br>
+        <input type="submit">
+    </fieldset>
+    </form>
+
+</body>
+</html>

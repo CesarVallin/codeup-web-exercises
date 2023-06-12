@@ -31,6 +31,13 @@ do {
 } while (counterA < 10);
 
 // ================================================================================================================
+// For loop
+
+for (let i = 0; i < 10; i++) {
+    console.log(`The random number is ${getRandomNumber(10)}`);
+}
+
+// ================================================================================================================
 
 // // Display the prompt dialogue while the value assigned to `secret` is not equal to "sesame"
 // let secret;
