@@ -1,3 +1,81 @@
-.fancy-header{
-    color: purple;
+:root {
+    --primary: rgb(255, 255, 255);
+    --primary-light: rgba(0, 147, 59, 0.66);
+    --border-radius: 10px;
 }
+
+.vision img {
+    display: inline-block;
+    width: calc(50% - 10px);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+/*button {*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*button.primary {*/
+/*    padding: 20px 30px;*/
+/*    background-color: var(--primary);*/
+/*    border: unset;*/
+/*    color: black;*/
+/*    border-radius: var(--border-radius);*/
+/*    transform: scale(1);*/
+/*    transition: all ease 0.2s;*/
+/*}*/
+
+/*button.primary:hover {*/
+/*    background-color: var(--primary-light);*/
+/*    transform: scale(1.5);*/
+/*}*/
+
+
+.white {
+    color: var(--primary);
+}
+
+section>ul, section>ol {
+    text-align: left;
+    color: white;
+    list-style: square;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+section {
+    background-color: unset;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-border {
+    border-bottom: 1px solid #000;
+}
+
+body {
+    background-image: url("../img/abstract-image_color-tone.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+
+
+
+
+
+/*
+A space indicates targeting any decendant, as long as you came from that element.
+
+section h2.all-caps.italic {
+
+}
+- what this is doing: looking for h2 elements with all-caps class & italic class, that are under a section element.
+*/
