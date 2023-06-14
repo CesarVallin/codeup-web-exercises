@@ -50,3 +50,22 @@ cars.forEach(car => {
     console.log(car.features);
 });
 
+const featuresList = () => {
+    const objFeatures = new Set ();
+    cars.forEach(car => {
+        car.features.forEach(feature => {
+            objFeatures.add(feature);
+        });
+    });
+    return Array.from(objFeatures).sort();
+}
+
+const arrToString = (arrParam) => {
+    let usefulString = arrParam.join(`</li><li>`);
+    return `<li>${usefulString}</li>`
+};
+
+console.log(arrToString(featuresList()));
+
+let unorderedList = document.getElementById('unorderedL');
+unorderedList.innerHTML = arrToString(featuresList());

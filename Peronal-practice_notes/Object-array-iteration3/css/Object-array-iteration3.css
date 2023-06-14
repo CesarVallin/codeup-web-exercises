@@ -1,0 +1,9 @@
+.features-items {
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+    text-align: center;
+    padding-right: 40px;
+}
