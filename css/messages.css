@@ -17,10 +17,13 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-
+/*
+Notice that there is two class selectors!!!
+*/
 .message {
     margin: 10px;
     padding: 10px;
+    border: 1px solid grey;
     border-radius: 8px;
     /* border-radius: #% will create a circle? */
 }

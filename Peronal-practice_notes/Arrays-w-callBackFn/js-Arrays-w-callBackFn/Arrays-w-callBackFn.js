@@ -14,6 +14,10 @@ The final result of running the reducer across all elements of the array is a si
 // ========================================================================================================
 
 const array1 = [1, 2, 3, 4];
+const arrayAA = [10, 15, 67];
+
+// ======================================
+
 
 // 0 + 1 + 2 + 3 + 4
 const initialValue = 0;
@@ -25,7 +29,7 @@ const sumWithInitial = array1.reduce(
 console.log(sumWithInitial);
 // Expected output: 10
 
-const arrayAA = [10, 15, 67];
+
 
 const sumWithInitialAA = (arrayParam) => {
     const usingReduce = arrayParam.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
