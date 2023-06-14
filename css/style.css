@@ -74,7 +74,10 @@ a:hover {
     color: blue;
 }
 
-
+td {
+    font-size: unset;
+    padding: unset;
+}
 
 
 /*
