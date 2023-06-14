@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.box1 {
+    background-color: chocolate;
+
+    height: 400px;
+    width: 400px;
+
+    padding: 40px;
+
+    border: 10px solid black;
+
+    margin: 40px;
+}
+
+.box1>div {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.box2 {
+    background-color: chocolate;
+    height: 40px;
+    margin: 40px;
+}

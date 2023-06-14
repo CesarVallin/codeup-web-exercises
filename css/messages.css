@@ -1,0 +1,48 @@
+:root {
+    --info: rgba(139, 174, 238, 0.66);
+    --info-dark: rgba(2, 36, 96, 0.66);
+    --success: rgba(131, 234, 131, 0.57);
+    --sucess-dark: rgba(3, 68, 3, 0.57);
+    --warning: #eff199;
+    --warning-dark: #6a6c0c;
+    --error: #ec8e8e;
+    --error-dark: #5b0707;
+}
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    /* border-radius: #% will create a circle? */
+}
+
+.message-info {
+    background-color: var(--info);
+    color: var(--info-dark);
+    /*font-weight: bold;*/
+}
+
+.message-success {
+    background-color: var(--success);
+    color: var(--sucess-dark);
+    /*font-weight: bold;*/
+}
+
+.message-warning {
+    background-color: var(--warning);
+    color: var(--warning-dark);
+}
+
+.message-error {
+    background-color: var(--error);
+    color: var(--error-dark);
+}
