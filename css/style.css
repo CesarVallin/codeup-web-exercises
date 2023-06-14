@@ -66,7 +66,13 @@ body {
     background-position: center
 }
 
-
+a:link {
+    color: lightslategrey;
+    font-size: 25px;
+}
+a:hover {
+    color: blue;
+}
 
 
 
