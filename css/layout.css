@@ -23,9 +23,6 @@
 }
 /* Combo classes to extend the container's versatility */
 .container.grow {
-    /*flex-grow: 1;*/
-    /*flex-shrink: 0;*/
-    /*flex-basis: auto;*/
     flex: 1 0 0;
 }
 .container.justify-center {
@@ -48,6 +45,33 @@
     padding: 0 20px;
 }
 /* Combo classes to extend the row's versatility */
+.row.full-width {
+    max-width: unset;
+}
+.row.align-center {
+    align-items: center;
+}
+.row.align-top {
+    align-items: start;
+}
+.row.align-bottom {
+    align-items: end;
+}
+.row.justify-center {
+    justify-content: center;
+}
+.row.justify-end {
+    justify-content: end;
+}
+.row.justify-space-between {
+    justify-content: space-between;
+}
+.row.no-padding {
+    padding: unset;
+}
+.row.grow {
+    flex: 1 0 0;
+}
 
 /*
     The "column" is a container element that vertically separates its
@@ -56,17 +80,86 @@
     to create a variety of layouts.
 */
 .column {
-
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
 }
 /* Combo classes to extend the column's versatility */
-
+.column.shrink {
+    flex: 0 1 auto;
+}
+.column.align-center {
+    align-items: center;
+}
+.column.align-end {
+    align-items: end;
+}
+.column.justify-center {
+    justify-content: center;
+}
+.column.justify-end {
+    justify-content: end;
+}
+.column.justify-space-between {
+    justify-content: space-between;
+}
 
 /*
     Flexbox utilities
 */
-
+.d-flex {
+    display: flex;
+}
+.d-flex.flex-column {
+    flex-direction: column;
+}
+.d-flex.justify-center {
+    justify-content: center;
+}
+.d-flex.justify-end {
+    justify-content: end;
+}
+.d-flex.justify-space-between {
+    justify-content: space-between;
+}
+.d-flex.justify-space-evenly {
+    justify-content: space-evenly;
+}
+.d-flex.justify-space-around {
+    justify-content: space-around;
+}
+.d-flex.align-center {
+    align-items: center;
+}
+.d-flex.align-end {
+    align-items: end;
+}
+.d-flex.align-self-stretch {
+    align-self: stretch;
+}
+.d-flex.full-width {
+    width: 100%;
+}
 
 
 /*
     Misc. utility classes
 */
+.gap-5 {
+    gap: 5px;
+}
+.gap-10 {
+    gap: 10px;
+}
+.gap-15 {
+    gap: 15px;
+}
+.gap-20 {
+    gap: 20px;
+}
+.gap-25 {
+    gap: 25px;
+}
+.gap-30 {
+    gap: 30px;
+}

@@ -1,0 +1,17 @@
+.parent-box {
+    height: 400px;
+    width: 400px;
+    background-color: lightgray;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.child-box {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
