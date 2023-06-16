@@ -1,0 +1,22 @@
+:root {
+    --primary: #979797;
+
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+header.container {
+    min-height: 80px;
+    background-color: white;
+    box-shadow: 3px -4px 15px -4px #000;
+}
+
+ul.d-flex {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
