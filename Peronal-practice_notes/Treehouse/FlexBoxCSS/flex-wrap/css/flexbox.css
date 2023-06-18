@@ -1,0 +1,33 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+/*.item-1 {*/
+/*    margin-right: auto;*/
+/*}*/
+
+/*
+From challenge:
+
+Finally, let's distribute the available space inside .row. Give .row the flexbox
+property and value that will place the first and last items along its edges, then equally distribute the
+space between the other items.
+ */
+
+
+/*
+Both of the uses here are experimental.
+Flex-wrap, combined with justify-content lets you wrap content, such as in a <nav> element,
+so that in smaller screens the content wraps around.
+
+
+targeting item-1, with a margin-right property set to auto, will push all the other items to the
+other end of the screen.
+*/
