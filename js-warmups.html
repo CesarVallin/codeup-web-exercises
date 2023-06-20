@@ -7,40 +7,31 @@
 <body>
 
 <script>
-    "use strict";
 
-    // Write a function, sumIsEqual, that takes in three inputs. The function should return
-    // true if the sum of the first two inputs are equal to the third input. If any of the
-    // inputs are not numbers, return false.
+    // Write a function, returnUserObject, that takes in three
+    // String arguments: a username, password, and email. The function should
+    // return a user object with username, password and email properties.
     //
-    // sumIsEqual(1, 2, 3) // returns true
-    // sumIsEqual(2, 2, 4) // returns true
-    // sumIsEqual(10, 2, 12) // returns true
-    // sumIsEqual(10, false, 12) // returns false
-    // sumIsEqual('10', '2', 12) // returns false
-    // sumIsEqual('fred', 'bob, 'hello') // returns false
+    // returnUserObject('jreich', 'password123', 'jreich@email.com') // returns...
+    //
+    // {
+    //     username: 'jreich',
+    //         password: 'password123',
+    //     email: 'jreich@email.com'
+    // }
+    //
+    // Assume all inputs are non-empty strings. The order of the properties does not matter.
 
-    function sumIsEqual(param1, param2, param3) {
-        if (typeof param1 === 'boolean' || typeof param2 === 'boolean' || typeof param3 === 'boolean') {
-            return false;
-        } else if (isNaN(param1) || isNaN(param2) || isNaN(param3)) {
-            return false;
+    const returnUserObject = (usernameParam, passwordParam, emailParam) => {
+        let userObject = {
+            username: `${usernameParam}`,
+            password: `${passwordParam}`,
+            email:  `${emailParam}`,
         }
-        if (param1 + param2 === param3) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+        return userObject;
+    };
 
-    console.log(sumIsEqual(1, 2, 3)); // returns true
-    console.log(sumIsEqual(2, 2, 4)); // returns true
-    console.log(sumIsEqual(10, 2, 12)); // returns true
-    console.log(sumIsEqual(10, false, 12)); // returns false
-    console.log(sumIsEqual('10', '2', 12)); // returns false
-    console.log(sumIsEqual('fred', 'bob', 'hello')); // returns false
-
-
+    console.log(returnUserObject("jreich", "password123", "jreich@email.com"));
 
 
 </script>
