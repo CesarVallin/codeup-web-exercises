@@ -1,0 +1,11 @@
+.test-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.container.threeBoxes {
+    margin-bottom: 100px;
+    border: 20px solid white;
+    padding-top: 15px;
+}
