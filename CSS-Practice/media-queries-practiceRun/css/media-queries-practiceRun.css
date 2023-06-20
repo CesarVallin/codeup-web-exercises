@@ -1,0 +1,47 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.hidden-on-desktop {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 12px;
+}
+
+.nav-links li {
+    display: flex;
+    margin: 0 10px;
+}
+
+
+header.container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/*
+If you want to target h1 specifically... see below =======================================
+*/
+.column h1 {
+    color: green;
+}
+
+.header-img img {
+    width: 100%;
+}
+
+
+
+
+
