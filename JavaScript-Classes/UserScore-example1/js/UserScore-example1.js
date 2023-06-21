@@ -1,8 +1,5 @@
 "use strict";
-console.log(`hello from A-blank-space-for-practice.js, external JS`);
-
-
-// ========================================================================================================
+console.log(`hello from UserScore-example1.js`);
 
 // Sum Numbers
 
@@ -33,7 +30,3 @@ let steve = new UserScore('Steve', array2);
 console.log(cesar);
 console.log(steve.userName)
 console.log(steve.sum(array1));
-
-
-
-
