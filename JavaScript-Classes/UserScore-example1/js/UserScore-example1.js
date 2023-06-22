@@ -28,5 +28,8 @@ class UserScore {
 let cesar = new UserScore ('Cesar', array1);
 let steve = new UserScore('Steve', array2);
 console.log(cesar);
+console.log(steve);
+console.log(cesar.userName);
+console.log(cesar.sum(array1));
 console.log(steve.userName)
-console.log(steve.sum(array1));
+console.log(steve.sum(array2));
