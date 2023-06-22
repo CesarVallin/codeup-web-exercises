@@ -62,7 +62,7 @@
             <div class="column">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#choose-size-crust" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"/>
                         </svg> Size and Crust</button>
                     </li>
@@ -77,32 +77,72 @@
                         </svg> Toppings</button>
                     </li>
                 </ul>
+
+
+            <form method="POST" action="https://request-inspector.glitch.me">
                 <div class="tab-content" id="myTabContent">
-<!--                    Main card div-->
-
-
-
-
-<!--                    -->
-                    <div>
-                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                            <div>
-                                <h6>Choose Size and Crust</h6>
+                    <div class="tab-pane fade show active" id="choose-size-crust" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <div class="card">
+                                <div class="card-header bg-primary text-light">
+                                    Choose Size and Crust
+                                </div>
+                                <div class="card-body">
+                                    <!-- -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Hand Tossed
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                            <li class="list-group-item">
+                                                <input type="radio" name="crust" id="smallRegular" value="regularCrust-Small10in">
+                                                <label for="smallRegular">Small (10")</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="radio" name="crust" id="mediumRegular" value="regularCrust-Medium12in">
+                                                <label for="mediumRegular">Medium (12")</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- -->
+                                    <br>
+                                    <!-- -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Crispy Thin
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                            <li class="list-group-item">
+                                                <input type="radio" name="crust" id="thin-crust" value="thinCrust-Medium-12in">
+                                                <label for="thin-crust">Medium (12")</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="radio" name="crust" id="thin-crust2" value="thinCrust-Large-14in">
+                                                <label for="thin-crust2">Large (14")</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- -->
+                                    <a href="#" class="btn btn-primary">Next</a>
+                                    <input type="submit">
+                                </div>
                             </div>
 
+
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <div>
+                            <h6>Choose Cheese and Sauce</h6>
                         </div>
-                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                            <div>
-                                <h6>Choose Cheese and Sauce</h6>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                            <div>
-                                <h6>Choose Toppings</h6>
-                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                        <div>
+                            <h6>Choose Toppings</h6>
                         </div>
                     </div>
                 </div>
+            </form>
             </div>
         </div>
     </div>
