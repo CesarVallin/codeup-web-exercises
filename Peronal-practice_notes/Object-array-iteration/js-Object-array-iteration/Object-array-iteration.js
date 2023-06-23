@@ -91,7 +91,7 @@ const featuresList = () => {
     cars.forEach(function(car) {
         car.features.forEach(function(feature) {
             let doesMatch = false;
-            allFeatrues.forEach(function(currFeature) {
+            allFeatrues.forEach(function(currFeature) { // Nested loop !!!
                 if (currFeature === feature) {
                     doesMatch = true;
                 }
