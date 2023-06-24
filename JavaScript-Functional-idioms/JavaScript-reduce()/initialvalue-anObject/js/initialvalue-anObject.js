@@ -54,7 +54,6 @@ Function summary:
     property name word is set, and value assignment, all within this simple conditional statement.
  */
 
-console.log(`refactor for learning purposes =============================================`);
 
 
 

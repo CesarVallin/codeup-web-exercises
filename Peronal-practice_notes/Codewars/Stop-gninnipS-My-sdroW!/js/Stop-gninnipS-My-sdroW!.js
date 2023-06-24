@@ -1,8 +1,6 @@
 "use strict";
-console.log(`hello from A-blank-space-for-practice.js, external JS`);
+console.log(`hello from Stop-gninnipS-My-sdroW!.js`);
 
-
-// ========================================================================================================
 // Stop gninnipS My sdroW!
 
 // Write a function that takes in a string of one or more words, and returns the same string, but with
