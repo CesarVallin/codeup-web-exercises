@@ -61,9 +61,8 @@ console.log(ageSortObject);
 const highestAge = ageSortObject.reduce((p, c) => {
     if (c.age > p) {
         return c.age;
-    } else {
-        return p;
     }
+    return p;
 
 }, 0);
 console.log(highestAge);

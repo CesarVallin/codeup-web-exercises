@@ -18,7 +18,7 @@ function countWords(sentence) {
         // }
         // console.log(wordCounts);
         return wordCounts;
-    }, {}); // start with an empty object
+    }, {}); // start with an empty object // THIS WILL BE OUR STARTING POINT FOR -wordCountObject-
     console.log(wordCountObject);
     return wordCountObject;
 }
@@ -30,8 +30,31 @@ countWords('Mary had a little lamb little lamb little lamb');
 // ====================================================================================
 const string1 = "Mary had a little lamb little lamb little lamb";
 
+console.log(`broken down 1st version ================================================`);
+const countWords1 = (param1) => {
+        const wordsArr = param1.split(" ");
+        const objectWordsNCount = wordsArr.reduce((wordCounter, word) => {
+            if (typeof wordCounter[word] === 'undefined') {
+                wordCounter[word] = 1;
+            } else {
+                wordCounter[word] += 1;
+            }
+            return wordCounter;
+        }, {}); // wordCounter has the initial value of an object
+    return objectWordsNCount;
+};
 
-// console.log(countWords1(string1));
+console.log(countWords1(string1));
+
+/*
+Setting object property name dynamically, through bracket notation rather than dot notation.
+    Check out ST_notes > JavaScript > Objects > Objects-property&value_notation
+
+Function summary:
+    property name word is set, and value assignment, all within this simple conditional statement.
+ */
+
+console.log(`refactor for learning purposes =============================================`);
 
 
 
