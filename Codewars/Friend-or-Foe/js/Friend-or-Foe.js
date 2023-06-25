@@ -100,7 +100,7 @@ console.log(friendDD(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`)
 
 
 console.log(`filter() ONLY ================================================================`);
-
+// try replacing filter with map, it returns booleans.
 const friendEE = (arrayParam) => {
         const friendsArray = arrayParam.filter(friend => {
                 return friend.length === 4;
