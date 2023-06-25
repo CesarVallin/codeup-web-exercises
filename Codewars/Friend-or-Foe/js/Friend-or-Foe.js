@@ -15,7 +15,7 @@ console.log(`hello from Friend-or-Foe.js`);
 //     friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
 // Note: keep the original order of the names in the output.
 
-console.log(`forEach loop & new Set() ======================================`);
+console.log(`forEach loop & new Set() ===================================================`);
 // Solved with function declaration:
 function friend(friends){
         const friendsObj = new Set ();
@@ -28,7 +28,7 @@ function friend(friends){
 }
 console.log(friend(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
-console.log(`forEach loop ======================================`);
+console.log(`forEach loop =============================================================`);
 // Solved with a forEach loop:
         // Will push duplicates
 const friendA = (friends) => {
@@ -42,7 +42,7 @@ const friendA = (friends) => {
 };
 console.log(friendA(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
-console.log(`for loop ======================================`);
+console.log(`for loop =============================================================`);
 // Solved with a for loop:
         // Will push duplicates
 const friendAA = (friends) => {
@@ -56,7 +56,7 @@ const friendAA = (friends) => {
 };
 console.log(friendAA(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
-console.log(`reduce() ======================================`);
+console.log(`reduce() ===============================================================`);
 // Solved with reduce() method:
         // FYI... Your given input is an array
         // Will push duplicates
@@ -71,7 +71,7 @@ const friendBB = (friends) => {
 }
 console.log(friendBB(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
-console.log(`forEach & new Set() ======================================`);
+console.log(`forEach & new Set() ========================================================`);
 // Solved with new Set () -- object method:
         // Remember, only issue with this one is that it will not add duplicates to the new Set ();
         // Try it, any duplicates of the same string (data-type) will not be added.
@@ -86,7 +86,7 @@ const friendCC = (friends) => {
 };
 console.log(friendCC(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
-console.log(`for..of loop ======================================`);
+console.log(`for..of loop =============================================================`);
 const friendDD = (friends) => {
         let friendsArr = [];
         for (const element of friends) {
@@ -98,6 +98,38 @@ const friendDD = (friends) => {
 };
 console.log(friendDD(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
+
+console.log(`filter() ONLY ================================================================`);
+
+const friendEE = (arrayParam) => {
+        const friendsArray = arrayParam.filter(friend => {
+                return friend.length === 4;
+        });
+        return friendsArray;
+};
+console.log(friendEE(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
+
+
+console.log(`for learning: incorrect use of map: ===============================================`);
+const friendFF = (arrayParam) => {
+        const friendsArray = arrayParam.map(friend => {
+                if (friend.length === 4) {
+                        return friend;
+                }
+        });
+        return friendsArray;
+};
+console.log(friendFF(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
+
+/*
+Great learning opportunity here:
+
+Remember:
+map():  transforms each element in the collection
+filter(): filters our values, that is makes sure each element in the collection meets
+        some criteria or passes some test.
+
+ */
 
 
 
