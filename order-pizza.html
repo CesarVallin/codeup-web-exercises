@@ -95,11 +95,11 @@
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
                                             <li class="list-group-item">
-                                                <input type="radio" name="crust" id="smallRegular" value="regularCrust-Small10in">
+                                                <input type="radio" name="crust" id="smallRegular" value="Regular-Small-10in">
                                                 <label for="smallRegular">Small (10")</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="radio" name="crust" id="mediumRegular" value="regularCrust-Medium12in">
+                                                <input type="radio" name="crust" id="mediumRegular" value="Regular-Medium-12in">
                                                 <label for="mediumRegular">Medium (12")</label>
                                             </li>
                                         </ul>
@@ -114,12 +114,12 @@
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
                                             <li class="list-group-item">
-                                                <input type="radio" name="crust" id="thin-crust" value="thinCrust-Medium-12in">
-                                                <label for="thin-crust">Medium (12")</label>
+                                                <input type="radio" name="crust" id="thin" value="Thin-Medium-12in">
+                                                <label for="thin">Medium (12")</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="radio" name="crust" id="thin-crust2" value="thinCrust-Large-14in">
-                                                <label for="thin-crust2">Large (14")</label>
+                                                <input type="radio" name="crust" id="thin2" value="Thin-Large-14in">
+                                                <label for="thin2">Large (14")</label>
                                             </li>
                                         </ul>
                                     </div>
@@ -132,14 +132,145 @@
 
                     </div>
                     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                        <div>
-                            <h6>Choose Cheese and Sauce</h6>
+<!--                        -->
+                        <div class="card">
+                            <div class="card-header bg-primary text-light">
+                                Cheese and Sauce
+                            </div>
+                            <div class="card-body">
+                                <!-- -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Cheese
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">How much Cheese?</li>
+                                        <li class="list-group-item">
+                                            <select id="cheese" name="cheese">
+                                                <option></option>
+                                                <option value="light">Light</option>
+                                                <option value="normal">Normal</option>
+                                                <option value="normal">Extra</option>
+                                                <option value="normal">Double</option>
+                                            </select>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <!-- -->
+                                <br>
+                                <!-- -->
+                                <div class="card">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Sauce
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">What type?</li>
+                                            <li class="list-group-item">
+                                                <select id="sauce" name="sauce-type">
+                                                    <option></option>
+                                                    <option value="tomato">Tomato</option>
+                                                    <option value="marinara">Marinara</option>
+                                                    <option value="bbq">BBQ</option>
+                                                    <option value="alfredo">Alredo</option>
+                                                </select>
+                                            </li>
+                                            <li class="list-group-item">How much?</li>
+                                            <li class="list-group-item">
+                                                <select id="sauce-amount" name="sauce-amount">
+                                                    <option></option>
+                                                    <option value="light">Light</option>
+                                                    <option value="normal">Normal</option>
+                                                    <option value="normal">Extra</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- -->
+                                <a href="#" class="btn btn-primary">Next</a>
+                                <input type="submit">
+                            </div>
                         </div>
+<!--                        -->
                     </div>
+
+<!--                    -->
                     <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                        <div>
-                            <h6>Choose Toppings</h6>
+                        <div class="card">
+                            <div class="card-header bg-primary text-light">
+                                Choose Toppings
+                            </div>
+                            <div class="card-body">
+                                <!-- -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Choose Meats
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <ul>
+                                                <li>
+                                                    <input type="checkbox" id="beef" name="meats[]" value="beef">
+                                                    <label for="beef">Beef</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" id="ham" name="meats[]" value="ham">
+                                                    <label for="ham">Ham</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" id="philly-steak" name="meats[]" value="philly-steak">
+                                                    <label for="philly-steak">Philly Steak</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" id="bacon" name="meats[]" value="bacon">
+                                                    <label for="bacon">Bacon</label>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <!-- -->
+                                <br>
+                                <!-- -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Choose Non-Meats
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <ul>
+                                                <li>
+                                                    <input type="checkbox" id="green-peppers" name="non-meats[]" value="green-peppers">
+                                                    <label for="green-peppers">Green Pepppers</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" id="mushrooms" name="non-meats[]" value="mushrooms">
+                                                    <label for="mushrooms">Mushrooms</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" id="onions" name="non-meats[]" value="onions">
+                                                    <label for="onions">Onions</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" id="jalapeno-peppers" name="non-meats[]" value="jalapeno-peppers">
+                                                    <label for="jalapeno-peppers">Jalapeno Peppers</label>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <!-- -->
+                                <a href="#" class="btn btn-primary">Next</a>
+                                <input type="submit">
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </form>

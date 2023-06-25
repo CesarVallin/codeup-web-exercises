@@ -53,9 +53,9 @@ const snipWords2 = (stringParam) => {
     const toWords = stringParam.split(" ");
     const finalChange = toWords.map(word => {
         if (word.length < 5) {
-            return word;
+            return word; // using map(), this will not break iteration over entire array
         } else if (word.length >= 5) {
-            return word.split("").reverse().join("");
+            return word.split("").reverse().join(""); // using map(), this will not break iteration over entire array
         }
     });
     return finalChange; // This returns the output in array form.
