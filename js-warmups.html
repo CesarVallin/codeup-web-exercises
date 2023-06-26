@@ -7,45 +7,68 @@
 <body>
 
 <script>
-    // Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
-    //     Assume all element in the input array are valid numbers. Assume all array inputs have at least 1 number.
-    // returnProduct([1, 2, 3]) // returns 1 * 2 * 3 = 6
-    // returnProduct([3, 3, 3]) // returns 3 * 3 * 3 = 27
-    // returnProduct([4, 1, 2]) // returns 4 * 1 * 2 = 8
-    // returnProduct([4, 0, 2]) // returns 4 * 0 * 2 = 0
-    // returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
+    // ================================= WARM UP
+    //
+    // Create a function, returnTotalSales, that takes in an array of sales data objects and
+    // returns the sum of all
+    // totalItemsSold properties. Assume all elements in the input array are valid sales
+    // data objects with a totalItemsSold
+    // property.
+    //
+    //     EXAMPLE...
 
+    const salesData = [
+        {
+            month: 'January',
+            totalItemsSold: 0
+        },
+        {
+            month: 'February',
+            totalItemsSold: 5
+        },
+        {
+            month: 'March',
+            totalItemsSold: 2
+        },
+        {
+            month: 'April',
+            totalItemsSold: 10
+        },
+        {
+            month: 'May',
+            totalItemsSold: 30
+        }
+    ];
 
-    const returnProduct = (arrayParam) => {
-          return arrayParam.reduce((accum, current) => {
-              return accum * current;
-          });
+    // returnTotalSales(salesData) // returns 47
+console.log(`forEach ==================================================`);
+    const returnTotalSales = (salesData) => {
+       let result = 0;
+        salesData.forEach(month => {
+           result += month.totalItemsSold;
+           });
+        return result;
     };
-    /*
-    Notice:
-    The initial value, which is set at the end of the call back function, is omitted.
-    This ensures that you do not multiply by zero from the beginning.
-    Initial value is optional.
-    A value to which accumulator is initialized the first time the callback is called.
-    */
-    console.log(returnProduct([1, 2, 3]));
-    console.log(returnProduct([3, 3, 3]));
-    console.log(returnProduct([4, 1, 2]));
-    console.log(returnProduct([4, 0, 2]));
-    console.log(returnProduct([5, 3, 2]));
+    console.log(returnTotalSales(salesData));
 
-    const returnProduct1 = (arrayParam) => {
-        let result = 1;
-        for (const number of arrayParam) {
-            result *= number;
+    console.log(`reduce() ==================================================`);
+    const returnTotalSales1 = (salesData) => {
+        const total = salesData.reduce((p, c) => {
+            return p + c.totalItemsSold;
+        }, 0);
+        return total;
+    };
+    console.log(returnTotalSales1(salesData));
+
+    console.log(`for loop ==================================================`);
+    const returnTotalSales2 = (salesData) => {
+        let result = 0;
+        for (let i = 0; i < salesData.length; i++) {
+            result += salesData[i].totalItemsSold;
         }
         return result;
     };
-    console.log(returnProduct1([1, 2, 3]));
-    console.log(returnProduct1([3, 3, 3]));
-    console.log(returnProduct1([4, 1, 2]));
-    console.log(returnProduct1([4, 0, 2]));
-    console.log(returnProduct1([5, 3, 2]));
+    console.log(returnTotalSales2(salesData));
 
 </script>
 

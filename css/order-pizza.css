@@ -5,3 +5,8 @@
     background-size: cover;
 }
 /* center center , x axis & y axis */
+
+.no-bullets-cv {
+    list-style: none;
+    padding-left: 0;
+}
