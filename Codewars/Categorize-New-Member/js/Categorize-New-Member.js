@@ -21,11 +21,31 @@ console.log(`hello from Categorize-New-Member.js`);
 // input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 // output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
+console.log(`for..of loop ==========================================================`);
 function openOrSenior(data){
-    const changes = data.map(element => {
-        (element[0] >= 55 && element[1] > 7) ? "Senior" : "Open";
-    });
-    return changes;
+    let output = [];
+    for (const element of data) {
+        if (element[0] >= 55 && element[1] > 7) {
+            output.push("Senior");
+        } else {
+            output.push("Open");
+        }
+    }
+    return output;
 }
 
 console.log(openOrSenior([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]));
+
+console.log(`map() loop ==========================================================`);
+const openOrSenior1 = (data) => {
+    const output = data.map(element => {
+        if (element[0] >= 55 && element[1] > 7) {
+            return "Senior";
+        } else {
+            return "Open";
+        }
+    });
+    return output;
+};
+console.log(openOrSenior1([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]));
+
