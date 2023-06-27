@@ -4,22 +4,28 @@ console.log(`hello from A-blank-space-for-practice.js, external JS`);
 
 // ========================================================================================================
 
-// In this kata you will create a function that takes a list of non-negative integers and strings and
-// returns a new list with the strings filtered out.
+// Shortest Word
 
-// Example
-// filter_list([1,2,'a','b']) == [1,2]
-// filter_list([1,'a','b',0,15]) == [1,0,15]
-// filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+// Simple, given a string of words, return the length of the shortest word(s).
+//
+//     String will never be empty and you do not need to account for different data types.
+
+//=================================================================================================
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+//
+// describe("Basic tests", () => {
+//     it("Testing for fixed tests", () => {
+//         assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
+//         assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3);
+//         assert.strictEqual(findShort("Let's travel abroad shall we"), 2);
+//     })
+// })
 
 
-function filter_list(l) {
-    const numbersOnly = l.filter(element => {
-        return typeof element === 'number';
-    });
-    return numbersOnly;
+function findShort(s){
+    const arr = s.split(" ").sort((a, b) => {return a.length - b.length});
+    return arr[0].length;
 }
-console.log(filter_list([1,2,'aasf','1','123',123]), `Expect: [1,2,123]`);
-
-
-
+console.log(findShort("Let's travel abroad shall we"));
