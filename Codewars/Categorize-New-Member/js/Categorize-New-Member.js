@@ -49,3 +49,49 @@ const openOrSenior1 = (data) => {
 };
 console.log(openOrSenior1([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]));
 
+console.log(`Object practice ============================================================`);
+
+const memberData = [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]];
+console.log(memberData);
+
+const openOrSenior2 = (data) => {
+    console.log("Inside openOrSenior2");
+    console.log(data);
+    console.log(data.length)
+    let members = {};
+    for(let i = 0; i < data.length; i++) {
+        console.log(i);
+        console.log(data[i]);
+            if (data[i][0] >= 55 && data[i][1] > 7) {
+                members["Senior"] = data[i];
+            } else {
+                members["Open"] = data[i];
+            }
+            return members;
+    }
+    // for (let i = 0; i < memberData.length; i++) {
+    //     if (memberData[i][0] >= 55 && memberData[i][1] > 7) {
+    //         members["Senior"] = memberData[i];
+    //     } else {
+    //         members["Open"] = memberData[i];
+    //     }
+    //     return members;
+    // }
+    // for(let member of data) {
+    //     console.log(member)
+    //     if (member[0] >= 55 && member[1] > 7) {
+    //         members["Senior"] = member;
+    //     } else {
+    //         members["Open"] = member;
+    //     }
+    //     return members;
+    // }
+}
+
+console.log(openOrSenior2(memberData));
+
+
+
+
+
+
