@@ -70,6 +70,19 @@ console.log(`forEach ==================================================`);
     };
     console.log(returnTotalSales2(salesData));
 
+
+    console.log(`finding the average, for each =========================================`);
+
+    const returnAvgSales = (salesData) => {
+        let result = 0;
+        salesData.forEach(month => {
+            result += month.totalItemsSold;
+        });
+        return result / salesData.length;
+    }
+    console.log(returnAvgSales(salesData));
+
+
 </script>
 
 </body>
