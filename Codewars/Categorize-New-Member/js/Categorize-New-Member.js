@@ -49,46 +49,43 @@ const openOrSenior1 = (data) => {
 };
 console.log(openOrSenior1([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]));
 
-console.log(`Object practice ============================================================`);
+console.log(`Object practice, this one is for learning ==========================================`);
 
 const memberData = [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]];
 console.log(memberData);
 
 const openOrSenior2 = (data) => {
-    console.log("Inside openOrSenior2");
-    console.log(data);
-    console.log(data.length)
     let members = {};
     for(let i = 0; i < data.length; i++) {
-        console.log(i);
-        console.log(data[i]);
+        console.log(i, data[i]);
             if (data[i][0] >= 55 && data[i][1] > 7) {
-                members["Senior"] = data[i];
+                members.senior = data[i];
             } else {
-                members["Open"] = data[i];
+                members.open = data[i];
             }
-            return members;
     }
-    // for (let i = 0; i < memberData.length; i++) {
-    //     if (memberData[i][0] >= 55 && memberData[i][1] > 7) {
-    //         members["Senior"] = memberData[i];
-    //     } else {
-    //         members["Open"] = memberData[i];
-    //     }
-    //     return members;
-    // }
-    // for(let member of data) {
-    //     console.log(member)
-    //     if (member[0] >= 55 && member[1] > 7) {
-    //         members["Senior"] = member;
-    //     } else {
-    //         members["Open"] = member;
-    //     }
-    //     return members;
-    // }
-}
-
+    return members;
+};
+/*
+FOR LEARNING PURPOSES, YOU CANNOT HAVE ONE OBJECT - with a repeating property name.
+    At this point, you will need an array of objects.
+ */
 console.log(openOrSenior2(memberData));
+
+console.log(`Object practice, this one is right =================================================`);
+const openOrSenior3 = (data) => {
+    let members = [];
+    for(let i = 0; i < data.length; i++) {
+        console.log(i, data[i]);
+        if (data[i][0] >= 55 && data[i][1] > 7) {
+            members.push({senior: data[i]});
+        } else {
+            members.push({open: data[i]});
+        }
+    }
+    return members;
+};
+console.log(openOrSenior3(memberData));
 
 
 
