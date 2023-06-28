@@ -50,4 +50,9 @@ const findShort2 = (s) => {
 };
 console.log(findShort2("Let's travel abroad shall we"), `Expected 2`);
 
+console.log(`object practice ======================================================`);
+
+
+
+
 
