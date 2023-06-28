@@ -7,80 +7,106 @@
 <body>
 
 <script>
-    // ================================= WARM UP
+    // Create a function, returnAdmins, that takes in an array of user objects
+    // and returns an array of only the admin user objects. Assume the array
+    // has at least one user object and all elements have an isAdmin property.
     //
-    // Create a function, returnTotalSales, that takes in an array of sales data objects and
-    // returns the sum of all
-    // totalItemsSold properties. Assume all elements in the input array are valid sales
-    // data objects with a totalItemsSold
-    // property.
-    //
-    //     EXAMPLE...
+    //     Example:
 
-    const salesData = [
+
+    const users = [
+
         {
-            month: 'January',
-            totalItemsSold: 0
+            username: 'fred123',
+            password: 'letmein',
+            email: 'fred123@email.com',
+            isAdmin: true
         },
         {
-            month: 'February',
-            totalItemsSold: 5
+            username: 'cindy123',
+            password: 'hello123',
+            email: 'cindy123@email.com',
+            isAdmin: false
         },
         {
-            month: 'March',
-            totalItemsSold: 2
+            username: 'kathy123',
+            password: 'letmein',
+            email: 'kathy123@email.com',
+            isAdmin: true
         },
         {
-            month: 'April',
-            totalItemsSold: 10
-        },
-        {
-            month: 'May',
-            totalItemsSold: 30
+            username: 'kyle123',
+            password: 'letmein',
+            email: 'kyle123@email.com',
+            isAdmin: false
         }
-    ];
+    ]
 
-    // returnTotalSales(salesData) // returns 47
-console.log(`forEach ==================================================`);
-    const returnTotalSales = (salesData) => {
-       let result = 0;
-        salesData.forEach(month => {
-           result += month.totalItemsSold;
-           });
-        return result;
-    };
-    console.log(returnTotalSales(salesData));
 
-    console.log(`reduce() ==================================================`);
-    const returnTotalSales1 = (salesData) => {
-        const total = salesData.reduce((p, c) => {
-            return p + c.totalItemsSold;
-        }, 0);
-        return total;
-    };
-    console.log(returnTotalSales1(salesData));
+    /*
 
-    console.log(`for loop ==================================================`);
-    const returnTotalSales2 = (salesData) => {
-        let result = 0;
-        for (let i = 0; i < salesData.length; i++) {
-            result += salesData[i].totalItemsSold;
+    returnAdmins(users) returns...
+
+    [
+
+        {
+            username: 'fred123',
+            password: 'letmein',
+            email: 'fred123@email.com',
+            isAdmin: true
+        },
+        {
+            username: 'kathy123',
+            password: 'letmein',
+            email: 'kathy123@email.com',
+            isAdmin: true
         }
-        return result;
-    };
-    console.log(returnTotalSales2(salesData));
+    ]
 
+    */
 
-    console.log(`finding the average, for each =========================================`);
-
-    const returnAvgSales = (salesData) => {
-        let result = 0;
-        salesData.forEach(month => {
-            result += month.totalItemsSold;
+    console.log(`with filter() ==========================================================`);
+    const returnAdmins = (users) => {
+        const adminOnly = users.filter(user => {
+            if (user.isAdmin === true) {
+                return user;
+            }
         });
-        return result / salesData.length;
-    }
-    console.log(returnAvgSales(salesData));
+        return adminOnly
+    };
+    console.log(returnAdmins(users));
+
+    console.log(`with for loop ==========================================================`);
+
+    const returnAdmins1 = (users) => {
+        let adminOnly = [];
+        for (let i = 0; i < users.length; i++) {
+            // console.log(i, users[i]);
+            if (users[i].isAdmin === true) {
+                adminOnly.push(users[i]);
+            }
+        }
+        return adminOnly;
+    };
+    console.log(returnAdmins1(users));
+
+    console.log(`with for..of loop ==========================================================`);
+
+    const returnAdmins2 = (users) => {
+        let adminOnly = [];
+        for (const user of users) {
+            // console.log(user);
+            if (user.isAdmin === true) {
+                adminOnly.push(user);
+            }
+        }
+        return adminOnly;
+    };
+    console.log(returnAdmins2(users));
+
+
+
+
 
 
 </script>
