@@ -3,29 +3,31 @@ console.log(`hello from A-blank-space-for-practice.js, external JS`);
 
 
 // ========================================================================================================
+///////////////////Bills loops//////////////////////////////////
+// Use the following array for these practice exercises
+const cars = ["Charger", "Equinox", "Malibu", "Soul", "Fusion", "Focus", "Avenger", "Town and Country"];
+//Using the cars array, log the car with the fewest letters in it's name
 
-// Shortest Word
+//log the car with the most letters
 
-// Simple, given a string of words, return the length of the shortest word(s).
-//
-//     String will never be empty and you do not need to account for different data types.
+//Use a loop to output the following text in the console:
+//1
+//1 2
+//1 2 3
+//1 2 3 4
+//1 2 3 4 5
+//1 2 3 4
+//1 2 3
+//1 2
+//1
 
-//=================================================================================================
-// const chai = require("chai");
-// const assert = chai.assert;
-// chai.config.truncateThreshold=0;
-//
-// describe("Basic tests", () => {
-//     it("Testing for fixed tests", () => {
-//         assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
-//         assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3);
-//         assert.strictEqual(findShort("Let's travel abroad shall we"), 2);
-//     })
-// })
+console.log(cars);
 
-
-function findShort(s){
-    const arr = s.split(" ").sort((a, b) => {return a.length - b.length});
-    return arr[0].length;
-}
-console.log(findShort("Let's travel abroad shall we"));
+const fewestLetters = (cars) => {
+    const smallToBig = cars.sort((a, b) => {
+        return a.length - b.length;
+    });
+    return smallToBig[0];
+};
+console.log(fewestLetters(cars));
+console.log(fewestLetters(cars)[0]);
