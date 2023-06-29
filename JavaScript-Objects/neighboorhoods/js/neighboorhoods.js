@@ -53,7 +53,9 @@ const desireable = (neighborhood) => {
     return false;
 };
 
-const desireable1 = (neighborhood) => {return (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24)};
+const desireable1 = (neighborhood) => {
+    return (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24)
+};
 
 
 console.log(desireable(neighborhood1));
@@ -68,8 +70,21 @@ neighborhoodArr.push(neighborhood3);
 neighborhoodArr.push(neighborhood4);
 
 console.log(neighborhoodArr);
-// const desireableObject = (neighborhoodArr) => {
-//     for (let i = 0; i < neighborhoodArr.length; i++) {
-//         if (desireable)
-//     }
-// };
+
+const desireableObject = (neighborhoodArr) => {
+    let gradedNeighborhoods = {
+        good: [],
+        bad: []
+    };
+    for (let i = 0; i < neighborhoodArr.length; i++) {
+        if (desireable(neighborhoodArr[i])) {
+            gradedNeighborhoods.good.push(neighborhoodArr[i]);
+        } else {
+            gradedNeighborhoods.bad.push(neighborhoodArr[i]);
+        }
+    }
+    return gradedNeighborhoods;
+};
+
+console.log(desireableObject(neighborhoodArr));
+console.log(JSON.stringify(desireableObject(neighborhoodArr)));
