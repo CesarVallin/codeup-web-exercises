@@ -7,105 +7,85 @@
 <body>
 
 <script>
-    // Create a function, returnAdmins, that takes in an array of user objects
-    // and returns an array of only the admin user objects. Assume the array
-    // has at least one user object and all elements have an isAdmin property.
+    // ================================= WARM UP
     //
-    //     Example:
+    // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable.
+    //     If the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+    // The function should return true if the neighborhood object is desireable and false otherwise.
 
+// example data...
 
-    const users = [
+    // const desireable = (neighborhood) => {
+    //     if (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // };
 
-        {
-            username: 'fred123',
-            password: 'letmein',
-            email: 'fred123@email.com',
-            isAdmin: true
-        },
-        {
-            username: 'cindy123',
-            password: 'hello123',
-            email: 'cindy123@email.com',
-            isAdmin: false
-        },
-        {
-            username: 'kathy123',
-            password: 'letmein',
-            email: 'kathy123@email.com',
-            isAdmin: true
-        },
-        {
-            username: 'kyle123',
-            password: 'letmein',
-            email: 'kyle123@email.com',
-            isAdmin: false
-        }
-    ]
-
-
-    /*
-
-    returnAdmins(users) returns...
-
-    [
-
-        {
-            username: 'fred123',
-            password: 'letmein',
-            email: 'fred123@email.com',
-            isAdmin: true
-        },
-        {
-            username: 'kathy123',
-            password: 'letmein',
-            email: 'kathy123@email.com',
-            isAdmin: true
-        }
-    ]
-
-    */
-
-    console.log(`with filter() ==========================================================`);
-    const returnAdmins = (users) => {
-        const adminOnly = users.filter(user => {
-            if (user.isAdmin === true) {
-                return user;
-            }
-        });
-        return adminOnly
+        const neighborhood1 = {
+        neighborhood: "Lovely Estates",
+        medianHomePrice: 280000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: 22
     };
-    console.log(returnAdmins(users));
 
-    console.log(`with for loop ==========================================================`);
+    const neighborhood2 = {
+        neighborhood: "Luminous Estates",
+        medianHomePrice: 270000,
+        pool: true,
+        tennis: false,
+        crimeRate: "high",
+        schools: 24
+    }
 
-    const returnAdmins1 = (users) => {
-        let adminOnly = [];
-        for (let i = 0; i < users.length; i++) {
-            // console.log(i, users[i]);
-            if (users[i].isAdmin === true) {
-                adminOnly.push(users[i]);
-            }
+    const neighborhood3 = {
+        neighborhood: "Oak Mountain",
+        medianHomePrice: 290000,
+        pool: false,
+        tennis: false,
+        crimeRate: "low",
+        schools: 24
+    }
+
+    const neighborhood4 = {
+        neighborhood: "Ginormous Acres",
+        medianHomePrice: 350000,
+        pool: true,
+        tennis: true,
+        crimeRate: "low",
+        schools: 27
+    }
+
+    const desireable = (neighborhood) => {
+        if (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24) {
+            return true;
         }
-        return adminOnly;
+        return false;
     };
-    console.log(returnAdmins1(users));
 
-    console.log(`with for..of loop ==========================================================`);
+    const desireable1 = (neighborhood) => {return (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24)};
 
-    const returnAdmins2 = (users) => {
-        let adminOnly = [];
-        for (const user of users) {
-            // console.log(user);
-            if (user.isAdmin === true) {
-                adminOnly.push(user);
-            }
-        }
-        return adminOnly;
-    };
-    console.log(returnAdmins2(users));
+    
+    console.log(desireable(neighborhood1));
+    console.log(desireable(neighborhood2));
+    console.log(desireable(neighborhood3));
+    console.log(desireable(neighborhood4));
 
+    const neighborhoodArr = [];
+    neighborhoodArr.push(neighborhood1);
+    neighborhoodArr.push(neighborhood2);
+    neighborhoodArr.push(neighborhood3);
+    neighborhoodArr.push(neighborhood4);
 
-
+    console.log(neighborhoodArr);
+    // const desireableObject = (neighborhoodArr) => {
+    //     for (let i = 0; i < neighborhoodArr.length; i++) {
+    //         if (desireable)
+    //     }
+    // };
 
 
 
