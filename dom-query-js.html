@@ -5,6 +5,9 @@
     <title>DOM: Query and Modify</title>
 </head>
 <body>
+<div>
+    <button id="dark-mode"></button>
+</div>
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
@@ -29,25 +32,49 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // var mainHeader = ;
+        var mainHeader = document.getElementById('main-header');
+        console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "JavaScript is Cool!"
 
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        var subHeader = document.getElementById('sub-header');
+        console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
+        subHeader.style.color = 'blue';
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        var listItems = Array.from(document.getElementsByTagName('li'));
+        console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
 
+        for (var i = 0; i < listItems.length; i += 2) {
+            listItems[i].style.color = 'grey';
+        }
+
+
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        var subParagraphs = Array.from(document.getElementsByClassName('sub-paragraph'));
+        console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerHTML = `<p>Mission Accomplished!</p>`;
+
+        let funButton = document.getElementById('dark-mode');
+        funButton.innerHTML = 'Dark-Mode!';
+
+        const listener = () => {
+            let disBody = document.getElementsByTagName('body')[0];
+            disBody.style['background-color'] = `rgb(112 113 117)`;
+            console.log(`fun button was clicked!!!`);
+
+        }
+        funButton.addEventListener('click', listener);
+
     })();
 </script>
 </body>
