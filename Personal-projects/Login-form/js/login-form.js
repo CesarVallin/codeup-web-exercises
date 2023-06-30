@@ -55,19 +55,44 @@ function updatedPasswordInput (){
     let passwordInput = document.forms.login.password.value;
     console.log(passwordInput);
 
-    let usernameInput = document.forms.login.username.value;
-    const regex = new RegExp(usernameInput);
-    const passContainsUser = regex.test(passwordInput);
-
-    if (passContainsUser){
-        console.log(`password must not include the username`);
-    }
-
+    // let usernameInput = document.forms.login.username.value;
+    // const regex = new RegExp(usernameInput);
+    // const passContainsUser = regex.test(passwordInput);
     //
-    let blankSpace = passwordInput.includes(" ");
-    if (blankSpace) {
-        console.log(`Password input must not include a whitespace`);
-    }
+    // if (passContainsUser){
+    //     console.log(`password must not include the username`);
+    // }
+    //
+    // //
+    // let blankSpace = passwordInput.includes(" ");
+    // if (blankSpace) {
+    //     console.log(`Password input must not include a whitespace`);
+    // }
+
+
+    const coffees = ['americano', 'americanoCharged', 'americanoDoubleCharged', 'latte', 'latte2', 'regular', 'mocha'];
+
+    const fastSearchList = coffees.filter(coffee => {
+        return passwordInput.substring(0, 2) === coffee.substring(0, 2);
+    })
+    console.log(fastSearchList, typeof fastSearchList); // Notice nothing displays before typing. can be a good opportunity for an if statement, if (null) {Be creative}
+    console.log(fastSearchList.join(" "));
+
+    // Also remember, if input is null or input.length === 0, display all.
+    // Also consider, display all for select option.
+
+    // for (let i = 0; i < coffees.length; i++) {
+    //     if (passwordInput.substring(0, 2) === coffees[i].substring(0, 2)) {
+    //         console.log(coffees[i]);
+    //     }
+
+        /* for consideration:
+        if (passwordInput.substring(0, passwordInput.length - 2) === coffees[i].substring(0, coffees[i].length - 2)) {
+            console.log(coffees[i]);
+        }
+        */
+
+    // }
 }
 // register the listener to record password <input value>
 document.addEventListener("input", updatedPasswordInput);
