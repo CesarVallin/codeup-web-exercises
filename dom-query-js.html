@@ -52,8 +52,19 @@
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
 
-        for (let i = 0; i < listItems.length; i += 2) {
-            listItems[i].style.color = 'grey';
+        let lidbid1 = document.querySelector('li');
+        for (let i = 0; i < listItems.length; i++) {
+            // console.log(i, listItems[i]);
+            // console.log(i % 2 === 0);
+            if (listItems[i] === lidbid1) {
+                listItems[i].style.color = 'blue';
+                console.log(`here it is`);
+                continue;
+            }
+
+            if (i % 2 === 0) {
+                listItems[i].style.color = 'grey';
+            }
         }
 
 
