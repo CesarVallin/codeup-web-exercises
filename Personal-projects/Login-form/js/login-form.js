@@ -50,10 +50,13 @@ usernameInput.includes(" ").at(0) || usernameInput.includes(" ").at(-1)
  *  Utlize regex.test() outcome to create a condition, display message that password must not contain username
  *  If password value includes (" ") a white space, display message that it must not
  */
+
+const coffees = ['americano', 'americanoCharged', 'americanoDoubleCharged', 'latte', 'latte2', 'regular', 'mocha'];
+console.log(coffees);
 // Create handler function for password <input value>:
 function updatedPasswordInput (){
     let passwordInput = document.forms.login.password.value;
-    console.log(passwordInput);
+    console.log(passwordInput, passwordInput.length, typeof passwordInput);
 
     // let usernameInput = document.forms.login.username.value;
     // const regex = new RegExp(usernameInput);
@@ -70,8 +73,8 @@ function updatedPasswordInput (){
     // }
 
 
-    const coffees = ['americano', 'americanoCharged', 'americanoDoubleCharged', 'latte', 'latte2', 'regular', 'mocha'];
-    console.log(coffees);
+    // const coffees = ['americano', 'americanoCharged', 'americanoDoubleCharged', 'latte', 'latte2', 'regular', 'mocha'];
+    // console.log(coffees);
 
     const fastSearchList = coffees.filter(coffee => {
         return passwordInput.substring(0, 2) === coffee.substring(0, 2);
@@ -83,7 +86,7 @@ function updatedPasswordInput (){
     // ============================================================
 
     console.log(fastSearchList); // Notice nothing displays before typing. can be a good opportunity for an if statement, if (null) {Be creative}
-    console.log(fastSearchList.join(" "));
+    // console.log(fastSearchList.join(" "));
 
     // ============================================================
 

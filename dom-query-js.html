@@ -52,11 +52,11 @@
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
 
-        let lidbid1 = document.querySelector('li');
+        // let lidbid1 = document.querySelectorAll('li');
         for (let i = 0; i < listItems.length; i++) {
             // console.log(i, listItems[i]);
             // console.log(i % 2 === 0);
-            if (listItems[i] === lidbid1) {
+            if (listItems[i].getAttribute('data-dbid') === '1') {
                 listItems[i].style.color = 'blue';
                 console.log(`here it is`);
                 continue;
@@ -71,6 +71,11 @@
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = Array.from(document.getElementsByClassName('sub-paragraph'));
         console.log(subParagraphs);
+        /*
+        It is not necessary to convert your collection to an array.
+            You can still access it like you would an array.
+            However, if you do not convert it into an array, you can't get manipulation benefits.
+         */
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerHTML = `<p>Mission Accomplished!</p>`;
