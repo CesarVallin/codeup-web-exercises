@@ -6,7 +6,10 @@
 </head>
 <body>
 <div>
-    <button id="dark-mode"></button>
+    <button id="header-change">Header Change</button>
+    <button id="header-blue">Sub Header</button>
+    <button id="change-lis">List items</button>
+    <button id="paragraph-button">Paragraph Button</button>
 </div>
 
 <h1 id="main-header">Hello World!</h1>
@@ -33,43 +36,68 @@
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById('main-header');
+        const headerButton = document.getElementById('header-change');
+        headerButton.addEventListener('click', () => {
+            mainHeader.innerHTML = "JavaScript is Cool!";
+        });
         console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool!"
+        // mainHeader.innerHTML = "JavaScript is Cool!"
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
         console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        const subHeaderButton = document.getElementById('header-blue');
+        subHeaderButton.addEventListener('click', () => {
+            subHeader.style.color = 'blue';
+        });
+
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = Array.from(document.getElementsByTagName('li'));
+        var listItems = document.getElementsByTagName('li');
         console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
 
         // let lidbid1 = document.querySelectorAll('li');
-        for (let i = 0; i < listItems.length; i++) {
-            // console.log(i, listItems[i]);
-            // console.log(i % 2 === 0);
-            if (listItems[i].getAttribute('data-dbid') === '1') {
-                listItems[i].style.color = 'blue';
-                console.log(`here it is`);
-                continue;
-            }
+       const lisButton = document.getElementById('change-lis');
+        lisButton.addEventListener('click', () => {
+            for (let i = 0; i < listItems.length; i++) {
+                // console.log(i, listItems[i]);
+                // console.log(i % 2 === 0);
+                if (listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = 'blue';
+                    console.log(`here it is`);
+                    continue;
+                }
 
-            if (i % 2 === 0) {
-                listItems[i].style.color = 'grey';
+                if (i % 2 === 0) {
+                    listItems[i].style.color = 'grey';
+                }
             }
-        }
+        });
+
+        // for (let i = 0; i < listItems.length; i++) {
+        //     // console.log(i, listItems[i]);
+        //     // console.log(i % 2 === 0);
+        //     if (listItems[i].getAttribute('data-dbid') === '1') {
+        //         listItems[i].style.color = 'blue';
+        //         console.log(`here it is`);
+        //         continue;
+        //     }
+        //
+        //     if (i % 2 === 0) {
+        //         listItems[i].style.color = 'grey';
+        //     }
+        // }
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = Array.from(document.getElementsByClassName('sub-paragraph'));
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
         console.log(subParagraphs);
         /*
         It is not necessary to convert your collection to an array.
@@ -78,18 +106,21 @@
          */
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = `<p>Mission Accomplished!</p>`;
+        const paragraphBtn = document.getElementById('paragraph-button');
+        paragraphBtn.addEventListener('click', () => {
+            subParagraphs[0].innerHTML = `<p>Mission Accomplished!</p>`;
+        });
 
-        let funButton = document.getElementById('dark-mode');
-        funButton.innerHTML = 'Dark-Mode!';
-
-        const listener = () => {
-            let disBody = document.getElementsByTagName('body')[0];
-            disBody.style['background-color'] = `rgb(112 113 117)`;
-            console.log(`fun button was clicked!!!`);
-
-        }
-        funButton.addEventListener('click', listener);
+        // let funButton = document.getElementById('dark-mode');
+        // funButton.innerHTML = 'Dark-Mode!';
+        //
+        // const listener = () => {
+        //     let disBody = document.getElementsByTagName('body')[0];
+        //     disBody.style['background-color'] = `rgb(112 113 117)`;
+        //     console.log(`fun button was clicked!!!`);
+        //
+        // }
+        // funButton.addEventListener('click', listener);
     })();
 </script>
 </body>

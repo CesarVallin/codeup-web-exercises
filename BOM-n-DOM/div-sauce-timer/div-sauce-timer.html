@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div Sauce Timer</title>
+  <style>
+    .circle {
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>Div Sauce Timer</h2>
+  </div>
+
+  <div class="circle" id="div-sauce-circle"></div>
+
+  <br>
+
+  <div>
+      <button id="funButton">fun!</button>
+      <p>This is the fun button</p>
+  </div>
+
+  <div>
+      <button id="notFunButton">no fun!</button>
+      <p>This is the not fun button</p>
+  </div>
+
+  <script>
+    const randomValue = () => {return Math.floor(Math.random() * 256)};
+    const randomRGBstring = () => {
+        return `rgb(${randomValue()}, ${randomValue()}, ${randomValue()})`
+    };
+
+    const circleColorJS = document.getElementById('div-sauce-circle');
+
+    const funBtn = document.getElementById('funButton');
+    funBtn.addEventListener('click', () => {
+        circleColorJS.style['background-color'] = randomRGBstring();
+        circleColorJS.style['border-radius'] = '50%';
+    });
+
+    const noFunBtn = document.getElementById('notFunButton');
+    noFunBtn.addEventListener('click', () => {
+        circleColorJS.innerHTML = 'No Fun :(';
+        circleColorJS.style['background-color'] = 'grey';
+        circleColorJS.style['border-radius'] = 'unset';
+    });
+
+
+
+/*
+"#" + red + green + blue
+ */
+
+  </script>
+</body>
+</html>
