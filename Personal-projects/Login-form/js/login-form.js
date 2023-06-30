@@ -15,27 +15,27 @@ console.log(`hello from login-form.js, external JS`);
  *  Else username meets length criteria, display message
  *  If username value includes(" ") a white space, display message that it must not
  */
-function updatedUsernameInput (){
-    let usernameInput = document.forms.login.username.value;
-    console.log(usernameInput, usernameInput.length);
-    if (usernameInput.length < 5){
-        console.log(`Username must be greater than 5 characters`);
-    } else if (usernameInput.length > 20) {
-        console.log(`Username must not exceed 20 characters`);
-    }else {
-        console.log(`Username meets length criteria`);
-    }
-
-    //
-    let blankSpace = usernameInput.includes(" ");
-    if (blankSpace) {
-        console.log(`Username input must not include a whitespace`);
-    }
-}
-// register the listener to record username <input value>:
-document.addEventListener("input", updatedUsernameInput);
-// invoke handler function for username <input value>:
-updatedUsernameInput();
+// function updatedUsernameInput (){
+//     let usernameInput = document.forms.login.username.value;
+//     console.log(usernameInput, usernameInput.length);
+//     if (usernameInput.length < 5){
+//         console.log(`Username must be greater than 5 characters`);
+//     } else if (usernameInput.length > 20) {
+//         console.log(`Username must not exceed 20 characters`);
+//     }else {
+//         console.log(`Username meets length criteria`);
+//     }
+//
+//     //
+//     let blankSpace = usernameInput.includes(" ");
+//     if (blankSpace) {
+//         console.log(`Username input must not include a whitespace`);
+//     }
+// }
+// // register the listener to record username <input value>:
+// document.addEventListener("input", updatedUsernameInput);
+// // invoke handler function for username <input value>:
+// updatedUsernameInput();
 
 /*
 If you wanted to test out including white space at the beginning or at the end, try this:
@@ -71,12 +71,21 @@ function updatedPasswordInput (){
 
 
     const coffees = ['americano', 'americanoCharged', 'americanoDoubleCharged', 'latte', 'latte2', 'regular', 'mocha'];
+    console.log(coffees);
 
     const fastSearchList = coffees.filter(coffee => {
         return passwordInput.substring(0, 2) === coffee.substring(0, 2);
-    })
-    console.log(fastSearchList, typeof fastSearchList); // Notice nothing displays before typing. can be a good opportunity for an if statement, if (null) {Be creative}
+    });
+
+    // Do you need to try a more complete path first:
+    // if (passwordInput.substring(0, passwordInput.length / 2) ... taking half of the typed input??
+
+    // ============================================================
+
+    console.log(fastSearchList); // Notice nothing displays before typing. can be a good opportunity for an if statement, if (null) {Be creative}
     console.log(fastSearchList.join(" "));
+
+    // ============================================================
 
     // Also remember, if input is null or input.length === 0, display all.
     // Also consider, display all for select option.
