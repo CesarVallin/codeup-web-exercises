@@ -17,6 +17,7 @@ let classes = [
     {class: "10th grade history", students: 25}
 ];
 
+console.log(`sort compare callbackFn =====================================================`);
 // const returnLargestStudentCount = (classes) => {
 //     const inOrder = classes.sort((a, b) => {
 //         return b.students - a.students;
@@ -30,6 +31,8 @@ let classes = [
 /*
 Champion analogy!
  */
+
+console.log(`champion analogy, for loop =====================================================`);
 const returnLargestStudentCount1 = (classes) => {
     let champion = 0;
     for (let i = 0; i < classes.length; i++) {
