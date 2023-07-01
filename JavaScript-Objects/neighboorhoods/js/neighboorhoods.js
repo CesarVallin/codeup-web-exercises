@@ -46,6 +46,7 @@ const neighborhood4 = {
     schools: 27
 }
 
+console.log(`1st function ========================================================`);
 const desireable = (neighborhood) => {
     if (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24) {
         return true;
@@ -53,16 +54,30 @@ const desireable = (neighborhood) => {
     return false;
 };
 
-const desireable1 = (neighborhood) => {
-    return (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24)
-};
-
-
 console.log(desireable(neighborhood1));
 console.log(desireable(neighborhood2));
 console.log(desireable(neighborhood3));
 console.log(desireable(neighborhood4));
 
+console.log(`2nd function ========================================================`);
+
+
+const desireable1 = (neighborhood) => {
+    return (neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && neighborhood.schools >= 24)
+};
+
+console.log(desireable1(neighborhood1));
+console.log(desireable1(neighborhood2));
+console.log(desireable1(neighborhood3));
+console.log(desireable1(neighborhood4));
+
+
+
+
+console.log(`2nd function ========================================================`);
+
+
+console.log(`pushing all available neighborhoods into an array ===================`);
 const neighborhoodArr = [];
 neighborhoodArr.push(neighborhood1);
 neighborhoodArr.push(neighborhood2);
@@ -70,6 +85,8 @@ neighborhoodArr.push(neighborhood3);
 neighborhoodArr.push(neighborhood4);
 
 console.log(neighborhoodArr);
+
+console.log(`function to organize array ====================================`);
 
 const desireableObject = (neighborhoodArr) => {
     let gradedNeighborhoods = {
@@ -87,4 +104,8 @@ const desireableObject = (neighborhoodArr) => {
 };
 
 console.log(desireableObject(neighborhoodArr));
-console.log(JSON.stringify(desireableObject(neighborhoodArr)));
+// console.log(JSON.stringify(desireableObject(neighborhoodArr)));
+/*
+Organized better by declaring an object with two properties, and their value being empty arrays, ready to
+receive a push from your conditional statement.
+ */
