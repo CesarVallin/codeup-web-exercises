@@ -30,3 +30,4 @@ function solution(str, ending){
 
 
 console.log(solution('abc', 'bc'));
+console.log(solution('abcde', 'abc'), false);
