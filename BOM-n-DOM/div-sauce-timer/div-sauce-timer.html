@@ -1,62 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Div Sauce Timer</title>
-  <style>
-    .circle {
-      height: 100px;
-      width: 100px;
-    }
-  </style>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/custom.css">
+
 </head>
 <body>
+<div class="page-wrapper">
+    <section class="container">
+        <div class="row">
+            <div class="column align-center">
+                <div>
+                    <h2>Div Sauce Timer</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="column align-center">
+                <div class="row justify-center">
+                    <div class="circle" id="div-sauce-circle"></div>
+                </div>
+                <br>
+                <main class="row justify-center gap-25">
+                        <button id="funButton">fun!</button>
+                        <span>This is the fun button</span>
+                        <button id="notFunButton">no fun!</button>
+                        <span>This is the not fun button</span>
+                </main>
+            </div>
+        </div>
+    </section>
+</div>
 
-  <div>
-    <h2>Div Sauce Timer</h2>
-  </div>
-
-  <div class="circle" id="div-sauce-circle"></div>
-
-  <br>
-
-  <div>
-      <button id="funButton">fun!</button>
-      <p>This is the fun button</p>
-  </div>
-
-  <div>
-      <button id="notFunButton">no fun!</button>
-      <p>This is the not fun button</p>
-  </div>
-
-  <script>
-    const randomValue = () => {return Math.floor(Math.random() * 256)};
-    const randomRGBstring = () => {
-        return `rgb(${randomValue()}, ${randomValue()}, ${randomValue()})`
-    };
-
-    const circleColorJS = document.getElementById('div-sauce-circle');
-
-    const funBtn = document.getElementById('funButton');
-    funBtn.addEventListener('click', () => {
-        circleColorJS.style['background-color'] = randomRGBstring();
-        circleColorJS.style['border-radius'] = '50%';
-    });
-
-    const noFunBtn = document.getElementById('notFunButton');
-    noFunBtn.addEventListener('click', () => {
-        circleColorJS.innerHTML = 'No Fun :(';
-        circleColorJS.style['background-color'] = 'grey';
-        circleColorJS.style['border-radius'] = 'unset';
-    });
-
-
-
-/*
-"#" + red + green + blue
- */
-
-  </script>
+<script src="js/div-sauce-timer.js"></script>
 </body>
 </html>
