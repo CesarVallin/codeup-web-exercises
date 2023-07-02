@@ -4,30 +4,37 @@ console.log(`hello from A-blank-space-for-practice.js, external JS`);
 
 // ========================================================================================================
 
-// String ends with?
+// Find the unique number
 //
-// Complete the solution so that it returns true if the first argument(string) passed in
-// ends with the 2nd argument (also a string).
+// There is an array with some numbers. All numbers are equal except for one. Try to find it!
 //
-// Examples:
+// findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+// findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+//
+// It’s guaranteed that array contains at least 3 numbers.
+//
+// The tests contain some very huge arrays, so think about performance.
+//
+// This is the first kata in series:
+//
+// Find the unique number (this kata)
+// Find the unique string
+// Find The Unique
 
-// solution('abc', 'bc') // returns true
-// solution('abc', 'd') // returns false
-// solution('abcde', 'cde'), true)
-// solution('abcde', 'abc'), false)
+// function findUniq(arr) {
+//     const ordered = arr.sort((a, b) => {
+//         return a - b;
+//     });
+//     let champion;
+//     for (let i = 0; i < ordered.length; i++) {
+//         if (ordered[i] !== ordered[i + 1]) {
+//             champion = ordered[i];
+//         }
+//         if (ordered[i] === ordered[i + 1] && ordered[i] !== ordered[i + 2]) {
+//             champion = ordered[i + 2];
+//         }
+//     }
+//     return champion;
+// }
+// console.log(findUniq([ 1, 1, 1, 2, 1, 1 ]));
 
-
-
-function solution(str, ending){
-    const flipStart = str.split("").reverse().join("");
-    const flipEnd = ending.split("").reverse().join("");
-    console.log(flipStart, flipEnd);
-    if (flipStart.substring(0, ending.length) === flipEnd) {
-        return true;
-    }
-    return false;
-}
-
-
-console.log(solution('abc', 'bc'));
-console.log(solution('abcde', 'abc'), false);
