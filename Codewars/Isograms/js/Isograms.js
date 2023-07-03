@@ -1,8 +1,5 @@
 "use strict";
-console.log(`hello from A-blank-space-for-practice.js, external JS`);
-
-
-// ========================================================================================================
+console.log(`hello from Isograms.js`);
 
 // Isograms
 
@@ -34,4 +31,14 @@ console.log(isIsogram("Dermatoglyphics"));
 
 console.log(isIsogram("moose"));
 
+/*
+Big learning opportunity:
+If you need to check multiple conditions within a loop, for instance, make full use of:
+    if_else-if_else
 
+If you need to check one condition: simply use if
+
+Remember, from a function you can only have one return.
+As you are looping, if your condition is met, return there.
+    Otherwise, set up your function to return a default value.
+ */
