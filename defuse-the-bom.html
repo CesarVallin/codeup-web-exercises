@@ -26,7 +26,8 @@
 
         detonationTimer--;
     }
-    setInterval(updateTimer, 1000);
+    let intervalId = setInterval(updateTimer, 1000);
+
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
@@ -38,7 +39,7 @@
      */
     // let myInterval = setInterval(updateTimer, 1000);
     function defuseTheBOM() {
-        clearTimeout(setInterval(updateTimer, 1000));
+        clearTimeout(intervalId);
         alert(`You have been saved`);
     }
 
