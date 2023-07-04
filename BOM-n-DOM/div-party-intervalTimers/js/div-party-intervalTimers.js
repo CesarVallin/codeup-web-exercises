@@ -43,4 +43,11 @@ noFunBtn.addEventListener('click', () => {
     clearTimeout(intervalId);
 });
 
+document.addEventListener('keypress', (e) => {
+    console.log(e.code);
+    if (e.code === 'KeyC') {
+        console.log(`listening for C... e.code === 'KeyC'`);
+    }
+});
+
 
