@@ -13,7 +13,10 @@ const randomRgb = () => {
 
 // Declaring variable to target circle divs & button
 const partyCircles = document.getElementsByClassName('div-party-circle');
-console.log(partyCircles); //
+console.log(partyCircles); // Notice this is a collection
+/*
+If you need to modify its content, a loop would follow.  
+ */
 const funBtn = document.getElementById('funBtn');
 
 funBtn.addEventListener('click', () => {
