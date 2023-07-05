@@ -24,32 +24,49 @@ Also logic to conduct a fast search based on the first two typed letters.
  */
 
 const searchBar = document.getElementById('search');
-function updatedSearch() {
+// function updatedSearch() {
+//     let currentSearch = searchBar.value;
+//     console.log(currentSearch, currentSearch.length, typeof currentSearch);
+//
+//     let fastSearchResults = [];
+//
+//     coffees.forEach(coffee => {
+//         if (currentSearch.toLowerCase().substring(0, 1) === coffee.name.toLowerCase().substring(0, 1)) {
+//             fastSearchResults.push(coffee);
+//         }
+//
+//         // This one works, with a little too much trouble!!:
+//         // if (coffee.name.toLowerCase().split(" ")[0] === currentSearch.toLowerCase() || coffee.name.toLowerCase().split(" ")[1] === currentSearch.toLowerCase()) {
+//         //     fastSearchResults.push(coffee);
+//         // }
+//
+//         // This one works best:
+//         // if (coffee.name.toLowerCase().includes(currentSearch.toLowerCase())) {
+//         //     fastSearchResults.push(coffee);
+//         // }
+//
+//     });
+//     console.log(fastSearchResults);
+// }
+
+function updatedSearch1 () {
     let currentSearch = searchBar.value;
     console.log(currentSearch, currentSearch.length, typeof currentSearch);
 
     let fastSearchResults = [];
 
     coffees.forEach(coffee => {
-        if (currentSearch.toLowerCase().substring(0, 1) === coffee.name.toLowerCase().substring(0, 1)) {
-            fastSearchResults.push(coffee);
-        }
-
-        // This one works, with a little too much trouble!!:
-        // if (coffee.name.toLowerCase().split(" ")[0] === currentSearch.toLowerCase() || coffee.name.toLowerCase().split(" ")[1] === currentSearch.toLowerCase()) {
-        //     fastSearchResults.push(coffee);
-        // }
-
-        // This one works best:
-        // if (coffee.name.toLowerCase().includes(currentSearch.toLowerCase())) {
-        //     fastSearchResults.push(coffee);
-        // }
-
+        // coffee.name = coffee.name.split(" ");
+        coffee.name.split(" ").forEach(name => {
+            if (currentSearch.toLowerCase().substring(0, 3) === name.toLowerCase().substring(0, 3)) {
+                fastSearchResults.push(coffee);
+            }
+        });
     });
     console.log(fastSearchResults);
 }
 
-searchBar.addEventListener('input', updatedSearch);
+searchBar.addEventListener('input', updatedSearch1);
 
 console.log(coffees[2].name, typeof coffees[2].name, coffees[2].name.substring(0, 2));
 console.log(coffees[1].name.split(" "));

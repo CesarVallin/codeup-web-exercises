@@ -4,34 +4,42 @@ console.log(`hello from A-blank-space-for-practice.js, external JS`);
 
 // ========================================================================================================
 
-// Isograms
+var coffees = [
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
+    {id: 5, name: 'American', roast: 'medium'},
+    {id: 6, name: 'Breakfast', roast: 'medium'},
+    {id: 7, name: 'High', roast: 'dark'},
+    {id: 8, name: 'Continental', roast: 'dark'},
+    {id: 9, name: 'New Orleans', roast: 'dark'},
+    {id: 10, name: 'European', roast: 'dark'},
+    {id: 11, name: 'Espresso', roast: 'dark'},
+    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 13, name: 'Italian', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'},
+];
 
-// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function
-// that determines whether a string that contains only letters is an isogram. Assume the empty
-// string is an isogram. Ignore letter case.
-//
-// Example: (Input --> Output)
-//
-// "Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+let disArray = [];
+// coffees.forEach(coffee => {
+//     coffee.name = coffee.name.split(" ");
+//     console.log(coffee);
+//     coffee.name.forEach(name => {
+//         console.log(name);
+//     })
+//     coffee.name = coffee.name.join(" ");
+//     console.log(coffee);
+// });
+console.log(disArray);
 
-// isIsogram "Dermatoglyphics" = true
-// isIsogram "moose" = false
-// isIsogram "aba" = false
+coffees.forEach(coffee => {
+    // coffee.name = coffee.name.split(" ");
+    coffee.name.split(" ").forEach(name => {
+        console.log(name);
 
-function isIsogram(str){
-    const words = str.toLowerCase().split("").sort();
-    // console.log(words);
-    for (let i = 0; i < words.length; i++) {
-        // console.log(words[i], words[i + 1]);
-        if (words[i] === words[i + 1]) {
-            return false;
-        }
-    }
-    return true;
-}
+    });
+});
 
-console.log(isIsogram("Dermatoglyphics"));
-
-console.log(isIsogram("moose"));
 
 
