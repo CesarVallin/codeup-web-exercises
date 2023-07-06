@@ -1,9 +1,5 @@
 "use strict";
-console.log(`hello from A-blank-space-for-practice.js, external JS`);
-
-
-// ========================================================================================================
-
+console.log(`hello from exes-and-ohs.js`);
 
 // Exes and Ohs
 
@@ -43,5 +39,8 @@ console.log(XO("ooxXm"), true);
 console.log(XO("zpzpzpp"), true);
 console.log(XO("zzoo"), false);
 
-
-
+// Check out this solution:
+const XO1 = str => {
+    str = str.toLowerCase().split('');
+    return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
+}
