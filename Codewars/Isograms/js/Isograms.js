@@ -17,11 +17,15 @@ console.log(`hello from Isograms.js`);
 
 function isIsogram(str){
     const words = str.toLowerCase().split("").sort();
-    // console.log(words);
+    console.log(words);
     for (let i = 0; i < words.length; i++) {
-        // console.log(words[i], words[i + 1]);
+        console.log(words[i], words[i + 1]);
         if (words[i] === words[i + 1]) {
             return false;
+            /*
+            The return will kick you out of your loop!!!
+            This is why you do not need an else statement here!!
+             */
         }
     }
     return true;

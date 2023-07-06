@@ -33,14 +33,49 @@ function XO(str) {
     return false;
 }
 
+
 console.log(XO("ooxx"), true);
 console.log(XO("xooxx"), false);
 console.log(XO("ooxXm"), true);
 console.log(XO("zpzpzpp"), true);
 console.log(XO("zzoo"), false);
 
-// Check out this solution:
-const XO1 = str => {
-    str = str.toLowerCase().split('');
-    return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
-}
+
+const XO1 = (str) => {
+    let arrxo = str.toLowerCase().split("");
+    const arrx = arrxo.filter(element => {
+        return element === 'x';
+    });
+    console.log(arrx, `filter for arrx`);
+
+    const arro = arrxo.filter(element => {
+        return element === 'o';
+    });
+    console.log(arro, `filter for arro`);
+
+    if (arrx.length === arro.length) {
+        return true;
+    }
+    return false;
+};
+
+console.log(XO1("ooxx"), true);
+console.log(XO1("xooxx"), false);
+console.log(XO1("ooxXm"), true);
+console.log(XO1("zpzpzpp"), true);
+console.log(XO1("zzoo"), false);
+
+
+
+
+
+
+
+
+
+
+// // Check out this solution:
+// const XOAA = str => {
+//     str = str.toLowerCase().split('');
+//     return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
+// }
