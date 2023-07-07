@@ -94,3 +94,4 @@ const returnAdmins2 = (users) => {
     return adminOnly;
 };
 console.log(returnAdmins2(users));
+

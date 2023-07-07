@@ -78,14 +78,16 @@ const openOrSenior3 = (data) => {
     for(let i = 0; i < data.length; i++) {
         console.log(i, data[i]);
         if (data[i][0] >= 55 && data[i][1] > 7) {
-            members.push({senior: data[i]});
+            members.push({type: 'senior', score: data[i]});
         } else {
-            members.push({open: data[i]});
+            members.push({type: 'open', score: data[i]});
         }
     }
     return members;
 };
 console.log(openOrSenior3(memberData));
+
+const openOrSeniorData = openOrSenior3(memberData);
 
 
 

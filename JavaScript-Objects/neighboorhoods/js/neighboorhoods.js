@@ -109,3 +109,5 @@ console.log(desireableObject(neighborhoodArr));
 Organized better by declaring an object with two properties, and their value being empty arrays, ready to
 receive a push from your conditional statement.
  */
+
+
