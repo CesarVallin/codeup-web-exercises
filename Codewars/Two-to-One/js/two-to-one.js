@@ -39,3 +39,16 @@ function longest(s1, s2) {
   return Array.from(new Set(s1 + s2)).sort().join('');
 }
  */
+
+console.log(`using new Set() ================================================`);
+
+const longest1 = (s1, s2) => {
+    let meltedTogether = s1 + s2;
+    const arr1 = meltedTogether.split("").sort();
+    const result = new Set();
+    arr1.forEach(word => {
+        result.add(word);
+    });
+    return Array.from(result).join("");
+};
+console.log(longest1("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
