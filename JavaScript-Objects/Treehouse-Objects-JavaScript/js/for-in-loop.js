@@ -71,10 +71,10 @@ console.log(`Object.values() --- --- ---`);
 const personValues = Object.values(person);
 console.log(personValues);
 
-console.log(`Iterating an single object with a for..in loop --- --- ---`);
+console.log(`Iterating a single object with a for..in loop: --- --- ---`);
 // for..in loop again:
 for (let peekaboo in person) {
-    console.log(peekaboo);
+    console.log(peekaboo, `:`);
     console.log(person[peekaboo]);
 }
 
