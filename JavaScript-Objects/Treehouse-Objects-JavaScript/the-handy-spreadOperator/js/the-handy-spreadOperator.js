@@ -26,4 +26,6 @@ console.log(person);
 
 /*
 You can use the spread operator to copy key/value pairs from one object to another.
+    In this case, it merges the name object with the role object.
  */
+
