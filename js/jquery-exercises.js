@@ -47,37 +47,58 @@ $(function () {
 
     // -------------------------------------------------------------------------------------------------------
     // Handler functions:
-    function changeH1Color (e) {
-        $(e.target).css('background-color', 'green');
-    }
-
-    function paragraphFontSize () {
-        $(this).css('font-size', '18px');
-    }
-
-    // ==================================
-    // li's
-    function liToRed (e) {
-        $(e.target).css('color', 'red');
-    }
-    function liNormal () {
-        $(this).css('color', 'unset');
-    }
-    // ==================================
-
-
-    // Event listeners:
-    $('h1')
-        .on('click', changeH1Color)
-
-    $('p')
-        .on('dblclick', paragraphFontSize)
-
-    $('li')
-        .on('mouseenter', liToRed)
-        .on('mouseleave', liNormal)
+    // function changeH1Color (e) {
+    //     $(e.target).css('background-color', 'green');
+    // }
+    //
+    // function paragraphFontSize () {
+    //     $(this).css('font-size', '18px');
+    // }
+    //
+    // // ==================================
+    // // li's
+    // function liToRed (e) {
+    //     $(e.target).css('color', 'red');
+    // }
+    // function liNormal () {
+    //     $(this).css('color', 'unset');
+    // }
+    // // ==================================
+    //
+    //
+    // // Event listeners:
+    // $('h1')
+    //     .on('click', changeH1Color)
+    //
+    // $('p')
+    //     .on('dblclick', paragraphFontSize)
+    //
+    // $('li')
+    //     .on('mouseenter', liToRed)
+    //     .on('mouseleave', liNormal)
 
     // -------------------------------------------------------------------------------------------------------
+
+    // Same but All included in one function:
+
+    $('h1').on('click', (e) => {
+        $(e.target).css('background-color', 'green');
+    });
+
+    $('p').on('dblclick', (e) => {
+        $(e.target).css('font-size', '18px');
+    });
+
+    $('li').on('mouseenter', (e) => {
+        $(e.target).css('color', 'red');
+    });
+
+    $('li').on('mouseleave', (e) => {
+        $(e.target).css('color', 'unset');
+    });
+
+
+
 
 
 });

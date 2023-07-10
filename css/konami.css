@@ -1,0 +1,19 @@
+.header-rule {
+    background-color: black;
+    height: 15px;
+    width: 100%;
+}
+
+.cesar {
+    width: 100%;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    border: solid black 0.3rem;
+}
+
+/*.top-gap {*/
+/*    margin-top: 65px;*/
+/*}*/
