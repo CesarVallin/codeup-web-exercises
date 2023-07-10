@@ -41,9 +41,43 @@ $(function () {
     // alert(heading1);
     //
     // Multiple selectors:
-    $('h1, p, li').css('background-color', 'yellow');
+    // $('h1, p, li').css('background-color', 'yellow');
+
+    // =======================================================================================================
+
+    // -------------------------------------------------------------------------------------------------------
+    // Handler functions:
+    function changeH1Color (e) {
+        $(e.target).css('background-color', 'green');
+    }
+
+    function paragraphFontSize () {
+        $(this).css('font-size', '18px');
+    }
+
+    // ==================================
+    // li's
+    function liToRed (e) {
+        $(e.target).css('color', 'red');
+    }
+    function liNormal () {
+        $(this).css('color', 'unset');
+    }
+    // ==================================
 
 
+    // Event listeners:
+    $('h1')
+        .on('click', changeH1Color)
+
+    $('p')
+        .on('dblclick', paragraphFontSize)
+
+    $('li')
+        .on('mouseenter', liToRed)
+        .on('mouseleave', liNormal)
+
+    // -------------------------------------------------------------------------------------------------------
 
 
 });
