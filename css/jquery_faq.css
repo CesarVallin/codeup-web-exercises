@@ -1,0 +1,15 @@
+.invisible {
+    visibility: hidden;
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+.fancy {
+    text-decoration: underline wavy blue 5px;
+}
+
+.fancy2 {
+    text-decoration: underline overline dotted red;
+}
