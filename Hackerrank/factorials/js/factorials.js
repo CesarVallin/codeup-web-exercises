@@ -6,8 +6,8 @@ function extraLongFactorials(n) {
     for (let i = BigInt(n); i > 0; i--) {
         counter *= i;
     }
-    console.log(counter);
-    return counter;
+    // console.log(counter);
+    return counter.toString();
 }
 
 console.log(extraLongFactorials(25));

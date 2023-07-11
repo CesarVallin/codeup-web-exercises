@@ -74,3 +74,24 @@ console.log(getTopRunners(runners));
 //             { name: "Charlie", age: 19 },
 //             { name: "Eve", age: 17 }
 //         ]
+
+
+
+// Refactor your code from yesterday's warmup to return just the
+// top runner
+
+// Expected output:
+// { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
+
+const getTopRunner = (runners) => {
+    let topRunner = [];
+    runners.forEach(runner => {
+        runner.lapTimes = calculateLapTimeAverage(runner.lapTimes);
+        topRunner.push(runner);
+    });
+    const first = topRunner.sort((a, b) => {
+        return a.lapTimes - b.lapTimes;
+    });
+    return first[0];
+}
+console.log(getTopRunner(runners));

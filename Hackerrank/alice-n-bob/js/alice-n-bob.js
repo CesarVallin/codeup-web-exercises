@@ -9,7 +9,7 @@ console.log(`expected output :`, [2, 1]);
 function compareTriplets(a, b) {
     let aliceTotal = 0;
     let bobTotal = 0;
-    for (let i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) { // assume length is same.  Keep in mind, if your condition is a number, it would a hard coded value
         console.log(i, a[i], `alice`);
         console.log(i, b[i], `bob`);
         if (a[i] > b[i]) {
