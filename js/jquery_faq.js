@@ -21,16 +21,16 @@ toggleDiv.appendChild(buttonEl);
 console.log(toggleDiv.innerHTML);
 
 // or:
-// crate a new element:
-const toggleLinkDiv = document.createElement('a');
-// Create innerHTML for the element
-toggleLinkDiv.innerHTML = `
-    <a href="#">The Toggle Link</a>
-`;
-// Find the position where the new element should be added:
-const bodyElement = document.querySelector('body');
-// Insert the new element into its position:
-bodyElement.appendChild(toggleLinkDiv);
+// // crate a new element:
+// const toggleLinkDiv = document.createElement('a');
+// // Create innerHTML for the element
+// toggleLinkDiv.innerHTML = `
+//     <a href="#">The Toggle Link</a>
+// `;
+// // Find the position where the new element should be added:
+// const bodyElement = document.querySelector('body');
+// // Insert the new element into its position:
+// bodyElement.appendChild(toggleLinkDiv);
 
 // =========================================================================================================
 
@@ -128,4 +128,90 @@ dlElement.addEventListener('click', (e) => {
 // });
 
 
+// =========================================================================================================
+// For Traversing section:
+// ---------------------------------------------------------------------------------------
+// last li to yellow
+// jQuery:
+// $('.list-button').click(() => {
+//     console.log(`list-button clicked`);
+//     $('ul').each(function(index, element) {
+//         $(element).children().last().toggleClass('highlighted');
+//     })
+// });
+
+
+
+// JS:
+// Variables...
+const yellowButton = document.querySelector('.list-button');
+const ulElements = document.querySelectorAll('ul');
+
+// Functions...
+function handleMakeYellowClick (e) {
+    console.log(`list-button clicked`);
+    ulElements.forEach((ulElement) => {
+        ulElement.lastElementChild.classList.toggle('highlighted');
+    });
+}
+
+
+// Events
+yellowButton.addEventListener('click', handleMakeYellowClick);
+
+
+// ---------------------------------------------------------------------------------------
+// h3 , lis underneath bolded
+// jQuery:
+$('h3').click((e) => {
+    console.log(e.target);
+    if (e.target.localName === 'h3') {
+        $(e.target).next().children().toggleClass('bolder');
+    }
+});
+
+// // js:
+// // variables...
+// const h3Elements = document.querySelectorAll('h3');
+// console.log(h3Elements);
+//
+// // functions...
+// function handleMakeBoldClick (e) {
+//
+// }
+//
+// // Events...
+// h3Elements.forEach((h3Element) => {
+//     h3Element.addEventListener('click', handleMakeBoldClick);
+// });
+
+// ---------------------------------------------------------------------------------------
+// li changes first li of parent ul
+$('li').click((e) => {
+    if(e.target.localName === 'li') {
+        console.log(`this is list item`);
+        // $('ul li:first-child').toggleClass('blue');
+        $(e.target).parent().children().first().toggleClass('blue-text');
+    }
+});
+
+
+// ---------------------------------------------------------------------------------------
+// Div pictures:
+// $('.btn-1').click(() => {
+//     $('#square-1').removeClass('red')
+//         .addClass('blue');
+//     $('#square-3').removeClass('blue')
+//         .addClass('red');
+// })
+
+// const butn1 = document.querySelector('.btn-1');
+// const butn2 = document.querySelector('.btn-2');
+// const butn3 = document.querySelector('.btn-3');
+//
+// const picturesMainDiv = document.querySelector('.pictures-main-div');
+//
+// butn1.addEventListener('click', () => {
+//
+// })
 

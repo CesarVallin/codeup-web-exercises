@@ -13,3 +13,41 @@
 .fancy2 {
     text-decoration: underline overline dotted red;
 }
+
+.bolder {
+    font-weight: bold;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.pictureFrame {
+    height: 100px;
+    width: 100px;
+    border: 1rem solid black;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.item-order1 {
+    order: 1;
+}
+
+.item-order2 {
+    order: 2;
+}
+
+.item-order3 {
+    order: 3;
+}

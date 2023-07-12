@@ -232,14 +232,17 @@
     ]
 
     const houseLoop = (arrayHogwarts) => {
-        arrayHogwarts.forEach(house => {
+        arrayHogwarts.forEach((house, index) => {
             console.log(`Name: `, house.name);
             console.log(`Animal: `, house.animal);
             console.log(`Founder: `, house.founder);
             console.log(`Common Room: `, house.commonRoom);
             // console.log(house.heads[0].firstName);
             house.heads.forEach(head => {
-                console.log(`${head.firstName}, ${head.lastName}`);
+                if (index % 2 === 0) {
+                    console.log(`conditional --- --- ---`)
+                    console.log(`${head.firstName}, ${head.lastName}`);
+                }
             });
         });
     };

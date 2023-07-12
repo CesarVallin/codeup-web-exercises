@@ -3,55 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery_faq</title>
+    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/jquery_faq.css">
-
 
 </head>
 <body>
 
-  <div>
+<div>
     <h1>National Parks FAQs</h1>
     <div class="DefButton"></div>
     <dl>
-      <dt>Who is the director of the National Park Service?</dt>
-      <dd class="invisible">Charles F. "Chuck" Sams III is the Director of the National Park Service.</dd>
+        <dt>Who is the director of the National Park Service?</dt>
+        <dd class="invisible">Charles F. "Chuck" Sams III is the Director of the National Park Service.</dd>
 
-      <dt>What government agency oversees the National Park Service?</dt>
-      <dd class="invisible">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.
-      </dd>
+        <dt>What government agency oversees the National Park Service?</dt>
+        <dd class="invisible">The National Park Service is a bureau of the Department of the Interior. Directly
+            overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.
+        </dd>
 
-      <dt>How old is the National Park System?</dt>
-      <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System timeline.</dd>
+        <dt>How old is the National Park System?</dt>
+        <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on
+            August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on
+            March 1, 1872, as the nation's first national park. View the National Park System timeline.
+        </dd>
 
-      <dt>Where can I find a park map?</dt>
-      <dd class="invisible">You can view maps on specific park websites or find national park, National Park System, National Trails System, and other maps.</dd>
+        <dt>Where can I find a park map?</dt>
+        <dd class="invisible">You can view maps on specific park websites or find national park, National Park System,
+            National Trails System, and other maps.
+        </dd>
 
-      <dt>Can I bring my pet to a national park?
-      </dt>
-      <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
+        <dt>Can I bring my pet to a national park?
+        </dt>
+        <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and
+            in some lodging facilities. Learn more about pets in parks.
+        </dd>
 
-      <dt>Another FAQ</dt>
-      <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur excepturi laborum tempore?</dd>
+        <dt>Another FAQ</dt>
+        <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Aspernatur excepturi laborum tempore?
+        </dd>
 
-      <dt>Another FAQ</dt>
-      <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem hic nostrum obcaecati?</dd>
+        <dt>Another FAQ</dt>
+        <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Dolorem hic nostrum obcaecati?
+        </dd>
 
-      <dt>Another FAQ</dt>
-      <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quidem ratione reiciendis.</dd>
+        <dt>Another FAQ</dt>
+        <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Molestias quidem ratione reiciendis.
+        </dd>
 
-      <dt>Another FAQ</dt>
-      <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet illo sit.</dd>
+        <dt>Another FAQ</dt>
+        <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Adipisci amet illo sit.
+        </dd>
 
-      <dt>Another FAQ</dt>
-      <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores harum minus ratione?</dd>
+        <dt>Another FAQ</dt>
+        <dd class="invisible">Another response to the FAQ. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Dolores harum minus ratione?
+        </dd>
 
     </dl>
 
+
+
+</div>
+<div>
+  <div class="list-button">
+      <button class="ul-list-btn">UL List Btn</button>
   </div>
+  <h3 id="national-parks-heading">National Parks</h3>
+  <ul id="national-parks" class="uls">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+  </ul>
+  <h3>State Parks of Texas</h3>
+  <ul id="state-parks-texas" class="uls">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+  </ul>
+  <h3>Last Unordered List</h3>
+  <ul id="last-unordered-list" class="uls">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+  </ul>
+</div>
+<div id="pictures-main-div" class="row justify-center gap-20">
+    <div>
+        <div id="square-1" class="pictureFrame red"></div>
+        <button class="btn-1">Click here</button>
+    </div>
+    <div>
+        <div id="square-2" class="pictureFrame green"></div>
+        <button class="btn-2">Click here</button>
+    </div>
+    <div>
+        <div id="square-3" class="pictureFrame blue"></div>
+        <button class="btn-3">Click here</button>
+    </div>
+</div>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
 
-  <script src="js/jquery_faq.js"></script>
+<script src="js/jquery_faq.js"></script>
 </body>
 </html>
