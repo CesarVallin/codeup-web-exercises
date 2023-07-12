@@ -1,5 +1,5 @@
-"use strict"
-console.log(`hello from runners.js`);
+"use strict";
+console.log(`hello from runners2.js`);
 
 // / You are given an array of runner objects, where each object represents a
 // runner with properties name, age, and lapTimes (in seconds). Write a
@@ -13,7 +13,6 @@ console.log(`hello from runners.js`);
 // that takes in an array of numbers and returns the average
 
 
-// Input:
 const runners = [
     { name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1] },
     { name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9] },
@@ -21,8 +20,7 @@ const runners = [
     { name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3] },
     { name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] },
 ];
-
-
+//===================================================================================================
 // Function to calculate average time:
 const calculateLapTimeAverage = (arrParam) => {
     let result = 0;
@@ -31,15 +29,12 @@ const calculateLapTimeAverage = (arrParam) => {
     }
     return result / arrParam.length;
 };
-console.log(calculateLapTimeAverage([50.5, 45.2, 48.8, 47.1]));
-
-
-
-// Looping :
-const getTopRunners = (runners) => {
+// console.log(calculateLapTimeAverage([50.5, 45.2, 48.8, 47.1]));
+//===================================================================================================
+const getTopRunners = (runnersArr) => {
     let topRunners = [];
-    runners.forEach(runner => {
-        console.log(runner.lapTimes);
+    runnersArr.forEach(runner => {
+        // console.log(runner.lapTimes);
         if (calculateLapTimeAverage(runner.lapTimes) <= 50) {
             topRunners.push(runner);
         }
@@ -47,34 +42,14 @@ const getTopRunners = (runners) => {
     return topRunners;
 };
 console.log(getTopRunners(runners));
-
+console.log(runners);
 // // Expected Output:
 // [
 //     { name: 'Alice', age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1] },
 //     { name: 'Charlie', age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5] },
 //     { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
 // ]
-
-
-
-// BONUS: Each runner in the resulting array should be represented as an
-// object containing only the name and age properties.
-
-    // Try by establishing the actual object you want to push
-
-// const getTopRunners1 = (param1) => {
-//     for (let key in param1) {
-//
-//     }
-// }
-
-// // Expected Bonus Output:
-//         [
-//         { name: "Alice", age: 18 },
-//             { name: "Charlie", age: 19 },
-//             { name: "Eve", age: 17 }
-//         ]
-
+//===================================================================================================
 
 
 // Refactor your code from yesterday's warmup to return just the
@@ -82,34 +57,28 @@ console.log(getTopRunners(runners));
 
 // Expected output:
 // { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
+// console.log(runners)
+const getTopRunner = (runnersArr) => {
+    let champion = runnersArr[0];
+    for (let i = 0; i < runnersArr.length; i++) {
+        if (calculateLapTimeAverage(runnersArr[i].lapTimes) < calculateLapTimeAverage(champion.lapTimes)) {
+            champion = runnersArr[i];
+        }
+    }
+    return champion;
+};
+console.log(getTopRunner(runners));
 
-// My function: this return the actual average within the 'fastest' object
-const getTopRunner = (runnersArray) => {
+// ----------------------------------------------------------------
+const sortRunnersFastSlow = (runnersArray) => {
     let runnersFastestToSlowest = [];
     runnersArray.forEach(runner => {
         runner.lapTimes = calculateLapTimeAverage(runner.lapTimes);
-        topRunner.push(runner);
+        runnersFastestToSlowest.push(runner);
     });
-    const first = topRunner.sort((a, b) => {
+    const first = runnersFastestToSlowest.sort((a, b) => {
         return a.lapTimes - b.lapTimes;
     });
     return runnersFastestToSlowest;
 };
-console.log(getTopRunner(runners));
-
-// Steve's walk through: returns the unaltered fastest
-// function getTopRunnerAA (runnersArray) {
-//     // Before checking anything, first runner is technically the fastest
-//     let topRunner = runnersArray[0];
-//     // Loop through the array
-//     for (let i = 1; i < runnersArray.length; i++) { // "pretended fastest runner is already declared"
-//         // Check if the runner is faster than our current topRunner
-//         if (calculateLapTimeAverage(runnersArray[i].lapTimes) < calculateLapTimeAverage(topRunner.lapTimes)) {
-//             // If so, replace the topRunner
-//             topRunner = runnersArray[i];
-//             // If not, do nothing
-//         }
-//     }
-//     return topRunner;
-// }
-// console.log(getTopRunnerAA(runners));
+// console.log(sortRunnersFastSlow(runners));

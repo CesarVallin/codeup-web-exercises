@@ -73,15 +73,24 @@ $(document).keyup(function(event){
             console.log(`not a match`);
             userCode = [];
         }
-        if (konamiCode.join("") === userCode.join("")) {
-            console.log(`Yay, matching codes!`);
-            alert(`You have added 30 lives!!!`);
-            $('#horizontal-rule').css('border', '3px solid red');
-            $('body').css('background-color', 'black');
-            $('.circle').css('border', 'solid white 0.3rem')
-            $('#head-title').css('color', 'red');
-            $('#head-title').css('text-shadow', '2px 2px white');
-        }
+        // if (konamiCode.join("") === userCode.join("")) {
+        //     console.log(`Yay, matching codes!`);
+        //     alert(`You have added 30 lives!!!`);
+        //     $('#horizontal-rule').css('border', '3px solid red');
+        //     $('body').css('background-color', 'black');
+        //     $('.circle').css('border', 'solid white 0.3rem')
+        //     $('#head-title').css('color', 'red');
+        //     $('#head-title').css('text-shadow', '2px 2px white');
+        // }
+    }
+    if (konamiCode.join("") === userCode.join("")) {
+        console.log(`Yay, matching codes!`);
+        alert(`You have added 30 lives!!!`);
+        $('#horizontal-rule').css('border', '3px solid red');
+        $('body').css('background-color', 'black');
+        $('.circle').css('border', 'solid white 0.3rem')
+        $('#head-title').css('color', 'red');
+        $('#head-title').css('text-shadow', '2px 2px white');
     }
 });
 
