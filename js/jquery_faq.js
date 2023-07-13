@@ -190,28 +190,11 @@ $('h3').click((e) => {
 $('li').click((e) => {
     if(e.target.localName === 'li') {
         console.log(`this is list item`);
-        // $('ul li:first-child').toggleClass('blue');
         $(e.target).parent().children().first().toggleClass('blue-text');
     }
 });
 
 
 // ---------------------------------------------------------------------------------------
-// Div pictures:
-// $('.btn-1').click(() => {
-//     $('#square-1').removeClass('red')
-//         .addClass('blue');
-//     $('#square-3').removeClass('blue')
-//         .addClass('red');
-// })
 
-// const butn1 = document.querySelector('.btn-1');
-// const butn2 = document.querySelector('.btn-2');
-// const butn3 = document.querySelector('.btn-3');
-//
-// const picturesMainDiv = document.querySelector('.pictures-main-div');
-//
-// butn1.addEventListener('click', () => {
-//
-// })
 
