@@ -1,0 +1,20 @@
+[
+  {
+    "name": "El Parian",
+    "address": "C. Juárez 68, Centro, 45500 San Pedro Tlaquepaque, Jal., Mexico",
+    "coordinates": [-103.310831, 20.638406],
+    "type": "All in one stop"
+  },
+  {
+    "name": "Cooper's Old Time Pit Bar-B-Que",
+    "address": "604 W Young St, Llano, TX 78643, United States",
+    "coordinates": [-98.68207, 30.75922],
+    "type": "BBQ"
+  },
+  {
+    "name": "Mattenga's Pizzeria",
+    "address": "6044 FM3009 Ste 290, Schertz, TX 78154, United States",
+    "coordinates": [-98.28025, 29.60578],
+    "type": "Italian"
+  }
+]

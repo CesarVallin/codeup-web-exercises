@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mapbox-Maps-API</title>
+<!--    keys-->
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+
+    <!--  mapbox CDN-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+
+
 </head>
 <body>
 
+<h1></h1>
+<div id="map" style="height: 30rem; width: 40rem;"></div>
+
+<button id="zoom-in">++ Zoom In ++</button>
+<button id="zoom-out">-- Zoom Out --</button>
+<button id="zoom-reset">Reset Zoom</button>
+
+<div>
+    <button id="el-parian">El Parian</button>
+    <button id="coopers">Cooper's BBQ</button>
+    <button id="mattengas">Mattenga's Pizzeria</button>
+</div>
+
+
+
+
+<!-- jQuery CDN-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script type="module" src="js/mapbox_maps_api.js"></script>
 </body>
 </html>
