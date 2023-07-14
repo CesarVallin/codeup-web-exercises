@@ -14,7 +14,8 @@ export function initializeMap () {
 // ZOOM FUNCTIONS:
 
 // Function to zoom in:
-export function zoomIn(map) { // need to pass map as parameter
+export function zoomIn(map) {
+    // need to pass map as parameter
     // console.log(`zoomIn clicked`);
     let currentZoom = map.getZoom();
     // console.log(currentZoom);
@@ -23,14 +24,16 @@ export function zoomIn(map) { // need to pass map as parameter
 // -----------------------------------
 
 // Function for zoom out:
-export function zoomOut(map) { // need to pass map as parameter
+export function zoomOut(map) {
+    // need to pass map as parameter
     let currentZoom = map.getZoom();
     map.setZoom(--currentZoom);
 }
 // --------------------------------------
 
 // Function reset zoom:
-export function resetZoom(map) { // need to pass map as parameter
+export function resetZoom(map) {
+    // need to pass map as parameter
     map.setZoom(5);
 }
 // -------------------------------------------------------------------------------------------------
@@ -64,10 +67,31 @@ export function mattengasPizza (map) {
 
 // ------------------------------------------------------------------------------------------------
 // Functions to create markers and popups
+
 // Ajax request -- With JS // 'getter function'
 // request to map-restaurants.json
-export function getRestaurants () {
+export function getRestaurants (map) {
     $.ajax(`data/map-restaurants.json`).done((restaurants) => {
         console.log(restaurants);
+
+        renderRestaurants(restaurants, map);
+    });
+}
+
+// Function rendering favorite restaurants // 'render function'
+
+export function renderRestaurants (restaurants, map) {
+    restaurants.forEach(restaurant => {
+        const createDiv = document.createElement('div');
+        createDiv.innerHTML = `
+            <h1>${restaurant.name}</h1>
+            <p>${restaurant.address}</p>
+            <p>${restaurant.coordinates}</p>
+            <p>Type : ${restaurant.type}</p>
+        `;
+        let popup =  new mapboxgl.Popup()
+            .setLngLat(restaurant.coordinates)
+            .setHTML(createDiv)
+            .addTo(map)
     });
 }

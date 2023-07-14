@@ -50,5 +50,5 @@ import {
     // -------------------------------------------------------------------------------------------------
 
     // Function imported from mapbox-utilities.js
-    getRestaurants();
+    getRestaurants(map);
 })();
