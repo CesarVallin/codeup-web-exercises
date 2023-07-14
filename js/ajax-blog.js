@@ -2,17 +2,19 @@
     "use strict";
     console.log(`hello from ajax-blog.js`);
 
+    // ----------------------------------------------------------------------------------------
     // Variables...
     const blogsBody = document.querySelector('#post');
-
+    // ----------------------------------------------------------------------------------------
     // Ajax request -- With JS // 'getter function'
     function getBlogs () {
         $.ajax(`data/blog.json`).done((blogs) => {
             console.log(blogs);
+            // Calling renderBlogs(blogs)
             renderBlogs(blogs);
         });
     }
-
+    // ----------------------------------------------------------------------------------------
     // Function rendering all blogs // 'render function'
     function renderBlogs (blogs) {
         for (const blog of blogs) {
@@ -26,10 +28,9 @@
             blogsBody.appendChild(parentDiv);
         }
     }
-
+    // ----------------------------------------------------------------------------------------
     // Call Your ajax request once you are ready to go!!
     getBlogs();
-
 
 
 

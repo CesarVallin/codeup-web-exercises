@@ -10,7 +10,7 @@ import {
 
 (() => {
     // Variables...
-    const map = initializeMap(); // declaring what map is!!
+    const map = initializeMap(); // declaring what map is!! Very important to go first!!
 // Zoom btns:
     const zoomInBtn = document.querySelector('#zoom-in');
     const zoomOutBtn = document.querySelector('#zoom-out');
@@ -70,4 +70,6 @@ import {
 
     // Function imported from mapbox-utilities.js
     getRestaurants(map);
+
+
 })();
