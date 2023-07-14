@@ -6,7 +6,7 @@ export function initializeMap () {
         container: 'map',
         style: 'mapbox://styles/mapbox/satellite-streets-v12',
         zoom: 5,
-        center: [-103.349609, 20.659698],
+        center: [-98.4916, 29.4252],
     }
     return new mapboxgl.Map(mapOptions);
 }
@@ -79,19 +79,42 @@ export function getRestaurants (map) {
 }
 
 // Function rendering favorite restaurants // 'render function'
-
 export function renderRestaurants (restaurants, map) {
     restaurants.forEach(restaurant => {
-        const createDiv = document.createElement('div');
-        createDiv.innerHTML = `
-            <h1>${restaurant.name}</h1>
-            <p>${restaurant.address}</p>
-            <p>${restaurant.coordinates}</p>
-            <p>Type : ${restaurant.type}</p>
-        `;
-        let popup =  new mapboxgl.Popup()
-            .setLngLat(restaurant.coordinates)
-            .setHTML(createDiv)
+        geocode(restaurant.address, MAPBOX_TOKEN).then((data) => {
+            console.log(data);
+
+            let popup =  new mapboxgl.Popup()
+                // .setLngLat(data)
+                .setHTML(`
+                    <h1>${restaurant.name}</h1>
+                    <p>${restaurant.address}</p>
+                    <p>Type : ${restaurant.type}</p>
+                    `)
+                    // .addTo(map)
+
+            let marker = new mapboxgl.Marker()
+                .setLngLat(data)
+                .addTo(map)
+
+            marker.setPopup(popup);
+        })
+
+    });
+}
+
+// ------------------------------------------------------------------------------------------------
+
+// Function to search:
+export function searchBox (map, searchBoxInput) {
+    geocode(searchBoxInput.value, MAPBOX_TOKEN).then((data) => {
+        console.log(data);
+        let marker = new mapboxgl.Marker()
+            .setLngLat(data)
             .addTo(map)
+        map.flyTo({
+            center: data,
+            zoom: 8
+        });
     });
 }

@@ -15,21 +15,20 @@ console.log(`hello from ajax-store.js`);
     // // Variable... for JS verion:
     const tbody = document.querySelector('#insertProducts');
     const refreshToolsBtn = document.querySelector('button');
-    //
+    //-------------------------------------------------------------------------------------------
     // Ajax request -- With JS // 'getter function'
     function getTools(){
         $.ajax(`data/inventory.json`).done((tools) => {
             // accessing the object:
             console.log(tools);
-
-
             // Function rendering all tools:
             renderTools(tools);
         });
     }
-    // JS
+    //-------------------------------------
     // Function rendering all tools // 'render function'
     function renderTools (tools) {
+        tbody.innerHTML = '';
         tools.forEach(tool => {
             const createdRow = document.createElement('tr');
             createdRow.innerHTML = `
@@ -41,17 +40,19 @@ console.log(`hello from ajax-store.js`);
             tbody.appendChild(createdRow);
         })
     }
+    //-------------------------------------------------------------------------------------------
     // Call Your ajax request once you are ready to go!!
     getTools();
+    //-------------------------------------------------------------------------------------------
     // Function for refresh button:
     refreshToolsBtn.addEventListener('click', () => {
-        tbody.innerHTML = '';
+        // tbody.innerHTML = '';
         getTools();
     });
 
-    // -----------------------------------
 
 
+    //-------------------------------------------------------------------------------------------
     // // With jQuery:
     // $.ajax(`data/inventory.json`).done((tools) => {
     //     for (let i = 0; i < tools.length; i++) {
