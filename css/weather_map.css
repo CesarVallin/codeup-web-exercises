@@ -1,0 +1,10 @@
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#map {
+    height: 40rem;
+    width: 100%;
+}

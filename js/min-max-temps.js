@@ -1,3 +1,4 @@
+console.log(`hello from min-max-temps.js`);
 /**
  * returnMinMaxTemps destructures the OpenWeather 5 Day / 3 Hour Forecast API response to get the daily minimum
  *   and maximum temperatures using a list of 40 three-hour forecast blocks.

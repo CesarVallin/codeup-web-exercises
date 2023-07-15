@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map</title>
+<!--    KEYS -->
+    <script src="js/keys.js"></script>
+<!--    GEOCODER -->
+    <script src="js/mapbox-geocoder-utils.js"></script>
+<!--  mapbox CDN-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+
+<!--    Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<!--    CUSTOM CSS -->
+    <link rel="stylesheet" href="css/weather_map.css">
+
+
+
+    <!-- Min-Max Temps JS-->
+    <script src="js/min-max-temps.js"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="module" src="js/weather_map.js"></script>
+
+
+</head>
+<body>
+    <div class="page-wrapper">
+
+<!--        SEARCH BAR -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
+                        <input id="search-input" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--        MAP CONTAINER -->
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+</body>
+</html>
