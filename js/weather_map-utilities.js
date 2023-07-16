@@ -1,8 +1,11 @@
 // WEATHER_MAP-UTILITIES
 
-
 // Define a variable to store the previous marker
+    // To be used to check and remove previous markers
 let previousMarker = null;
+// Define a variable to store the current marker coordinates.
+    // To be used to update ajax request
+let markerLatLng = null;
 
 // -------------------------------------------------------------------------------------------------
 // Test function:
@@ -25,23 +28,22 @@ export function initializeMap() {
 }
 
 // ------------------------------------------------------------------------------------------------
-// Searchbox function 'getter function'
+// Searchbox function... enables search data for 'getter' function
 export function searchBox(map, searchBoxInput) {
     geocode(searchBoxInput.value, MAPBOX_TOKEN).then((data) => {
         console.log(data);
-
+        // EXECUTES weatherAPI based on searchBoxInput ////////////////////////////////////////////////////////
         // Remove the previous marker (if it exists)
         if (previousMarker) {
             previousMarker.remove();
         }
-
+        // Create one marker
         let marker = new mapboxgl.Marker({
             draggable: true
         })
             .setLngLat(data)
             .addTo(map)
-        data = marker.getLngLat();
-        console.log(data, `Yay, typed`);
+        console.log(marker.getLngLat(), `Yay, typed`);
 
         // Update the previousMarker variable to the current marker
         previousMarker = marker;
@@ -50,41 +52,43 @@ export function searchBox(map, searchBoxInput) {
             center: data,
             zoom: 10
         });
-        // AJAX request on search input...
-        $.ajax(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.lat.toString()}&lon=${data.lng.toString()}&units=imperial&appid=${OPEN_WEATHER_APPID}`).done((weatherAPI) => {
-            console.log(weatherAPI);
-            console.log(weatherAPI.city.name, weatherAPI.city.country, `from input`);
-            renderWeather(weatherAPI);
-
-
-
-        })
+        // ----------------------------------------------------
+        // AJAX request based on 'markerLatLng' - (current marker positioning)
+        markerLatLng = marker.getLngLat();
+        getMapAndWeather(markerLatLng);
+        // ----------------------------------------------------
+        // weatherAPI executed based on searchBoxInput ////////////////////////////////////////////////////////
         // -----------------------------------------------------------
+        // EXECUTES weatherAPI based on marker drag /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
         marker.on('dragend', function () {
-            data = marker.getLngLat();
+            // data = marker.getLngLat();
             map.flyTo({
-                center: data,
+                center: marker.getLngLat(),
                 zoom: 10
             });
-            data = marker.getLngLat();
-            console.log(data, `Yay, dragged`);
-
-            // AJAX request within dragged marker...
-            $.ajax(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.lat.toString()}&lon=${data.lng.toString()}&units=imperial&appid=${OPEN_WEATHER_APPID}`).done((weatherAPI) => {
-                console.log(weatherAPI);
-                console.log(weatherAPI.city.name, weatherAPI.city.country, `from dragged`);
-                renderWeather(weatherAPI);
-
-
-
-            })
+            console.log(marker.getLngLat(), `Yay, dragged`);
+            // ----------------------------------------------------
+            // AJAX request based on 'markerLatLng' - (current marker positioning)
+            markerLatLng = marker.getLngLat();
+            getMapAndWeather(markerLatLng);
+            // ----------------------------------------------------
         })
+        // weatherAPI executed based on marker drag  /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
         // ----------------------------------------------------------
     });
 }
 
 // ------------------------------------------------------------------------------------------------
+// Function getting map from Mapbox and weather from OpenWeatherMap ... 'GETTER FUNCTION'
+function getMapAndWeather (markerLatLng) {
+    $.ajax(`https://api.openweathermap.org/data/2.5/forecast?lat=${markerLatLng.lat.toString()}&lon=${markerLatLng.lng.toString()}&units=imperial&appid=${OPEN_WEATHER_APPID}`).done((weatherAPI) => {
+        console.log(weatherAPI);
+        console.log(weatherAPI.city.name, weatherAPI.city.country, `from weatherAPI`);
+        renderWeather(weatherAPI);
 
+    })
+}
+// ------------------------------------------------------------------------------------------------
 // Function rendering weatherAPI, 'render function'...
 function renderWeather(weatherAPI) {
 
@@ -93,6 +97,7 @@ function renderWeather(weatherAPI) {
     const dynamicNameDiv = document.createElement('div');
     dynamicNameDiv.innerHTML = `
         <div>
+            <img>
             <p>${weatherAPI.city.name}... temp: ${weatherAPI.list[3].main.temp}</p>
             <p>${weatherAPI.city.country}</p>
         </div>
