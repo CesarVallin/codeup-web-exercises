@@ -9,6 +9,9 @@ let markerLatLng = null;
 
 // Define variable to clear five-dayParent div before next search
 const fiveDayParentDiv = document.querySelector('#five-dayParent');
+// To render city name and image...
+const dynamicName = document.querySelector('#dynamic-city');
+
 
 
 
@@ -59,7 +62,6 @@ export function searchBox(map, searchBoxInput) {
         });
         // ----------------------------------------------------
         // AJAX request based on 'markerLatLng' - (current marker positioning)
-        // Clear fiveDayParentDiv before next search...
         markerLatLng = marker.getLngLat();
         getMapAndWeather(markerLatLng);
         // ----------------------------------------------------
@@ -75,7 +77,6 @@ export function searchBox(map, searchBoxInput) {
             console.log(marker.getLngLat(), `Yay, dragged`);
             // ----------------------------------------------------
             // AJAX request based on 'markerLatLng' - (current marker positioning)
-            // Clear fiveDayParentDiv before next search...
             markerLatLng = marker.getLngLat();
             getMapAndWeather(markerLatLng);
             // ----------------------------------------------------
@@ -88,6 +89,7 @@ export function searchBox(map, searchBoxInput) {
 // ------------------------------------------------------------------------------------------------
 // Function getting map from Mapbox and weather from OpenWeatherMap ... 'GETTER FUNCTION'
 function getMapAndWeather (markerLatLng) {
+    // clear fiveDayParentDiv innerHTML before 'getting' & 'rendering' new information.
     fiveDayParentDiv.innerHTML = '';
     $.ajax(`https://api.openweathermap.org/data/2.5/forecast?lat=${markerLatLng.lat.toString()}&lon=${markerLatLng.lng.toString()}&units=imperial&appid=${OPEN_WEATHER_APPID}`).done((weatherAPI) => {
         console.log(weatherAPI);
@@ -101,7 +103,6 @@ function getMapAndWeather (markerLatLng) {
 // Function rendering weatherAPI, 'render function'...
 function renderWeather(weatherAPI) {
     // Rendering city name and image...
-    const dynamicName = document.querySelector('#dynamic-city');
     dynamicName.innerHTML = '';
     const dynamicNameDiv = document.createElement('div');
     dynamicNameDiv.innerHTML = `
@@ -117,7 +118,6 @@ function renderWeather(weatherAPI) {
     dynamicName.appendChild(dynamicNameDiv);
 
     // Rendering 5 day forecast...
-    const fiveDayParentDiv = document.querySelector('#five-dayParent');
     // ------------------------------
     let date, min, max;
     const minMaxTemps = returnMinMaxTemps(weatherAPI);
@@ -135,6 +135,7 @@ function renderWeather(weatherAPI) {
                 <div id="single-day" class="text-center">
                     <p>${date}</p>
                     <p>${min} / ${max}</p>
+                    <p>${weatherAPI.city.name}</p>
                 </div>
             `;
             fiveDayParentDiv.appendChild(singleDayDivParent);
