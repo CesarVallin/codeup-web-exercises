@@ -72,25 +72,30 @@
 
     // TODO: log the humidity for all days
 
-    // $.ajax(getWeatherURL(...ALAMO_COORDINATES))
-    //     .done((data) => {
-    //
-    //         data.list.forEach((day, index) => {
-    //             if (index % 8 === 0) {
-    //                 console.log(day.main.humidity);
-    //                 // evenly divisible over the next 8 hrs
-    //                 // getting 5 days of humidity
-    //             }
-    //         });
-    //
-    //         // OR
-    //
-    //         for (let i = 0; i < data.list.length; i += 8) {
-    //             console.log(data.list[i].main.humidity);
-    //         }
-    //
-    //     })
-    //     .fail(console.error);
+    $.ajax(getWeatherURL(...ALAMO_COORDINATES))
+        .done((data) => {
+
+            data.list.forEach((day, index) => {
+                if (index % 8 === 0) {
+                    console.log(day.main.humidity);
+                    // evenly divisible over the next 8 hrs
+                    // getting 5 days of humidity
+                }
+            });
+
+            // OR
+
+            // for (let i = 0; i < data.list.length; i += 8) {
+            //     console.log(data.list[i].main.humidity);
+            // }
+
+            // Logging all weather key-values
+            data.list.forEach((day) => {
+                console.log(day.weather[0]);
+            })
+
+        })
+        .fail(console.error);
 
 
     // TODO: log the min and max temp for each day

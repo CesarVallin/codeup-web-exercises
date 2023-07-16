@@ -13,15 +13,21 @@ import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
     const searchBoxInput = document.querySelector('#search-input');
     // Search button:
     const searchBtn = document.querySelector('#button-addon1');
-    // Dynamic City name:
-    // const dynamicCityName = document.querySelector('#dynamic-city');
-
 
     // -------------------------------------------------------------------------------------------------
     // Events:
+    // Search button event listener...
     searchBtn.addEventListener('click', (e) => {
         searchBox(map, searchBoxInput);
         searchBoxInput.value = '';
+    });
+    // Search enter key-up event listener...
+    searchBoxInput.addEventListener('keyup', (e) => {
+        // For enter, e.keyCode is 13
+        if (e.keyCode === 13) {
+            searchBox(map, searchBoxInput);
+            searchBoxInput.value = '';
+        }
     });
 
 

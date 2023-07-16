@@ -14,9 +14,19 @@
     height: 10%;
 }
 
-.min-height {
+.min-heightSearchContent {
     min-height: 100px;
 }
+
+.kids-image {
+    height: 100px;
+    /*width: 200px;*/
+    opacity: 0.9;
+}
+
+/*.single-dayCustom {*/
+/*    width: 0;*/
+/*}*/
 
 
 /* Taken care of with bootstrap */

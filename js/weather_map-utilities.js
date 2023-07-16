@@ -7,6 +7,11 @@ let previousMarker = null;
     // To be used to update ajax request
 let markerLatLng = null;
 
+// Define variable to clear five-dayParent div before next search
+const fiveDayParentDiv = document.querySelector('#five-dayParent');
+
+
+
 // -------------------------------------------------------------------------------------------------
 // Test function:
 export function sayHello() {
@@ -54,6 +59,7 @@ export function searchBox(map, searchBoxInput) {
         });
         // ----------------------------------------------------
         // AJAX request based on 'markerLatLng' - (current marker positioning)
+        // Clear fiveDayParentDiv before next search...
         markerLatLng = marker.getLngLat();
         getMapAndWeather(markerLatLng);
         // ----------------------------------------------------
@@ -69,6 +75,7 @@ export function searchBox(map, searchBoxInput) {
             console.log(marker.getLngLat(), `Yay, dragged`);
             // ----------------------------------------------------
             // AJAX request based on 'markerLatLng' - (current marker positioning)
+            // Clear fiveDayParentDiv before next search...
             markerLatLng = marker.getLngLat();
             getMapAndWeather(markerLatLng);
             // ----------------------------------------------------
@@ -81,6 +88,7 @@ export function searchBox(map, searchBoxInput) {
 // ------------------------------------------------------------------------------------------------
 // Function getting map from Mapbox and weather from OpenWeatherMap ... 'GETTER FUNCTION'
 function getMapAndWeather (markerLatLng) {
+    fiveDayParentDiv.innerHTML = '';
     $.ajax(`https://api.openweathermap.org/data/2.5/forecast?lat=${markerLatLng.lat.toString()}&lon=${markerLatLng.lng.toString()}&units=imperial&appid=${OPEN_WEATHER_APPID}`).done((weatherAPI) => {
         console.log(weatherAPI);
         console.log(weatherAPI.city.name, weatherAPI.city.country, `from weatherAPI`);
@@ -88,20 +96,82 @@ function getMapAndWeather (markerLatLng) {
 
     })
 }
+
 // ------------------------------------------------------------------------------------------------
 // Function rendering weatherAPI, 'render function'...
 function renderWeather(weatherAPI) {
-
+    // Rendering city name and image...
     const dynamicName = document.querySelector('#dynamic-city');
     dynamicName.innerHTML = '';
     const dynamicNameDiv = document.createElement('div');
     dynamicNameDiv.innerHTML = `
         <div>
-            <img>
-            <p>${weatherAPI.city.name}... temp: ${weatherAPI.list[3].main.temp}</p>
-            <p>${weatherAPI.city.country}</p>
+            <div>
+                <p>${weatherAPI.city.name}, ${weatherAPI.city.country}... temp: ${weatherAPI.list[0].main.temp}</p>
+            </div>
+            <div>
+                <img src="../img/kids-meditate-removebg-preview-thisone.png" class="kids-image">
+            </div>
         </div>
     `;
     dynamicName.appendChild(dynamicNameDiv);
+
+    // Rendering 5 day forecast...
+    const fiveDayParentDiv = document.querySelector('#five-dayParent');
+    // ------------------------------
+    let date, min, max;
+    const minMaxTemps = returnMinMaxTemps(weatherAPI);
+        minMaxTemps.forEach(singleDay => {
+            // console.log(singleDay.date, `--- date`);
+            date = singleDay.date;
+            // console.log(singleDay.min, `--- min`, singleDay.max, `--- max`);
+            min = singleDay.min;
+            max = singleDay.max;
+            console.log(date, `--- date`);
+            console.log(min, `--- min`, max, `--- max`);
+            let singleDayDivParent = document.createElement('div');
+            singleDayDivParent.classList.add('col-2')
+            singleDayDivParent.innerHTML = `
+                <div id="single-day" class="text-center">
+                    <p>${date}</p>
+                    <p>${min} / ${max}</p>
+                </div>
+            `;
+            fiveDayParentDiv.appendChild(singleDayDivParent);
+
+
+        });
+
+
+    let descrpt, descrptMain, windSpeed, humiditee, psi;
+    weatherAPI.list.forEach((day, index) => {
+        if (index % 8 === 0) {
+            // general weather...
+            // console.log(day.weather[0]);
+
+            // description...
+            // console.log(day.weather[0].main, day.weather[0].description);
+            descrpt = day.weather[0].description;
+            descrptMain = day.weather[0].main;
+            // wind speed...
+            // console.log(day.wind.speed, `--- wind speed`);
+            windSpeed = day.wind.speed;
+            // humidity...
+            // console.log(day.main.humidity, `--- humidity`);
+            humiditee = day.main.humidity;
+            // pressure
+            // console.log(day.main.pressure, `--- pressure`);
+            psi = day.main.pressure;
+
+            console.log(descrpt);
+            console.log(descrptMain);
+            console.log(windSpeed);
+            console.log(humiditee);
+            console.log(psi);
+        }
+    })
+
+
+
 }
 
