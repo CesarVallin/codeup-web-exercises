@@ -14,7 +14,6 @@ const dynamicName = document.querySelector('#dynamic-city');
 
 
 
-
 // -------------------------------------------------------------------------------------------------
 // Test function:
 export function sayHello() {
@@ -121,8 +120,11 @@ function renderWeather(weatherAPI) {
     // ------------------------------
     let date, min, max;
     const minMaxTemps = returnMinMaxTemps(weatherAPI);
-        minMaxTemps.forEach(singleDay => {
+        // Moving for 5 days (minMaxTemps)(per single day)
+        // Index being multiplied by 8 every time the forEach loop executes
+        minMaxTemps.forEach((singleDay, index) => {
             // console.log(singleDay.date, `--- date`);
+            console.log(minMaxTemps);
             date = singleDay.date;
             // console.log(singleDay.min, `--- min`, singleDay.max, `--- max`);
             min = singleDay.min;
@@ -133,9 +135,17 @@ function renderWeather(weatherAPI) {
             singleDayDivParent.classList.add('col-2')
             singleDayDivParent.innerHTML = `
                 <div id="single-day" class="text-center">
-                    <p>${date}</p>
-                    <p>${min} / ${max}</p>
-                    <p>${weatherAPI.city.name}</p>
+                    <p>
+                        <span>${date}</span>
+                        <span>${min} / ${max}</span>
+                    </p>
+        <!--                       testing out access within -->
+                        <span>${weatherAPI.city.name}</span>
+                    <p>
+                        <span>descrition: ${weatherAPI.list[index * 8].weather[0].description}</span>
+                        <span>main descrition: ${weatherAPI.list[index * 8].weather[0].main}</span>
+                    </p>
+                    <span>wind speed : ${weatherAPI.list[index * 8].wind.speed}</span>
                 </div>
             `;
             fiveDayParentDiv.appendChild(singleDayDivParent);
@@ -143,7 +153,7 @@ function renderWeather(weatherAPI) {
 
         });
 
-
+    // [index * 8] above is the equivalent of this test below:
     let descrpt, descrptMain, windSpeed, humiditee, psi;
     weatherAPI.list.forEach((day, index) => {
         if (index % 8 === 0) {
