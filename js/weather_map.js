@@ -1,7 +1,7 @@
 
 
 console.log(`hello from weather_map.js`);
-import {sayHello, initializeMap, searchBox, getWeather} from './weather_map-utilities.js'
+import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
 
 (() => {
     // Test exported function:
@@ -13,14 +13,16 @@ import {sayHello, initializeMap, searchBox, getWeather} from './weather_map-util
     const searchBoxInput = document.querySelector('#search-input');
     // Search button:
     const searchBtn = document.querySelector('#button-addon1');
+    // Dynamic City name:
+    // const dynamicCityName = document.querySelector('#dynamic-city');
+
 
     // -------------------------------------------------------------------------------------------------
     // Events:
-    searchBtn.addEventListener('click', (e, ) => {
+    searchBtn.addEventListener('click', (e) => {
         searchBox(map, searchBoxInput);
-        getWeather(map, searchBoxInput);
-    })
-
+        searchBoxInput.value = '';
+    });
 
 
 
