@@ -4,17 +4,46 @@
     flex-direction: column;
 }
 body {
+    /*background-image: url("/img/rockwater-background.jpeg");*/
+    /*background-position: center center;*/
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+}
 
+.map-container {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
 }
 
 #map {
-    height: 30rem;
-    width: 75%;
+    height: 100%;
+    width: 100%;
+}
+
+.fluid-container.controls {
+    position: relative;
+    z-index: 2;
+    /*background-color: rgba(255,255,255,0.5);*/
+    pointer-events: none;
+    padding: 0 20px;
+}
+
+.btn.btn-outline-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.fluid-container.controls .input-group {
+    pointer-events: all;
 }
 
 .search-bar {
-    width: 30%;
-    height: 10%;
 }
 
 .min-heightSearchContent {
@@ -26,11 +55,13 @@ body {
     /*width: 200px;*/
     opacity: 0.9;
     background-color: white;
+    border-radius: 50%;
 }
 .singleDayDiv{
     border: 0.5rem solid black;
     border-radius: 5%;
     background-color: white;
+    pointer-events: all;
 }
 
 .singleDayDate {
@@ -44,6 +75,14 @@ body {
     border-radius: 2%;
     background-color: #354670;
     color: white;
+}
+
+#five-dayParent {
+    margin-bottom: 20px;
+}
+
+#dynamic-city {
+    pointer-events: all;
 }
 
 /*.single-dayCustom {*/

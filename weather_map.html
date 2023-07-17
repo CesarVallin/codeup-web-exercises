@@ -30,17 +30,23 @@
 
 </head>
 <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper justify-content-between">
+
+<!--        <div class="text-center py-2 controls">-->
+<!--            <h1>Weather Map</h1>-->
+<!--        </div>-->
 
 <!--        SEARCH BAR CONTAINER START -->
-        <div class="container py-5">
+        <div class="fluid-container py-5 controls">
             <div class="row">
-                <div class="col row justify-content-center min-heightSearchContent">
+                <div class="col">
 <!--                    Image or city name -->
                     <div id="dynamic-city" class="col-4">
                         <img src="img/example-logo.svg">
                     </div>
+                </div>
 <!--                    search bar-->
+                <div class="col row justify-content-center">
                     <div class="input-group mb-3 search-bar col-8">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
                         <input id="search-input" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
@@ -51,7 +57,7 @@
 <!--        SEARCH BAR CONTAINER END -->
 
 <!--         DYNAMIC 5 DAY FORECAST START--->
-        <div class="container">
+        <div class="fluid-container controls">
             <div class="row">
                 <div class="col">
                     <div id="five-dayParent" class="row justify-content-evenly">
@@ -60,25 +66,14 @@
                 </div>
             </div>
         </div>
-
+<!--         DYNAMIC 5 DAY FORECAST END--->
 
 <!--        MAP CONTAINER START -->
-        <div class="container">
-            <div class="row">
-                <div class="col row justify-content-center">
-                    <div id="map"></div>
-                </div>
-            </div>
+        <div class="map-container">
+            <div id="map"></div>
         </div>
 <!--        MAP CONTAINER END -->
 
-
-
-
-
     </div>
-
-
-
 </body>
 </html>

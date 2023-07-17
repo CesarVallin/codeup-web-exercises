@@ -128,9 +128,9 @@ function renderWeather(weatherAPI) {
                 // console.log(singleDay.date, `--- date`);
                 // console.log(singleDay.min, `--- min`, singleDay.max, `--- max`);
                 let singleDayDivParent = document.createElement('div');
-                singleDayDivParent.classList.add('col-2')
+                singleDayDivParent.classList.add('col')
                 singleDayDivParent.innerHTML = `
-                    <div id="single-day" class="text-center singleDayDiv">
+                    <div class="text-center singleDayDiv single-day">
                         <p class="singleDayDate">
                             ${singleDay.date}
                         </p>
