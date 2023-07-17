@@ -100,15 +100,15 @@
 
     // TODO: log the min and max temp for each day
 
-    // $.ajax(getWeatherURL(...ALAMO_COORDINATES))
-    //     .done(data => {
-    //         console.log(data);
-    //         const minMaxTemps = returnMinMaxTemps(data);
-    //         minMaxTemps.forEach(minMaxTemp => {
-    //             console.log(minMaxTemp);
-    //         });
-    //     })
-    //     .fail(console.error);
+    $.ajax(getWeatherURL(...ALAMO_COORDINATES))
+        .done(data => {
+            console.log(data);
+            const minMaxTemps = returnMinMaxTemps(data);
+            minMaxTemps.forEach(minMaxTemp => {
+                console.log(minMaxTemp);
+            });
+        })
+        .fail(console.error);
 
 </script>
 </body>

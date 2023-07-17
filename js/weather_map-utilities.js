@@ -120,36 +120,39 @@ function renderWeather(weatherAPI) {
     // ------------------------------
     let date, min, max;
     const minMaxTemps = returnMinMaxTemps(weatherAPI);
+    console.log(minMaxTemps)
         // Moving for 5 days (minMaxTemps)(per single day)
         // Index being multiplied by 8 every time the forEach loop executes
         minMaxTemps.forEach((singleDay, index) => {
-            // console.log(singleDay.date, `--- date`);
-            console.log(minMaxTemps);
-            date = singleDay.date;
-            // console.log(singleDay.min, `--- min`, singleDay.max, `--- max`);
-            min = singleDay.min;
-            max = singleDay.max;
-            console.log(date, `--- date`);
-            console.log(min, `--- min`, max, `--- max`);
-            let singleDayDivParent = document.createElement('div');
-            singleDayDivParent.classList.add('col-2')
-            singleDayDivParent.innerHTML = `
-                <div id="single-day" class="text-center">
-                    <p>
-                        <span>${date}</span>
-                        <span>${min} / ${max}</span>
-                    </p>
-        <!--                       testing out access within -->
-                        <span>${weatherAPI.city.name}</span>
-                    <p>
-                        <span>descrition: ${weatherAPI.list[index * 8].weather[0].description}</span>
-                        <span>main descrition: ${weatherAPI.list[index * 8].weather[0].main}</span>
-                    </p>
-                    <span>wind speed : ${weatherAPI.list[index * 8].wind.speed}</span>
-                </div>
-            `;
-            fiveDayParentDiv.appendChild(singleDayDivParent);
-
+            if(index < 5) { // Guard clause so index does not go above 5
+                console.log(weatherAPI);
+                // console.log(singleDay.date, `--- date`);
+                console.log(minMaxTemps);
+                date = singleDay.date;
+                // console.log(singleDay.min, `--- min`, singleDay.max, `--- max`);
+                min = singleDay.min;
+                max = singleDay.max;
+                console.log(date, `--- date`);
+                console.log(min, `--- min`, max, `--- max`);
+                let singleDayDivParent = document.createElement('div');
+                singleDayDivParent.classList.add('col-2')
+                singleDayDivParent.innerHTML = `
+                    <div id="single-day" class="text-center">
+                        <p>
+                            <span>${date}</span>
+                            <span>${min} / ${max}</span>
+                        </p>
+            <!--                       testing out access within -->
+                            <span>${weatherAPI.city.name}</span>
+                        <p>
+                            <span>descrition: ${weatherAPI.list[index * 8].weather[0].description}</span>
+                            <span>main descrition: ${weatherAPI.list[index * 8].weather[0].main}</span>
+                        </p>
+                        <span>wind speed : ${weatherAPI.list[index * 8].wind.speed}</span>
+                    </div>
+                `;
+                fiveDayParentDiv.appendChild(singleDayDivParent);
+            }
 
         });
 
