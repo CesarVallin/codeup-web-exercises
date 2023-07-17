@@ -13,7 +13,6 @@ const fiveDayParentDiv = document.querySelector('#five-dayParent');
 const dynamicName = document.querySelector('#dynamic-city');
 
 
-
 // -------------------------------------------------------------------------------------------------
 // Test function:
 export function sayHello() {
