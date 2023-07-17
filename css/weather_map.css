@@ -3,14 +3,6 @@
     min-height: 100vh;
     flex-direction: column;
 }
-body {
-    /*background-image: url("/img/rockwater-background.jpeg");*/
-    /*background-position: center center;*/
-    /*background-attachment: fixed;*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-}
 
 .map-container {
     position: absolute;
@@ -43,40 +35,61 @@ body {
     pointer-events: all;
 }
 
-.search-bar {
-}
 
 .min-heightSearchContent {
     min-height: 100px;
 }
 
 .kids-image {
-    /*height: 100px;*/
-    /*width: 200px;*/
     opacity: 0.9;
     background-color: white;
     border-radius: 50%;
     animation: pulse;
     animation-duration: .5s;
-    animation-iteration-count: 6;
+    animation-iteration-count: 5;
 }
 
 @keyframes pulse {
     0% {
         border-radius: 50%;
+        background-color: white;
     }
     50% {
         border-radius: 5%;
+        background-color: yellow;
     }
     100%{
         border-radius: 50%;
+        background-color: white;
     }
 }
+
 .singleDayDiv{
     border: 0.5rem solid black;
     border-radius: 5%;
     background-color: white;
     pointer-events: all;
+    animation: fading;
+    animation-duration: .5s;
+    animation-iteration-count: 5;
+}
+
+@keyframes fading {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .singleDayDate {
@@ -99,11 +112,6 @@ body {
 #dynamic-city {
     pointer-events: all;
 }
-
-/*.single-dayCustom {*/
-/*    width: 0;*/
-/*}*/
-
 
 /* Taken care of with bootstrap */
 /*.map-container {*/

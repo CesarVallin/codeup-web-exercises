@@ -94,7 +94,6 @@ function getMapAndWeather (markerLatLng) {
         console.log(weatherAPI);
         console.log(weatherAPI.city.name, weatherAPI.city.country, `from weatherAPI`);
         renderWeather(weatherAPI);
-
     })
 }
 
@@ -111,7 +110,7 @@ function renderWeather(weatherAPI) {
                 </p>
             </div>
             <div>
-                <img src="../img/kids-meditate-removebg-preview-thisone.png" id="weather-gurus" class="kids-image py-2">
+                <img src="../img/kids-meditate-removebg-preview-thisone.png" class="kids-image py-2">
             </div>
     `;
     dynamicName.appendChild(dynamicNameDiv);
@@ -130,7 +129,7 @@ function renderWeather(weatherAPI) {
                 let singleDayDivParent = document.createElement('div');
                 singleDayDivParent.classList.add('col')
                 singleDayDivParent.innerHTML = `
-                    <div class="text-center singleDayDiv single-day">
+                    <div class="text-center singleDayDiv">
                         <p class="singleDayDate">
                             ${singleDay.date}
                         </p>
@@ -179,18 +178,4 @@ function renderWeather(weatherAPI) {
     // })
 }
 
-// export function thinkingGurus(kidsImageTimer) {
-//     let counter = 0;
-//     let max = 10;
-//     let interValId = setInterval(function () {
-//         if (counter > 10) {
-//             clearInterval(interValId);
-//         } else {
-//             if (counter % 2 === 0) {
-//                 kidsImageTimer.style['border-radius'] = '20%'
-//             }
-//             counter ++;
-//         }
-//     }, 1000);
-// }
 
