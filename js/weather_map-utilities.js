@@ -104,88 +104,79 @@ function renderWeather(weatherAPI) {
     // Rendering city name and image...
     dynamicName.innerHTML = '';
     const dynamicNameDiv = document.createElement('div');
+    dynamicNameDiv.classList.add("d-flex", "flex-column", "align-items-center");
     dynamicNameDiv.innerHTML = `
-        <div>
-            <div>
-                <p>${weatherAPI.city.name}, ${weatherAPI.city.country}... temp: ${weatherAPI.list[0].main.temp}</p>
+            <div class="dynamic-cityAndTemp text-center">
+                <p class="m-0">${weatherAPI.city.name}, ${weatherAPI.city.country} - current temp: ${weatherAPI.list[0].main.temp}°F
+                </p>
             </div>
             <div>
-                <img src="../img/kids-meditate-removebg-preview-thisone.png" class="kids-image">
+                <img src="../img/kids-meditate-removebg-preview-thisone.png" class="kids-image py-2">
             </div>
-        </div>
     `;
     dynamicName.appendChild(dynamicNameDiv);
 
     // Rendering 5 day forecast...
     // ------------------------------
-    let date, min, max;
-    const minMaxTemps = returnMinMaxTemps(weatherAPI);
+    const minMaxTemps = returnMinMaxTemps(weatherAPI).slice(0, 5); // safe guard to only receive 5 items.
     console.log(minMaxTemps)
         // Moving for 5 days (minMaxTemps)(per single day)
         // Index being multiplied by 8 every time the forEach loop executes
         minMaxTemps.forEach((singleDay, index) => {
-            if(index < 5) { // Guard clause so index does not go above 5
                 console.log(weatherAPI);
-                // console.log(singleDay.date, `--- date`);
                 console.log(minMaxTemps);
-                date = singleDay.date;
+                // console.log(singleDay.date, `--- date`);
                 // console.log(singleDay.min, `--- min`, singleDay.max, `--- max`);
-                min = singleDay.min;
-                max = singleDay.max;
-                console.log(date, `--- date`);
-                console.log(min, `--- min`, max, `--- max`);
                 let singleDayDivParent = document.createElement('div');
                 singleDayDivParent.classList.add('col-2')
                 singleDayDivParent.innerHTML = `
-                    <div id="single-day" class="text-center">
-                        <p>
-                            <span>${date}</span>
-                            <span>${min} / ${max}</span>
+                    <div id="single-day" class="text-center singleDayDiv">
+                        <p class="singleDayDate">
+                            ${singleDay.date}
                         </p>
-            <!--                       testing out access within -->
-                            <span>${weatherAPI.city.name}</span>
                         <p>
-                            <span>descrition: ${weatherAPI.list[index * 8].weather[0].description}</span>
-                            <span>main descrition: ${weatherAPI.list[index * 8].weather[0].main}</span>
+                            ${singleDay.min}°F / ${singleDay.max} °F
                         </p>
-                        <span>wind speed : ${weatherAPI.list[index * 8].wind.speed}</span>
+                        <img src="https://openweathermap.org/img/wn/${weatherAPI.list[index * 8].weather[0].icon}@2x.png">
+                        <p>
+                            ${weatherAPI.list[index * 8].weather[0].description}<br>
+                            wind speed : ${weatherAPI.list[index * 8].wind.speed}<br>
+                            pressure: ${weatherAPI.list[index * 8].main.pressure}<br>
+                            ${weatherAPI.city.name}<br>
+                        </p>
                     </div>
                 `;
                 fiveDayParentDiv.appendChild(singleDayDivParent);
-            }
-
         });
 
-    // [index * 8] above is the equivalent of this test below:
-    let descrpt, descrptMain, windSpeed, humiditee, psi;
-    weatherAPI.list.forEach((day, index) => {
-        if (index % 8 === 0) {
-            // general weather...
-            // console.log(day.weather[0]);
-
-            // description...
-            // console.log(day.weather[0].main, day.weather[0].description);
-            descrpt = day.weather[0].description;
-            descrptMain = day.weather[0].main;
-            // wind speed...
-            // console.log(day.wind.speed, `--- wind speed`);
-            windSpeed = day.wind.speed;
-            // humidity...
-            // console.log(day.main.humidity, `--- humidity`);
-            humiditee = day.main.humidity;
-            // pressure
-            // console.log(day.main.pressure, `--- pressure`);
-            psi = day.main.pressure;
-
-            console.log(descrpt);
-            console.log(descrptMain);
-            console.log(windSpeed);
-            console.log(humiditee);
-            console.log(psi);
-        }
-    })
-
-
+    // // [index * 8] above is the equivalent of this test below:
+    // let descrpt, descrptMain, windSpeed, humiditee, psi;
+    // weatherAPI.list.forEach((day, index) => {
+    //     if (index % 8 === 0) {
+    //         // general weather...
+    //         // console.log(day.weather[0]);
+    //
+    //         // description...
+    //         // console.log(day.weather[0].main, day.weather[0].description);
+    //         descrpt = day.weather[0].description;
+    //         descrptMain = day.weather[0].main;
+    //         // wind speed...
+    //         // console.log(day.wind.speed, `--- wind speed`);
+    //         windSpeed = day.wind.speed;
+    //         // humidity...
+    //         // console.log(day.main.humidity, `--- humidity`);
+    //         humiditee = day.main.humidity;
+    //         // pressure
+    //         // console.log(day.main.pressure, `--- pressure`);
+    //         psi = day.main.pressure;
+    //
+    //         console.log(descrpt);
+    //         console.log(descrptMain);
+    //         console.log(windSpeed);
+    //         console.log(humiditee);
+    //         console.log(psi);
+    //     }
+    // })
 
 }
 

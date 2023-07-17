@@ -3,6 +3,9 @@
     min-height: 100vh;
     flex-direction: column;
 }
+body {
+
+}
 
 #map {
     height: 30rem;
@@ -22,6 +25,25 @@
     height: 100px;
     /*width: 200px;*/
     opacity: 0.9;
+    background-color: white;
+}
+.singleDayDiv{
+    border: 0.5rem solid black;
+    border-radius: 5%;
+    background-color: white;
+}
+
+.singleDayDate {
+    background-color: #354670;
+    color: white;
+    border-bottom: 0.1rem solid black;
+}
+
+.dynamic-cityAndTemp {
+    border: 0.2rem solid black;
+    border-radius: 2%;
+    background-color: #354670;
+    color: white;
 }
 
 /*.single-dayCustom {*/
