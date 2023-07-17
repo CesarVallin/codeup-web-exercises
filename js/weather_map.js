@@ -1,5 +1,43 @@
 
 
+// console.log(`hello from weather_map.js`);
+// import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
+//
+// (() => {
+//     // Test exported function:
+//     sayHello();
+//     // -------------------------------------------------------------------------------------------------
+//     // Variables...
+//     const map = initializeMap();
+//     // Search input:
+//     const searchBoxInput = document.querySelector('#search-input');
+//     // Search button:
+//     const searchBtn = document.querySelector('#button-addon1');
+//
+//     // -------------------------------------------------------------------------------------------------
+//     // Events:
+//     // Search button event listener...
+//     searchBtn.addEventListener('click', (e) => {
+//         searchBox(map, searchBoxInput);
+//         searchBoxInput.value = '';
+//     });
+//     // Search enter key-up event listener...
+//     searchBoxInput.addEventListener('keyup', (e) => {
+//         // For enter, e.keyCode is 13
+//         if (e.keyCode === 13) {
+//             searchBox(map, searchBoxInput);
+//             searchBoxInput.value = '';
+//         }
+//     });
+//
+//
+//
+//
+//
+// })();
+
+
+
 console.log(`hello from weather_map.js`);
 import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
 

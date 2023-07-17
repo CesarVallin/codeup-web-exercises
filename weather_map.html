@@ -1,3 +1,88 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Weather Map</title>-->
+<!--&lt;!&ndash;    KEYS &ndash;&gt;-->
+<!--    <script src="js/keys.js"></script>-->
+<!--&lt;!&ndash;    GEOCODER &ndash;&gt;-->
+<!--    <script src="js/mapbox-geocoder-utils.js"></script>-->
+<!--&lt;!&ndash;  mapbox CDN&ndash;&gt;-->
+<!--    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />-->
+
+<!--&lt;!&ndash;    Bootstrap &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">-->
+<!--&lt;!&ndash;    CUSTOM CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="css/weather_map.css">-->
+
+
+
+<!--    &lt;!&ndash; Min-Max Temps JS&ndash;&gt;-->
+<!--    <script src="js/min-max-temps.js"></script>-->
+<!--    &lt;!&ndash; jQuery CDN &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+<!--    <script type="module" src="js/weather_map.js"></script>-->
+
+
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="page-wrapper">-->
+
+<!--&lt;!&ndash;        SEARCH BAR CONTAINER START &ndash;&gt;-->
+<!--        <div class="container py-5">-->
+<!--            <div class="row">-->
+<!--                <div class="col row justify-content-center min-heightSearchContent">-->
+<!--&lt;!&ndash;                    Image or city name &ndash;&gt;-->
+<!--                    <div id="dynamic-city" class="col-4">-->
+<!--                        <img src="img/example-logo.svg">-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    search bar&ndash;&gt;-->
+<!--                    <div class="input-group mb-3 search-bar col-8">-->
+<!--                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>-->
+<!--                        <input id="search-input" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        SEARCH BAR CONTAINER END &ndash;&gt;-->
+
+<!--&lt;!&ndash;         DYNAMIC 5 DAY FORECAST START-&ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <div id="five-dayParent" class="row justify-content-evenly">-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--&lt;!&ndash;        MAP CONTAINER START &ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col row justify-content-center">-->
+<!--                    <div id="map"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        MAP CONTAINER END &ndash;&gt;-->
+
+
+
+
+
+<!--    </div>-->
+
+
+
+<!--</body>-->
+<!--</html>-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,17 +91,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Map</title>
-<!--    KEYS -->
+    <!--    KEYS -->
     <script src="js/keys.js"></script>
-<!--    GEOCODER -->
+    <!--    GEOCODER -->
     <script src="js/mapbox-geocoder-utils.js"></script>
-<!--  mapbox CDN-->
+    <!--  mapbox CDN-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
-<!--    Bootstrap -->
+    <!--    Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<!--    CUSTOM CSS -->
+    <!--    CUSTOM CSS -->
     <link rel="stylesheet" href="css/weather_map.css">
 
 
@@ -30,53 +115,53 @@
 
 </head>
 <body>
-    <div class="page-wrapper">
+<div class="page-wrapper">
 
-<!--        SEARCH BAR CONTAINER START -->
-        <div class="container py-5">
-            <div class="row">
-                <div class="col row justify-content-center min-heightSearchContent">
-<!--                    Image or city name -->
-                    <div id="dynamic-city" class="col-4">
-                        <img src="img/example-logo.svg">
-                    </div>
-<!--                    search bar-->
-                    <div class="input-group mb-3 search-bar col-8">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
-                        <input id="search-input" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    </div>
+    <!--        SEARCH BAR CONTAINER START -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col row justify-content-center min-heightSearchContent">
+                <!--                    Image or city name -->
+                <div id="dynamic-city" class="col-4">
+                    <img src="img/example-logo.svg">
+                </div>
+                <!--                    search bar-->
+                <div class="input-group mb-3 search-bar col-8">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
+                    <input id="search-input" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 </div>
             </div>
         </div>
-<!--        SEARCH BAR CONTAINER END -->
-
-<!--         DYNAMIC 5 DAY FORECAST START--->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div id="five-dayParent" class="row justify-content-evenly">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-<!--        MAP CONTAINER START -->
-        <div class="container">
-            <div class="row">
-                <div class="col row justify-content-center">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-<!--        MAP CONTAINER END -->
-
-
-
-
-
     </div>
+    <!--        SEARCH BAR CONTAINER END -->
+
+    <!--         DYNAMIC 5 DAY FORECAST START--->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="five-dayParent" class="row justify-content-evenly">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--        MAP CONTAINER START -->
+    <div class="container">
+        <div class="row">
+            <div class="col row justify-content-center">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <!--        MAP CONTAINER END -->
+
+
+
+
+
+</div>
 
 
 
