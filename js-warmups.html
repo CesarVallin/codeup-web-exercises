@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <title>JS Warm Ups</title>
 </head>
+
+<input id="user-input" type="text" placeholder="search">
+
 <body>
 
 <script>
 
-    let disArr = [-103.310831, 20.638406];
-    function reverse(arrParam) {
-        let reversed = arrParam.join(",");
-        return reversed.split(",").reverse();
-    }
+    const searchBox = document.querySelector('#user-input');
 
-    console.log(disArr);
-    console.log(reverse(disArr));
+    searchBox.addEventListener('value', (e) => {
+        console.log(e.target.value);
+    })
 
-    // console.log(disArr[0].toString());
+    // let disArr = [-103.310831, 20.638406];
+    // function reverse(arrParam) {
+    //     let reversed = arrParam.join(",");
+    //     return reversed.split(",").reverse();
+    // }
+    //
+    // console.log(disArr);
+    // console.log(reverse(disArr));
+    //
+    // // console.log(disArr[0].toString());
 
 
 </script>
