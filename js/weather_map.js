@@ -14,6 +14,7 @@ import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
     // Search button:
     const searchBtn = document.querySelector('#button-addon1');
 
+
     // -------------------------------------------------------------------------------------------------
     // Events:
     // Search button event listener...
@@ -29,9 +30,6 @@ import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
             searchBoxInput.value = '';
         }
     });
-
-
-
 
 
 })();

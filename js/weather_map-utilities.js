@@ -35,7 +35,7 @@ export function initializeMap() {
 }
 
 // ------------------------------------------------------------------------------------------------
-// Searchbox function... enables search data for 'getter' function
+// Searchbox function... ENABLES search data for 'getter' function
 export function searchBox(map, searchBoxInput) {
     geocode(searchBoxInput.value, MAPBOX_TOKEN).then((data) => {
         console.log(data);
@@ -111,7 +111,7 @@ function renderWeather(weatherAPI) {
                 </p>
             </div>
             <div>
-                <img src="../img/kids-meditate-removebg-preview-thisone.png" class="kids-image py-2">
+                <img src="../img/kids-meditate-removebg-preview-thisone.png" id="weather-gurus" class="kids-image py-2">
             </div>
     `;
     dynamicName.appendChild(dynamicNameDiv);
@@ -177,6 +177,20 @@ function renderWeather(weatherAPI) {
     //         console.log(psi);
     //     }
     // })
-
 }
+
+// export function thinkingGurus(kidsImageTimer) {
+//     let counter = 0;
+//     let max = 10;
+//     let interValId = setInterval(function () {
+//         if (counter > 10) {
+//             clearInterval(interValId);
+//         } else {
+//             if (counter % 2 === 0) {
+//                 kidsImageTimer.style['border-radius'] = '20%'
+//             }
+//             counter ++;
+//         }
+//     }, 1000);
+// }
 
