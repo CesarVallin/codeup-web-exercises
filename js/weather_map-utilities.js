@@ -39,10 +39,12 @@ export function searchPack(map, searchBoxInput) {
     geocode(searchBoxInput.value, MAPBOX_TOKEN).then((data) => {
         console.log(data);
         // EXECUTES weatherAPI based on searchBoxInput ////////////////////////////////////////////////////////
+        // -----------------------------------------------------------------
         // Remove the previous marker (if it exists)
         if (previousMarker) {
             previousMarker.remove();
         }
+        // -----------------------------------------------------------------
         // Create one marker
         let marker = new mapboxgl.Marker({
             draggable: true
@@ -50,24 +52,26 @@ export function searchPack(map, searchBoxInput) {
             .setLngLat(data)
             .addTo(map)
         console.log(marker.getLngLat(), `Yay, typed`);
-
+        // ------------------------------------------------------------------
         // Update the previousMarker variable to the current marker
+            // Only one marker per search
         previousMarker = marker;
-
+        // ------------------------------------------------------------------
+        // Fly to your current coordinates
         map.flyTo({
             center: data,
             zoom: 10
         });
-        // ----------------------------------------------------
+        // -----------------------------------------------------------------
         // AJAX request based on 'markerLatLng' - (current marker positioning)
         markerLatLng = marker.getLngLat();
         getMapAndWeather(markerLatLng);
         // ----------------------------------------------------
-        // weatherAPI executed based on searchBoxInput ////////////////////////////////////////////////////////
+        // weatherAPI COMPLETED based on searchBoxInput ////////////////////////////////////////////////////////
         // -----------------------------------------------------------
         // EXECUTES weatherAPI based on marker drag /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
         marker.on('dragend', function () {
-            // data = marker.getLngLat();
+            // Fly to your current coordinates
             map.flyTo({
                 center: marker.getLngLat(),
                 zoom: 10
@@ -79,7 +83,7 @@ export function searchPack(map, searchBoxInput) {
             getMapAndWeather(markerLatLng);
             // ----------------------------------------------------
         })
-        // weatherAPI executed based on marker drag  /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
+        // weatherAPI COMPLETED based on marker drag  /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
         // ----------------------------------------------------------
     });
 }
@@ -114,7 +118,6 @@ function renderWeather(weatherAPI) {
             </div>
     `;
     dynamicName.appendChild(dynamicNameDiv);
-
     // ----------------------------------------------------------------------------------
     // Rendering 5 day forecast...
     const minMaxTemps = returnMinMaxTemps(weatherAPI).slice(0, 5); // safe guard to only receive 5 items.
@@ -145,7 +148,6 @@ function renderWeather(weatherAPI) {
             `;
             fiveDayParentDiv.appendChild(singleDayDivParent);
     });
-
     // Console logs below proving information above!!
     const minMaxTemps1 = returnMinMaxTemps(weatherAPI).slice(0, 5) // Safe guard to only receive 5 items
     console.log(minMaxTemps1);

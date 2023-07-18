@@ -91,6 +91,11 @@
         opacity: 1;
     }
 }
+.singleDayDiv:hover {
+    border: 0.4rem solid lightblue;
+    background-color: black;
+    color: white;
+}
 
 .singleDayDate {
     background-color: #354670;
