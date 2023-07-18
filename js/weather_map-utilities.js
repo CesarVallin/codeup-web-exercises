@@ -12,13 +12,11 @@ const fiveDayParentDiv = document.querySelector('#five-dayParent');
 // To render city name and image...
 const dynamicName = document.querySelector('#dynamic-city');
 
-
 // -------------------------------------------------------------------------------------------------
 // Test function:
 export function sayHello() {
     console.log(`hello from weather_map-utilities.js`);
 }
-
 // -------------------------------------------------------------------------------------------------
 // Initialize map function:
 export function initializeMap() {
@@ -32,7 +30,6 @@ export function initializeMap() {
     }
     return new mapboxgl.Map(mapOptions);
 }
-
 // ------------------------------------------------------------------------------------------------
 // Searchbox function... ENABLES search data for 'getter' function
 export function searchPack(map, searchBoxInput) {
@@ -69,7 +66,7 @@ export function searchPack(map, searchBoxInput) {
         // ----------------------------------------------------
         // weatherAPI COMPLETED based on searchBoxInput ////////////////////////////////////////////////////////
         // -----------------------------------------------------------
-        // EXECUTES weatherAPI based on marker drag /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
+        // EXECUTES weatherAPI based on marker drag +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         marker.on('dragend', function () {
             // Fly to your current coordinates
             map.flyTo({
@@ -83,11 +80,10 @@ export function searchPack(map, searchBoxInput) {
             getMapAndWeather(markerLatLng);
             // ----------------------------------------------------
         })
-        // weatherAPI COMPLETED based on marker drag  /-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-//-/-/-/-/-/-/
+        // weatherAPI COMPLETED based on marker drag ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         // ----------------------------------------------------------
     });
 }
-
 // ------------------------------------------------------------------------------------------------
 // Function getting map from Mapbox and weather from OpenWeatherMap ... 'GETTER FUNCTION'
 function getMapAndWeather (markerLatLng) {
@@ -99,7 +95,6 @@ function getMapAndWeather (markerLatLng) {
         renderWeather(weatherAPI);
     })
 }
-
 // ------------------------------------------------------------------------------------------------
 // Function rendering weatherAPI, 'render function'...
 function renderWeather(weatherAPI) {
