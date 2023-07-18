@@ -1,7 +1,7 @@
 
 
 console.log(`hello from weather_map.js`);
-import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
+import {sayHello, initializeMap, searchPack} from './weather_map-utilities.js'
 
 (() => {
     // Test exported function:
@@ -18,14 +18,14 @@ import {sayHello, initializeMap, searchBox} from './weather_map-utilities.js'
     // Events:
     // Search button event listener...
     searchBtn.addEventListener('click', (e) => {
-        searchBox(map, searchBoxInput);
+        searchPack(map, searchBoxInput);
         searchBoxInput.value = '';
     });
     // Search enter key-up event listener...
     searchBoxInput.addEventListener('keyup', (e) => {
         // For enter, e.keyCode is 13
         if (e.keyCode === 13) {
-            searchBox(map, searchBoxInput);
+            searchPack(map, searchBoxInput);
             searchBoxInput.value = '';
         }
     });

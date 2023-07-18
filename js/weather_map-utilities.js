@@ -35,7 +35,7 @@ export function initializeMap() {
 
 // ------------------------------------------------------------------------------------------------
 // Searchbox function... ENABLES search data for 'getter' function
-export function searchBox(map, searchBoxInput) {
+export function searchPack(map, searchBoxInput) {
     geocode(searchBoxInput.value, MAPBOX_TOKEN).then((data) => {
         console.log(data);
         // EXECUTES weatherAPI based on searchBoxInput ////////////////////////////////////////////////////////
@@ -151,9 +151,9 @@ function renderWeather(weatherAPI) {
     console.log(minMaxTemps1);
     for(let i = 0; i < minMaxTemps1.length; i++) {
         console.log(i, minMaxTemps1[i], `from minMaxTemps1`);
-        console.log(i, weatherAPI.list[i * 8].weather[0].description, `from weatherAPI`);
-        console.log(i, weatherAPI.list[i * 8].wind.speed, `from weatherAPI`);
-        console.log(i, weatherAPI.list[i * 8].main.pressure, `from weatherAPI`);
+        console.log(i, i * 8, weatherAPI.list[i * 8].weather[0].description, `from weatherAPI`);
+        console.log(i, i * 8, weatherAPI.list[i * 8].wind.speed, `from weatherAPI`);
+        console.log(i, i * 8, weatherAPI.list[i * 8].main.pressure, `from weatherAPI`);
     }
 }
 
