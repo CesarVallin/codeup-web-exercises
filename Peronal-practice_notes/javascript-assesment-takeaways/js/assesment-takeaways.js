@@ -108,6 +108,8 @@ function convertNameToObject(stringParam) {
     return personObject;
 }
 
+// =======================================================================================================
+
 // 9 Write a function named countVowels that accepts a string and returns the number of vowels in that string. (Don't worry about or count "y" as a vowel)
 //
 // countVowels('Hello, Codeup!') // 5
@@ -123,6 +125,10 @@ function countVowels(stringParam) {
     }
     return counter;
 }
+// You can instead declare and array ['aeiou'] or ["a", "e", "i", "o", "u"]
+// and use the includes method.
+// =======================================================================================================
+
 
 // 10 Write a function named analyzeWord. It should take in a string and return an object with information about the input word. The object returned should have the following properties:
 //
