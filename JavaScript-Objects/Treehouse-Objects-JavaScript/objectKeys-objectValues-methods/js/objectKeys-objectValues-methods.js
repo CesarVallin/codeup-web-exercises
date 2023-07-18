@@ -14,7 +14,7 @@ console.log(person);
 console.log(`for..in loop =======================================================`);
 for (const key in person) {
     console.log(key, person[key]);
-    console.log(key.length, ` ` , person[key].length); // See the difference with the logged items below.
+    console.log(key.length, ` /` , person[key].length); // See the difference with the logged items below.
 }
 
 console.log(`Object.keys(): returns array =======================================================`);
