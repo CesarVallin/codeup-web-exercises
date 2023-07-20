@@ -30,6 +30,15 @@ const users = [
     }
 ];
 
+// Remember, these methods are iterators themselves!!!!
+const atLeast3 = users.filter(user => {
+    return user.languages.length > 2;
+})
+console.log(atLeast3);
+
+
+
+
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable

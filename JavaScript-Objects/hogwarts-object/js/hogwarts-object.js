@@ -224,53 +224,63 @@ const hogwartsHouses = [
     }
 ]
 
-const houseLoop = (arrayHogwarts) => {
-    arrayHogwarts.forEach((house, index) => {
-        console.log(`Name: `, house.name);
-        console.log(`Animal: `, house.animal);
-        console.log(`Founder: `, house.founder);
-        console.log(`Common Room: `, house.commonRoom);
-        // console.log(house.heads[0].firstName);
-        house.heads.forEach(head => {
-            if (index % 2 === 0) {
-                console.log(`conditional --- <><><> ---`)
-                console.log(`${head.firstName}, ${head.lastName}`);
-            }
-        });
+function getFilteredHeads(hogwartsHouses) {
+    const filteredHeads = hogwartsHouses.filter((house) => {
+        return house.heads.length > 2;
     });
-};
-houseLoop(hogwartsHouses);
+    return filteredHeads;
+}
 
-console.log(`with a for loop ==========================================`);
-// const houseForLoop = (arrayHogwarts) => {
-//     for (let i = 0; i < arrayHogwarts.length; i++) {
-//         console.log(arrayHogwarts[i].name);
-//         console.log(arrayHogwarts[i].animal);
-//         console.log(arrayHogwarts[i].founder);
-//         console.log(arrayHogwarts[i].commonRoom);
-//     }
+console.log(getFilteredHeads(hogwartsHouses));
+
+//
+// const houseLoop = (arrayHogwarts) => {
+//     arrayHogwarts.forEach((house, index) => {
+//         console.log(`Name: `, house.name);
+//         console.log(`Animal: `, house.animal);
+//         console.log(`Founder: `, house.founder);
+//         console.log(`Common Room: `, house.commonRoom);
+//         // console.log(house.heads[0].firstName);
+//         house.heads.forEach(head => {
+//             if (index % 2 === 0) {
+//                 console.log(`conditional --- <><><> ---`)
+//                 console.log(`${head.firstName}, ${head.lastName}`);
+//             }
+//         });
+//     });
 // };
-// houseForLoop(hogwartsHouses);
-
-console.log(`walkthrough ==========================================`);
-// Function to access specific heads ------------------------
-const loopHeads = (heads) => {
-    let headsString = '';
-    for (const head of heads) {
-        headsString += `${head.firstName} ${head.lastName}`
-    }
-    return headsString
-};
-// ---------------------------------------------------------
-const logHouseInfo = (arrayHogwarts) => {
-    arrayHogwarts.forEach((house) => {
-        console.log(`
-                Hogwarts House : ${house.name}
-                Animal: ${house.animal}
-                Founder: ${house.founder}
-                Common Room: ${house.commonRoom}
-                House Heads: \n${loopHeads(house.heads)}
-            `)
-    })
-};
-logHouseInfo(hogwartsHouses)
+// houseLoop(hogwartsHouses);
+//
+// console.log(`with a for loop ==========================================`);
+// // const houseForLoop = (arrayHogwarts) => {
+// //     for (let i = 0; i < arrayHogwarts.length; i++) {
+// //         console.log(arrayHogwarts[i].name);
+// //         console.log(arrayHogwarts[i].animal);
+// //         console.log(arrayHogwarts[i].founder);
+// //         console.log(arrayHogwarts[i].commonRoom);
+// //     }
+// // };
+// // houseForLoop(hogwartsHouses);
+//
+// console.log(`walkthrough ==========================================`);
+// // Function to access specific heads ------------------------
+// const loopHeads = (heads) => {
+//     let headsString = '';
+//     for (const head of heads) {
+//         headsString += `${head.firstName} ${head.lastName}`
+//     }
+//     return headsString
+// };
+// // ---------------------------------------------------------
+// const logHouseInfo = (arrayHogwarts) => {
+//     arrayHogwarts.forEach((house) => {
+//         console.log(`
+//                 Hogwarts House : ${house.name}
+//                 Animal: ${house.animal}
+//                 Founder: ${house.founder}
+//                 Common Room: ${house.commonRoom}
+//                 House Heads: \n${loopHeads(house.heads)}
+//             `)
+//     })
+// };
+// logHouseInfo(hogwartsHouses)
