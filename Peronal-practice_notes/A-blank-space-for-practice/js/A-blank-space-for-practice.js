@@ -5,21 +5,26 @@ console.log(`hello from A-blank-space-for-practice.js, external JS`);
 // ========================================================================================================
 
 
-function validatePIN (pin) {
-    console.log(pin);
-    let pattern = /[0-9]/g;
-    console.log(pattern.length);
-    let pattern1 = /[-]/g;
-    console.log(pattern1.length);
+/*
+ * Complete the 'staircase' function below.
+ *
+ * The function accepts INTEGER n as parameter.
+ */
 
+function staircase(n) {
+    let emptyString = " ";
+    let hash = '#';
+    let counter = 0;
+    for (let i = n; i > 0; i--) {
+        counter += 1;
+        if (i <= n) {
+            console.log(emptyString.repeat(n - counter) + hash.repeat(counter));
+        }
+    }
 }
-
-console.log(validatePIN("-1234"));
-
-
-
-
-
+staircase(6);
+staircase(10);
+staircase(15);
 
 
 
