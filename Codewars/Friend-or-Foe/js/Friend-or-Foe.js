@@ -107,6 +107,7 @@ const friendEE = (arrayParam) => {
         });
         return friendsArray;
 };
+console.log(["Ryan", "Kieran", "Jason", "Yous"]);
 console.log(friendEE(["Ryan", "Kieran", "Jason", "Yous"]), `Expect Ryan & Yous`);
 
 
