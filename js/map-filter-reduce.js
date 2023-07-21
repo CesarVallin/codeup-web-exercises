@@ -53,6 +53,9 @@ const threeLangs = users.filter(user => {
     return user.languages.length > 2;
 });
 console.log(threeLangs);
+// One line if you are not using multiline code
+const threeLang = users.filter(user => user.languages.length > 2);
+console.log(`Users with three languages`, threeLang);
 // ------------------------------------------------------------------------------------------------------------
 // 3 Use .map to create an array of strings where each element is a user's email address
 function arrOfUsersEmails(arrParam) {
@@ -67,6 +70,10 @@ const userEmailArr = users.map(user => {
     return user.email;
 });
 console.log(userEmailArr);
+// One line if you are not using multiline code
+const emailArray = users.map(user => user.email);
+console.log(`User emails => `, emailArray);
+
 // ------------------------------------------------------------------------------------------------------------
 // 4 Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 function avgYearsExperience(arrParam) {
@@ -78,13 +85,13 @@ function avgYearsExperience(arrParam) {
 console.log(avgYearsExperience(users));
 // Outside of a function equivalent..
 const avgExperience = users.reduce((accumulator, user, index) => {
-    accumulator += user.yearsOfExperience;
-    if ( (index + 1) === users.length ) {
+    accumulator += parseFloat(user.yearsOfExperience);
+    if (users.length-1 === index) {
         accumulator = accumulator / users.length;
     }
     return accumulator;
 }, 0);
-console.log(avgExperience);
+console.log(`Average years => `, avgExperience);
 // ------------------------------------------------------------------------------------------------------------
 // 5 Use .reduce to get the longest email from the list of users.
 function getLongestEmail (arrParam) {
@@ -105,14 +112,25 @@ const longestEmail = users.reduce((accumulator, user) => {
     return accumulator;
 }, '');
 console.log(longestEmail);
+
+// From walk thru...
+const longestEmail1 = users.reduce((accumulator, user, index) => {
+    const emailLength = user.email.length;
+    const accumLength = accumulator.length; // 0 on first iteration.
+    if (emailLength > accumLength) {
+        accumulator = user.email;
+    }
+    return accumulator;
+}, '');
+console.log(`Longest email => `, longestEmail1);
 // ------------------------------------------------------------------------------------------------------------
 // 6 Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 function getListOfUsernamesAsString(arrParam) {
-    let userNameString = arrParam.reduce((accumulator, person) => {
-        if (person === arrParam[arrParam.length - 1]) {
-            accumulator += `and ${person.name}.`
+    let userNameString = arrParam.reduce((accumulator, user) => {
+        if (user === arrParam[arrParam.length - 1]) {
+            accumulator += `and ${user.name}.`
         } else {
-            accumulator += `${person.name}, `; // You could just return the user here
+            accumulator += `${user.name}, `; // You could just return the user here
         }
         return accumulator;
     }, "Your teachers are: ");
@@ -120,8 +138,8 @@ function getListOfUsernamesAsString(arrParam) {
     return userNameString;
 }
 console.log(getListOfUsernamesAsString(users));
-const usersListString = users.reduce((accumulator, user) => {
-    if (user === users[users.length - 1]) {
+const usersListString = users.reduce((accumulator, user, index) => {
+    if (index === (users.length - 1)) {
         accumulator += `and ${user.name}.`
     } else {
         accumulator += `${user.name}, `
