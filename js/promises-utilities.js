@@ -22,8 +22,12 @@ export function getPerson(searchBar) {
 }
 // -----------------------------------------------------------------------------
 // RENDER FUNCTION
-export function renderPersonInfo (user) {
-    console.log(user);
-    console.log(user[0].actor);
-    console.log(`Your last commit =>`, user[0].payload.commits[0].message);
+export function renderPersonInfo (events) {
+    const pushEvents = events.filter(event => {
+        return event.type === "PushEvent";
+    })
+    console.log(pushEvents);
+    console.log(pushEvents[0].actor);
+    console.log(`The date & time of your last commit was:` )
+    console.log(`Your last commit =>`, pushEvents[0].payload.commits[0].message);
 }

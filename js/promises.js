@@ -12,8 +12,8 @@ import {getPerson, renderPersonInfo} from './promises-utilities.js'
     searchBar.addEventListener('keyup' ,(e) => {
         if (e.keyCode === 13) {
             console.log(searchBar.value);
-            getPerson(searchBar).then(user => {
-                renderPersonInfo(user);
+            getPerson(searchBar).then(events => {
+                renderPersonInfo(events);
             })
             searchBar.value = '';
         }
