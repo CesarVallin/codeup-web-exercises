@@ -154,3 +154,19 @@ function getUniqueListofLanguages2(arrParam) {
     return uniqueLanguages;
 }
 console.log(getUniqueListofLanguages2(users));
+
+function getUniqueListofLanguages3(arrParam) {
+    const uniqueLanguages = arrParam.reduce((accumulator, user) => {
+        for (let language of user.languages) {
+            if(accumulator.includes(language)) {
+                continue;
+            } else {
+                accumulator.push(language);
+            }
+        }
+        return accumulator;
+    }, []);
+    return uniqueLanguages;
+}
+console.log(getUniqueListofLanguages3(users));
+
