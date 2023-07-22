@@ -5,7 +5,7 @@ console.log(`hello from promises-utilities.js`);
 // ============================================================================================================
 // .then method
 // -----------------------------------------------------------------------------
-// // GETTER FUNCTION
+// GETTER FUNCTION
 // export function getPerson(searchBar) {
 //     const userId = searchBar.value;
 //     const url = `https://api.github.com/users/${userId}/events`;

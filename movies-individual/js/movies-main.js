@@ -3,10 +3,11 @@ console.log(`hello from movies-main.js`);
 
 // =======================================================================================================
 // Async and await
+
 async function getMovies (queryParam){
     try {
         const baseUrl = 'https://api.themoviedb.org/3/search/movie';
-        const queryString = `?api_key=${TMDB_API}&query=${encodeURIComponent(queryParam)}`;
+        const queryString = `?query=${encodeURIComponent(queryParam)}&api_key=${TMDB_API}`;
         const url = baseUrl + queryString;
         const options = {
             method: 'GET',
@@ -17,47 +18,100 @@ async function getMovies (queryParam){
         }
         const response = await fetch(url, options)
         const movies = await response.json();
-        return movies;
+        const filteredMovies = movies.results.filter(movie => {
+            return movie.original_language === 'en' && movie.backdrop_path !== null;
+        })
+        // HTML here??
+        return filteredMovies;
     } catch(error) {
         console.log(error);
     }
 }
 
+
+
+
+
+
 (async () => {
-    const searchTerm = 'Alien';
-    const movies = await getMovies(searchTerm);
-    console.log(`async & await =>`, movies);
+    // Variables ......
+    const searchBar = document.querySelector('#search-bar');
+
+    // Event Listeners .....
+    searchBar.addEventListener('keyup', async(e) => {
+        if (e.keyCode === 13) {
+            console.log(searchBar.value);
+            const filteredMovies = await getMovies(searchBar.value);
+            // Function rendering HTML??
+            console.log(`async & await, ALL keyup =>`, filteredMovies);
+
+        }
+    });
+
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
 // =======================================================================================================
 // Fetch & .then
 // GETTER
-function getMovies1 (queryParam) {
-    const baseUrl = 'https://api.themoviedb.org/3/search/movie';
-    const queryString = `?api_key=${TMDB_API}&query=${encodeURIComponent(queryParam)}`;
-    const url = baseUrl + queryString;
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: TMDB_API
-        }
-    }
-    return fetch(url, options)
-        .then(response => {
-            return response.json();
-        })
-        .catch(error => {
-            console.log(error);
-        })
-}
+// Get Movies by Search function:
 
-(() => {
-    const searchTerm = 'The Lord of the Rings';
-    getMovies1(searchTerm).then(movies => {
-        console.log(`Fetch & then =>`, movies);
-    })
-
-})();
+// function getMoviesBySearch (queryParam) {
+//     const baseUrl = 'https://api.themoviedb.org/3/search/movie';
+//     const queryString = `?query=${encodeURIComponent(queryParam)}&api_key=${TMDB_API}`;
+//     const url = baseUrl + queryString;
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             accept: 'application/json',
+//             Authorization: TMDB_API
+//         }
+//     }
+//     return fetch(url, options)
+//         .then(response => {
+//             return response.json();
+//         })
+//         .catch(error => {
+//             console.log(error);
+//         })
+// }
+//
+//
+//
+//
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+// (() => {
+//     const searchTerm = 'Star Wars';
+//     getMoviesBySearch(searchTerm)
+//         .then(moviesData => {
+//         console.log(`Fetch & then ALL =>`, moviesData);
+//
+//         // -----------------------------------------------------------------------------------------------------
+//         // `firstFilter`: English and backdrop_path
+//         const firstFilter = moviesData.results.filter((movie) =>{
+//             return movie.original_language === 'en' && movie.backdrop_path !== null;
+//         });
+//         console.log(`then first filter method =>`, firstFilter);
+//
+//         const genreIds = firstFilter.map(movie => {
+//             return movie.genre_ids.toString();
+//         });
+//         console.log(genreIds);
+//
+//     })
+//
+// })();
 
 
 
