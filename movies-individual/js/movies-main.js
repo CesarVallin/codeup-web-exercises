@@ -121,6 +121,7 @@ fetch(urlDiscover, optionsDiscover)
 // ----------------------------------------------------------------------------------------------------
 
 // This gives me access to all genres, genre id & genre name
+// Turn this into a function? Declare it as a variable to use and map() corresponding genres?
 const urlGenreList = 'https://api.themoviedb.org/3/genre/movie/list';
 const optionsGenreList = {
     method: 'GET',
