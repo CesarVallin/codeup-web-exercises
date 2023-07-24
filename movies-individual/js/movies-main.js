@@ -90,7 +90,7 @@ function discoverAllMovies() {
             return response.json();
         })
         .then(data => {
-            console.log(data)
+            return data;
         })
         .catch(error => {
             console.log(error);
@@ -112,7 +112,6 @@ function genreList() {
         })
         .then(data => {
             return data;
-            console.log(data)
         })
         .catch(error => {
             console.log(error);
@@ -120,7 +119,7 @@ function genreList() {
 }
 
 
-const getGenreName = (genres, id) => {
+function getGenreName (genres, id) {
     // Find genre object in the genres array
     let genre = genres.find(genre => genre.id === id);
 
@@ -131,7 +130,7 @@ const getGenreName = (genres, id) => {
 
     // Return the genre's name
     return genre.name;
-};
+}
 
 
 // ---------------------------------------------------------------------------------------------------
@@ -140,7 +139,13 @@ const getGenreName = (genres, id) => {
     // Variables
     const searchBar = document.querySelector('#search-bar');
     // Functions...
-    discoverAllMovies();
+    discoverAllMovies().then(data => {
+        console.log(data);
+    });
+    genreList().then(data => {
+        console.log(data);
+    })
+
     genreList().then(genres => {
         // Events....
         searchBar.addEventListener('keyup', (e) => {
@@ -161,25 +166,7 @@ const getGenreName = (genres, id) => {
                 })
             }
         })
-        }
-    )
-
-    // // Events....
-    // searchBar.addEventListener('keyup', (e) => {
-    //     if(e.keyCode === 13) {
-    //         console.log(searchBar.value);
-    //         getMoviesBySearch(searchBar.value).then(moviesData => {
-    //             searchBar.value = '';
-    //             console.log(`Fetch & then => `, moviesData);
-    //             const firstFilter = moviesData.results.filter((movie) => {
-    //                 return movie.original_language === 'en' && movie.backdrop_path !== null;
-    //             });
-    //             console.log(`firstFilter => `, firstFilter);
-    //         })
-    //     }
-    // })
-
-
+    })
 
 })();
 
