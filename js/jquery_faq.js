@@ -177,6 +177,7 @@ $('h3').click((e) => {
 //
 // // functions...
 // function handleMakeBoldClick (e) {
+
 //
 // }
 //
