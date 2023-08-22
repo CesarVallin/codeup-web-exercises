@@ -12,12 +12,11 @@
 <script>
 
 
-    const isDivisibleBy3 = n => n % 3 === 0;
+    function myFunction(a, n) {
+        return a.substring(n -1, n);
+    }
 
-    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-    console.log(numbers.filter(isDivisibleBy3));
-    console.log(numbers);
+    console.log(myFunction('abcd', 1));
 
 </script>
 
