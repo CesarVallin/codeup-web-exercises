@@ -8,7 +8,7 @@ class HelloTest {
 
 class HiTest {
     sayHi() {
-        return `hi there, (with an instance of HiTest to access this method!)`;
+        return `hi there, (with an instance of HiTest in the IIFE to access this method!)`;
     }
 }
 
