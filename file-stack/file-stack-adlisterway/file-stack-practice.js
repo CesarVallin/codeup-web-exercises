@@ -1,4 +1,4 @@
-import {FilePickerAPI} from "./file-stack-practice-utils";
+import {FilePickerAPI} from "./file-stack-practice-utils.js";
 
 (async () => {
 
@@ -37,7 +37,7 @@ import {FilePickerAPI} from "./file-stack-practice-utils";
         usernameDisplay.innerHTML = `<p>${username}</p>`;
         emailDisplay.innerHTML = `<p>${email}</p>`;
         if (image) {
-            imageDisplay.innerHTML = `<img src="${img}">`;
+            imageDisplay.innerHTML = `<img src="${image}">`;
         } else {
             imageDisplay.innerHTML = `<p>Oops, no image</p>`;
         }
