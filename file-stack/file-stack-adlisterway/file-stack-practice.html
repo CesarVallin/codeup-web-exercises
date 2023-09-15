@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST" action="#">
+
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required>
+    </div>
+
+    <div id="upload-image">Want to Upload an Image?<span style="color:blue"> Click Here</span></div>
+    <input id="upload-input" name="url" type="hidden">
+    <div id="upload-preview"></div>
+
+    <button class="submit">Submit</button>
+
+</form>
+
+<div id="results">
+    <div id="username-display"></div>
+    <div id="email-display"></div>
+    <div id="image-display"></div>
+</div>
+
+</body>
+</html>
