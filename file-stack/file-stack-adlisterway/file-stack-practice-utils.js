@@ -12,6 +12,7 @@ export class FilePickerAPI {
             },
             imageMin: [200, 200],
             imageMax: [400, 400],
+            accept: ["image/jpeg", "image/png", "image/bmp"],
             onFileUploadFinished: file => {
                 console.log(file.url);
                 const uploadPreview = document.querySelector("#upload-preview");
