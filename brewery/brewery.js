@@ -9,5 +9,4 @@ import{BreweryUtils} from './brewery-utils.js';
     console.log(breweryObject);
     
 
-
 })();

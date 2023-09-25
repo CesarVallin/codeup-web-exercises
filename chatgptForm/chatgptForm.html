@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Search</title>
+</head>
+<body>
+<h1>ChatGPT Search</h1>
+<form id="searchForm">
+  <label for="query">Enter your search query:</label>
+  <input type="text" id="query" name="q" placeholder="Search..." required>
+  <br>
+  <input type="submit" value="Search">
+</form>
+
+<div id="results">
+  <!-- Results will be displayed here -->
+</div>
+
+<script>
+  document.getElementById('searchForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Get the user's query from the input field
+    const query = document.getElementById('query').value;
+
+    // Your ChatGPT URL (replace with the correct URL)
+    const chatGptUrl = `https://chatgpt.com/search?q=${encodeURIComponent(query)}`;
+
+    // Redirect the user to the ChatGPT search page
+    window.location.href = chatGptUrl;
+  });
+</script>
+</body>
+</html>
