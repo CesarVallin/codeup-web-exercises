@@ -3,34 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatGPT Search</title>
+  <script src="../js/keys.js"></script>
+  <title>NASA APOD API</title>
 </head>
 <body>
-<h1>ChatGPT Search</h1>
-<form id="searchForm">
-  <label for="query">Enter your search query:</label>
-  <input type="text" id="query" name="q" placeholder="Search..." required>
-  <br>
-  <input type="submit" value="Search">
-</form>
-
+<h1>NASA Astronomy Picture of the Day</h1>
+<button id="getAstronomyPicture">Get Astronomy Picture</button>
 <div id="results">
-  <!-- Results will be displayed here -->
+  <!-- Astronomy picture information will be displayed here -->
 </div>
 
 <script>
-  document.getElementById('searchForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission
+  // Function to make the API request
+  async function getAstronomyPicture() {
+    const apiKey = NASA_API_KEY; // Replace with your actual NASA API key
+    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-    // Get the user's query from the input field
-    const query = document.getElementById('query').value;
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+      const data = await response.json();
 
-    // Your ChatGPT URL (replace with the correct URL)
-    const chatGptUrl = `https://chatgpt.com/search?q=${encodeURIComponent(query)}`;
+      // Display the information in the "results" div
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `
+                    <h2>${data.title}</h2>
+                    <p>${data.date}</p>
+                    <img src="${data.url}" alt="${data.title}" />
+                    <p>${data.explanation}</p>
+                `;
 
-    // Redirect the user to the ChatGPT search page
-    window.location.href = chatGptUrl;
-  });
+      // Log the object to the console
+      console.log(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  // Attach the getAstronomyPicture function to the button click event
+  const getAstronomyPictureButton = document.getElementById('getAstronomyPicture');
+  getAstronomyPictureButton.addEventListener('click', getAstronomyPicture);
 </script>
 </body>
 </html>
