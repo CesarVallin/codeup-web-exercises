@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Geolocation</title>
+</head>
+<body>
+
+<form>
+  <input type="text" name="name" placeholder="Enter your name">
+  <button type="button" onclick="getLocation()">Get Location</button>
+  <input type="hidden" name="latitude" id="latitude">
+  <input type="hidden" name="longitude" id="longitude">
+  <button type="submit" id="submitBtn">Submit</button>
+</form>
+
+<script>
+
+  const submitBtn = document.querySelector("#submitBtn");
+
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+  })
+
+
+  function getLocation() {
+    if (navigator.geolocation) {
+        // Disable the button to prevent multiple clicks while waiting for the location.
+        document.querySelector("button").disabled = true;
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+      let latitudeInput = document.querySelector("#latitude");
+      let longitudeInput = document.querySelector("#longitude");
+
+      latitudeInput.value = position.coords.latitude;
+      console.log(latitudeInput.value);
+
+      longitudeInput.value = position.coords.longitude;
+      console.log(longitudeInput.value);
+
+      // Enable the button after getting the location.
+      document.querySelector("button").disabled = false;
+  }
+
+</script>
+</body>
+</html>
