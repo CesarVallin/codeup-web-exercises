@@ -10,7 +10,7 @@ export class FilePickerAPI {
                 crop: { aspectRatio: 1 / 1, force: true},
                 circle: true,
             },
-            imageMin: [200, 200],
+            imageMin: [400, 400],
             imageMax: [400, 400],
             accept: ["image/jpeg", "image/png", "image/bmp"],
             onFileUploadFinished: file => {
